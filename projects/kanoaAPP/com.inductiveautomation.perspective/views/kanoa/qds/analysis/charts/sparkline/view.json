@@ -1,0 +1,173 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": {
+      "points": [
+        52.186, 
+        54.986, 
+        47.5555, 
+        51.729444, 
+        42.285555, 
+        34.804, 
+        38.89421, 
+        35.89, 
+        45.456, 
+        38.2535, 
+        46.9425, 
+        43.1415, 
+        49.834, 
+        46.383157, 
+        39.841, 
+        50.8425, 
+        41.017142, 
+        48.42421, 
+        52.029444, 
+        59.133, 
+        40.248125, 
+        70, 
+        70, 
+        0, 
+        80, 
+        100, 
+        100
+      ], 
+      "controlLimits": {
+        "tgt": 80, 
+        "lsl": 70, 
+        "max": 100, 
+        "usl": 100, 
+        "min": 0, 
+        "lcl": 70, 
+        "mean": 51.10654766666667, 
+        "stdDev": 20.015619844994315, 
+        "ucl": 100
+      }
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 205, 
+      "height": 30
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.display.sparkline", 
+        "props": {
+          "range": {}, 
+          "desired": {
+            "fill": {
+              "opacity": 0
+            }, 
+            "stroke": {
+              "width": 0.6, 
+              "dashArray": 2
+            }
+          }, 
+          "marker": {
+            "last": {
+              "size": 0
+            }, 
+            "high": {
+              "fill": {
+                "color": "#D97700"
+              }, 
+              "size": 0
+            }, 
+            "low": {
+              "fill": {
+                "color": "#FFAC47"
+              }, 
+              "size": 0
+            }, 
+            "first": {
+              "size": 0
+            }
+          }
+        }, 
+        "meta": {
+          "domId": "Sparkline", 
+          "name": "Sparkline"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "basis": "30px"
+        }, 
+        "propConfig": {
+          "props.points": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.points"
+              }
+            }
+          }, 
+          "props.range.high": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn max([value['ucl'], value['max']])", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.controlLimits"
+              }
+            }
+          }, 
+          "props.desired.low": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.controlLimits.lcl"
+              }
+            }
+          }, 
+          "props.desired.high": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.controlLimits.ucl"
+              }
+            }
+          }, 
+          "props.range.low": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn value['min']", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.controlLimits"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

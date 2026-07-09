@@ -1,0 +1,907 @@
+{
+  "custom": {
+    "itemInfo": [], 
+    "table": {
+      "data": {
+        "$": [
+          "ds", 
+          192, 
+          1738178542728
+        ], 
+        "$columns": []
+      }, 
+      "columns": {
+        "numCols": 16, 
+        "fixedColLength": 0, 
+        "splitPosition": "0%"
+      }, 
+      "selection": {
+        "col": null, 
+        "row": null
+      }, 
+      "getData": false
+    }
+  }, 
+  "params": {
+    "selectedDCIs": [], 
+    "tableData": {
+      "$": [
+        "ds", 
+        192, 
+        1738178542728
+      ], 
+      "$columns": []
+    }, 
+    "infoBar": {
+      "showBar": false, 
+      "type": "INFO", 
+      "text": ""
+    }, 
+    "value": {
+      "displaySettings": {
+        "showSummary": false, 
+        "autoRefresh": false, 
+        "showCheckItemPath": false, 
+        "showFooter": false, 
+        "showSpec": false, 
+        "bradleyMode": false, 
+        "showItemInfo": false, 
+        "showWide": false
+      }, 
+      "filters": {
+        "agg": null, 
+        "chkShtId": null, 
+        "endDate": {
+          "$ts": 1735718400000, 
+          "$": [
+            "ts", 
+            192, 
+            1738178264892
+          ]
+        }, 
+        "ignoreZero": true, 
+        "shift": null, 
+        "chkItemGroupId": null, 
+        "editMode": false, 
+        "startDate": {
+          "$ts": 1733040000000, 
+          "$": [
+            "ts", 
+            192, 
+            1738178246820
+          ]
+        }
+      }
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 1310, 
+      "height": 822
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "classes": "kanoa/font/default", 
+        "overflow": "hidden"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "style": {
+                "paddingX": "5px", 
+                "gapX": "5px", 
+                "overflow": "hidden"
+              }, 
+              "direction": "column"
+            }, 
+            "children": [
+              {
+                "type": "ia.container.flex", 
+                "props": {
+                  "alignItems": "center", 
+                  "style": {
+                    "overflow": "hidden", 
+                    "gap": "5px"
+                  }
+                }, 
+                "children": [
+                  {
+                    "type": "ia.input.button", 
+                    "props": {
+                      "image": {
+                        "icon": {
+                          "path": "material/motion_photos_on"
+                        }
+                      }, 
+                      "style": {
+                        "classes": "kanoa/button/flatIcon"
+                      }, 
+                      "text": ""
+                    }, 
+                    "meta": {
+                      "tooltip": {
+                        "tail": false, 
+                        "enabled": true, 
+                        "delay": 0, 
+                        "location": "center-right", 
+                        "text": "Get data"
+                      }, 
+                      "domId": "btnGetData", 
+                      "name": "btnGetData"
+                    }, 
+                    "position": {
+                      "shrink": 0, 
+                      "display": false, 
+                      "basis": "30px"
+                    }, 
+                    "events": {
+                      "component": {
+                        "onActionPerformed": {
+                          "type": "script", 
+                          "scope": "G", 
+                          "config": {
+                            "script": "\n\tsystem.perspective.sendMessage('getMatrixTableData', {})\n\n\treturn"
+                          }
+                        }
+                      }
+                    }
+                  }, 
+                  {
+                    "type": "ia.container.flex", 
+                    "props": {
+                      "alignItems": "center", 
+                      "justify": "center", 
+                      "style": {
+                        "backgroundColor": "--kcGray-0", 
+                        "classes": "kanoa/border", 
+                        "gap": "5px", 
+                        "height": "30px"
+                      }
+                    }, 
+                    "children": [
+                      {
+                        "type": "ia.display.label", 
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          }, 
+                          "text": "Show"
+                        }, 
+                        "meta": {
+                          "domId": "lblShow", 
+                          "name": "lblShow"
+                        }, 
+                        "position": {
+                          "shrink": 0
+                        }
+                      }, 
+                      {
+                        "type": "ia.input.numeric-entry-field", 
+                        "props": {
+                          "align": "center", 
+                          "style": {
+                            "classes": "kanoa/font/default", 
+                            "height": "20px"
+                          }, 
+                          "spinner": {
+                            "enabled": false
+                          }
+                        }, 
+                        "meta": {
+                          "domId": "numCols", 
+                          "name": "numCols"
+                        }, 
+                        "position": {
+                          "shrink": 0, 
+                          "basis": "40px"
+                        }, 
+                        "propConfig": {
+                          "props.value": {
+                            "binding": {
+                              "type": "property", 
+                              "overlayOptOut": true, 
+                              "config": {
+                                "bidirectional": true, 
+                                "path": "view.custom.table.columns.numCols"
+                              }
+                            }
+                          }
+                        }
+                      }, 
+                      {
+                        "type": "ia.display.label", 
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          }
+                        }, 
+                        "meta": {
+                          "domId": "label", 
+                          "name": "label"
+                        }, 
+                        "position": {
+                          "display": false
+                        }, 
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "transforms": [
+                                {
+                                  "code": "\treturn ' of %i items'%(value-3)", 
+                                  "type": "script"
+                                }
+                              ], 
+                              "type": "property", 
+                              "overlayOptOut": true, 
+                              "config": {
+                                "path": "view.custom.table.columns.totalCols"
+                              }
+                            }
+                          }
+                        }
+                      }, 
+                      {
+                        "type": "ia.display.label", 
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          }, 
+                          "text": "columns"
+                        }, 
+                        "meta": {
+                          "domId": "lblUnits", 
+                          "name": "lblUnits"
+                        }, 
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ], 
+                    "meta": {
+                      "tooltip": {
+                        "enabled": true, 
+                        "location": "bottom-left", 
+                        "text": "Number of columns to display on the table"
+                      }, 
+                      "domId": "flxCols", 
+                      "name": "flxCols"
+                    }, 
+                    "position": {
+                      "basis": "160px"
+                    }, 
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "transforms": [
+                            {
+                              "code": "\treturn value.rowCount > 0 and self.view.custom.table.columns.numCols < self.view.custom.table.columns.totalCols", 
+                              "type": "script"
+                            }
+                          ], 
+                          "type": "property", 
+                          "enabled": false, 
+                          "overlayOptOut": true, 
+                          "config": {
+                            "path": "view.custom.table.data"
+                          }
+                        }
+                      }
+                    }
+                  }, 
+                  {
+                    "type": "ia.container.flex", 
+                    "children": [
+                      {
+                        "type": "ia.display.label", 
+                        "meta": {
+                          "domId": "lblLeftBlank", 
+                          "name": "lblLeftBlank"
+                        }, 
+                        "position": {
+                          "shrink": 0
+                        }, 
+                        "propConfig": {
+                          "position.basis": {
+                            "binding": {
+                              "transforms": [
+                                {
+                                  "code": "\treturn '0px' if value else '260px'", 
+                                  "type": "script"
+                                }
+                              ], 
+                              "type": "property", 
+                              "overlayOptOut": true, 
+                              "config": {
+                                "path": "view.custom.table.editMode"
+                              }
+                            }
+                          }
+                        }
+                      }, 
+                      {
+                        "type": "ia.display.label", 
+                        "props": {
+                          "text": "Drag to scroll➡"
+                        }, 
+                        "meta": {
+                          "domId": "lblTitle", 
+                          "name": "lblTitle"
+                        }, 
+                        "position": {
+                          "shrink": 0
+                        }, 
+                        "propConfig": {
+                          "props.style": {
+                            "binding": {
+                              "transforms": [
+                                {
+                                  "code": "\t\n\tposValue = int(value.replace('%', ''))\n\tdirection = 'left' if posValue < 50 else 'right'\n\tif direction == 'right': posValue =100 - posValue\n\tposValue += 8\n\t\n\tself.props.text = u' ⬅ ' + 'drag to scroll columns' if direction == 'left' else 'drag to scroll columns' + u' ➡ '\n\t\n\treturn {'classes': '', 'position': 'absolute', direction: '%s%%'%posValue}", 
+                                  "type": "script"
+                                }
+                              ], 
+                              "type": "property", 
+                              "enabled": false, 
+                              "overlayOptOut": true, 
+                              "config": {
+                                "path": "../splitScrollBar.props.split.position"
+                              }
+                            }
+                          }
+                        }
+                      }, 
+                      {
+                        "type": "ia.container.split", 
+                        "props": {
+                          "split": {}, 
+                          "style": {
+                            "backgroundColor": "--kcBlue-10", 
+                            "classes": "kanoa/border"
+                          }
+                        }, 
+                        "meta": {
+                          "domId": "splitScrollBar", 
+                          "name": "splitScrollBar"
+                        }, 
+                        "position": {
+                          "grow": 1, 
+                          "shrink": 0
+                        }, 
+                        "events": {
+                          "system": {
+                            "onStartup": {
+                              "type": "script", 
+                              "scope": "G", 
+                              "config": {
+                                "script": "\tself.props.split.position = '0%'"
+                              }
+                            }
+                          }
+                        }, 
+                        "propConfig": {
+                          "props.split.position": {
+                            "binding": {
+                              "type": "property", 
+                              "overlayOptOut": true, 
+                              "config": {
+                                "bidirectional": true, 
+                                "path": "view.custom.table.columns.splitPosition"
+                              }
+                            }
+                          }
+                        }
+                      }, 
+                      {
+                        "type": "ia.display.label", 
+                        "meta": {
+                          "domId": "lblRightBlank", 
+                          "name": "lblRightBlank"
+                        }, 
+                        "position": {
+                          "shrink": 0, 
+                          "basis": "10px"
+                        }
+                      }
+                    ], 
+                    "meta": {
+                      "domId": "flxScrollBar", 
+                      "name": "flxScrollBar"
+                    }, 
+                    "position": {
+                      "grow": 1
+                    }, 
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "transforms": [
+                            {
+                              "code": "\treturn value['chkShtId'] is not None and value.table.data.rowCount > 0 and value.table.columns.numCols < value.table.columns.totalCols - value.table.columns.fixedColLength", 
+                              "type": "script"
+                            }
+                          ], 
+                          "type": "expr-struct", 
+                          "enabled": false, 
+                          "overlayOptOut": true, 
+                          "config": {
+                            "struct": {
+                              "chkShtId": "{view.params.value.filters.chkShtId}", 
+                              "table": "{view.custom.table}"
+                            }, 
+                            "waitOnAll": true
+                          }
+                        }
+                      }
+                    }
+                  }
+                ], 
+                "meta": {
+                  "domId": "flxTableHdr", 
+                  "name": "flxTableHdr"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "30px"
+                }, 
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value['chkShtId'] is not None and value.table.data.rowCount > 0 and value.table.columns.numCols < value.table.columns.totalCols - value.table.columns.fixedColLength", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "chkShtId": "{view.params.value.filters.chkShtId}", 
+                          "table": "{view.custom.table}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "custom": {
+                  "updateColumns": {}
+                }, 
+                "type": "ia.display.table", 
+                "props": {
+                  "nullFormat": {
+                    "includeNullStrings": true
+                  }, 
+                  "rows": {
+                    "striped": {
+                      "enabled": false
+                    }
+                  }, 
+                  "filter": {
+                    "enabled": true, 
+                    "results": {
+                      "enabled": true
+                    }
+                  }, 
+                  "cells": {
+                    "style": {
+                      "paddingLeft": "5px"
+                    }
+                  }, 
+                  "pager": {
+                    "initialOption": 50, 
+                    "activeOption": 50
+                  }, 
+                  "selection": {
+                    "enableRowSelection": false, 
+                    "mode": "multiple interval", 
+                    "enableColumnSelection": true
+                  }, 
+                  "style": {
+                    "borderStyle": "none"
+                  }, 
+                  "resizeMode": "fixed", 
+                  "footerGroupStyle": {
+                    "borderColor": "--kcOutline", 
+                    "borderWidth": "1px", 
+                    "borderStyle": "solid"
+                  }
+                }, 
+                "meta": {
+                  "domId": "tblData", 
+                  "name": "tblData"
+                }, 
+                "position": {
+                  "grow": 1, 
+                  "basis": "400px"
+                }, 
+                "events": {
+                  "component": {
+                    "onRowDoubleClick": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\t\n\tsystem.perspective.print('dc with %s'%self.view.params.selectedDCIs)\n\tif len(self.view.params.selectedDCIs) == 0: return\n\n\tchkItemId = self.view.params.selectedDCIs[0]\n\tsystem.perspective.print('sending msg chkItemSelected')\n\tsystem.perspective.sendMessage('chkItemSelected', {'chkItemId': chkItemId})\n\t\t\n\treturn"
+                      }
+                    }
+                  }
+                }, 
+                "propConfig": {
+                  "props.footerGroups": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\n\tdef getChkItemInfo(dci):\n\t\tfor item in value['itemInfo']:\n\t\t\tif item['chkItemId'] == int(dci.replace('dci_','')): return item\n\t\treturn None\n\t\n\tdef buildFootCol(title, span, justify, fontWeight):\n\t\treturn {\"title\": title, \"span\": span, \"justify\": justify, \"align\": \"center\", \"style\": {\"classes\": \"\", 'padding':'5px', 'backgroundColor':'--kcGray-10', 'fontWeight': fontWeight}}\n\n\tif not value.displaySettings.showSummary: return []\n\n\tcalcs = ['Units', 'Average', 'Sum', 'Min', 'Max', 'Range', 'STDev']\n\tfooters = [[buildFootCol(calcs[y], self.view.custom.table.columns.fixedColLength,  'right', 'bold') for i in range(len(value.cols))] for y in range(len(calcs))]\n\n\tdata = value.filterData if len(value.filterData) > 0 else system.kanoa.utilities.convertDatasetToJSON(value.data)\n\tif len(data) == 0: return []\n\t\n\tfor i, col in enumerate(value.cols[self.view.custom.table.columns.fixedColLength:]):\n\t\tchkItemInfo = getChkItemInfo(col.field)\n\t\tvalues = [float(row[col.field]) for row in data if row[col.field] is not None] if chkItemInfo['isNumeric'] else [None for row in data]\n\t\tengUnit = chkItemInfo['engUnitName']\n\n\t\ty = 0\t\t\t\n\t\tfooters[y][i+1] = buildFootCol(engUnit, 1, 'right', 'normal')\n\t\tfooters[y+1][i+1] = buildFootCol(str(round(system.math.mean(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\t\tfooters[y+2][i+1] = buildFootCol(str(round(system.math.sum(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\t\tfooters[y+3][i+1] = buildFootCol(str(round(system.math.min(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\t\tfooters[y+4][i+1] = buildFootCol(str(round(system.math.max(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\t\tfooters[y+5][i+1] = buildFootCol(str(round(system.math.max(values) - system.math.min(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\t\tfooters[y+6][i+1] = buildFootCol(str(round(system.math.standardDeviation(values),3)), 1, 'right', 'normal') if chkItemInfo['isNumeric'] else buildFootCol('', 1, 'right', 'normal')\n\n\treturn footers", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "displaySettings": "{this.custom.updateColumns.displaySettings}", 
+                          "data": "{this.props.data}", 
+                          "filterData": "{this.props.filter.results.data}", 
+                          "itemInfo": "{view.custom.itemInfo}", 
+                          "cols": "{this.props.columns}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }, 
+                  "custom.updateColumns.displaySettings": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.params.value.displaySettings"
+                      }
+                    }
+                  }, 
+                  "props.data": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.custom.table.data"
+                      }
+                    }
+                  }, 
+                  "props.selection.selectedRow": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "bidirectional": true, 
+                        "path": "view.custom.table.selection.row"
+                      }
+                    }
+                  }, 
+                  "custom.updateColumns.numOfCols": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "bidirectional": true, 
+                        "path": "view.custom.table.columns.numCols"
+                      }
+                    }
+                  }, 
+                  "custom.selection": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\n\tif len(value.data) > 1:\n\t\trows = self.custom.selection.rows\n\t\tcols = self.custom.selection.cols\n\t\trows.append(value.selectedRow)\n\t\tcols.append(value.selectedColumn)\n\telse:\n\t\trows = []\n\t\tcols = []\n\t\n\treturn {'rows': list(set(rows)), 'cols': list(set(cols))}", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "this.props.selection"
+                      }
+                    }
+                  }, 
+                  "custom.updateColumns.columns": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\t\n\tdef getChkItemColName(dci):\n\t\tfor item in value['itemInfo']:\n\t\t\tif item['chkItemId'] == int(dci.replace('dci_','')): return item['chkItemGroupName'] + ' ' + item['chkItemName'] if value.displaySettings.showCheckItemPath else item['chkItemName']\n\t\treturn dci\n\n\tdef buildColumn(field, title, justify, sortable, hdrStyle, rowStyle, visible):\n\t\treturn {\n\t\t\t\t  \"field\": field,\n\t\t\t\t  \"visible\": visible,\n\t\t\t\t  \"editable\": False,\n\t\t\t\t  \"render\": \"auto\",\n\t\t\t\t  \"justify\": justify,\n\t\t\t\t  \"align\": \"center\",\n\t\t\t\t  \"resizable\": True,\n\t\t\t\t  \"sortable\": sortable,\n\t\t\t\t  \"sort\": \"none\",\n\t\t\t\t  \"filter\": {\"enabled\": False, \"visible\": \"on-hover\", \"string\": {\"condition\": \"\", \"value\": \"\" }, \"number\": {\"condition\": \"\", \"value\": \"\"}, \"boolean\": {\"condition\": \"\"}, \"date\": {\"condition\": \"\", \"value\": \"\"}},\n\t\t\t\t  \"viewPath\": \"\",\n\t\t\t\t  \"viewParams\": {},\n\t\t\t\t  \"boolean\": \"checkbox\",\n\t\t\t\t  \"number\": \"value\",\n\t\t\t\t  \"progressBar\": {\"max\": 100, \"min\": 0, \"bar\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"track\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"value\": {\"enabled\": True, \"format\": \"0,0.##\", \"justify\": \"center\", \"style\": {\"classes\": \"\"}}},\n\t\t\t\t  \"toggleSwitch\": {\"color\": {\"selected\": \"\", \"unselected\": \"\"}},\n\t\t\t\t  \"NoneFormat\": {\"includeNoneStrings\": False, \"strict\": False, \"NoneFormatValue\": \"\"},\n\t\t\t\t  \"numberFormat\": \"0,0.##\",\n\t\t\t\t  \"dateFormat\": \"MM/DD/YYYY HH:mm\",\n\t\t\t\t  \"width\": 90,\n\t\t\t\t  \"strictWidth\": True,\n\t\t\t\t  \"style\": rowStyle,\n\t\t\t\t  \"header\": {\"title\": title, \"justify\": justify, \"align\": \"center\", \"style\": hdrStyle},\n\t\t\t\t  \"footer\": {\"title\": \"\", \"justify\": \"left\", \"align\": \"center\", \"style\": {\"classes\": \"\" }}\n\t\t\t\t}\n\n\thdrStyle = {'backgroundColor' : '--kcBlue-10', 'fontWeight': 'bold', 'fontSize' : '10px', 'borderBottomWidth' : '1px' , 'borderBottomStyle' : 'solid','borderBottomColor':'#D5D5D5'}\n\n\tcolHeader = system.dataset.getColumnHeaders(value['data'])\n\tcolHeader = [hdr for hdr in colHeader if 'dci_' in hdr]\n\n\trowStyle = ({'backgroundColor' : '--kcBlue-0', 'fontSize' : '10px','borderRightWidth' : '1px' , 'borderRightStyle' : 'solid','borderRightColor':'#C1C1C1'})\n\treturn [buildColumn(colName, getChkItemColName(colName), 'center', False, hdrStyle, rowStyle, True) for colName in colHeader]\t#This list is ordered by the items sort order", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "displaySettings": "{view.params.value.displaySettings}", 
+                          "data": "{this.props.data}", 
+                          "itemInfo": "{view.custom.itemInfo}", 
+                          "editMode": "{view.custom.table.editMode}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }, 
+                  "props.selection.selectedColumn": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "bidirectional": true, 
+                        "path": "view.custom.table.selection.col"
+                      }
+                    }
+                  }, 
+                  "props.pager.bottom": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value.rowCount > self.props.pager.initialOption", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "this.props.data"
+                      }
+                    }
+                  }, 
+                  "custom.updateColumns.startingCol": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\n\tminStartCol = 0 \t\t\t\t\t\t\t\t#this is our min value for 0%\n\tmaxStartCol = len(value.cols) - value.numCols\t#this should be our max value for 100%\n\tincrement = (maxStartCol - minStartCol) / 100.0\n\n \tsplitPosition = int(value.splitPercent.replace('%',''))\n\treturn int(splitPosition * increment)", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "numCols": "{this.custom.updateColumns.numOfCols}", 
+                          "splitPercent": "{view.custom.table.columns.splitPosition}", 
+                          "cols": "{this.custom.updateColumns.columns}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }, 
+                  "props.enableFooterGroups": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\n\treturn value.displaySettings.showSummary or value.displaySettings.showItemInfo", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "displaySettings": "{view.params.value.displaySettings}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }, 
+                  "props.columns": {
+                    "onChange": {
+                      "enabled": null, 
+                      "script": "\t\n#\tsystem.perspective.print(\"column change origin %s\"%origin)\n\t#If orgign is browser, believe that the user has moved the columns around. This is essentially the sortOrder\n\t#If the user has edit rights, we will update the matrix items to reflect the new order\n\tif origin == 'Browser':\n\t\tsystem.perspective.print(\"column change origin %s. updating items sortOrder\"%origin)\n\t\tuser = self.session.props.auth.user.userName\n\n\t\tcols = list(self.props.columns)\t#make a copy so we don't affect the actual colmns\n\t\ti= 0\n\t\tfor col in cols:\n\t\t\tif 'dci_' in col['field']: \n\t\t\t\tfor item in self.view.custom.itemData:\n\t\t\t\t\tif item['data_configuration_id'] == int(col['field'].replace('dci_','')):\n\t\t\t\t\t\tkpiMatrix.config.updateMatrixItem(item['Matrix_Data_Id'], 'Sort_Order', i, user)\n\t\t\t\t\t\tbreak\n\t\t\t\ti += 1\n\n\treturn"
+                    }
+                  }, 
+                  "custom.updateColumns": {
+                    "onChange": {
+                      "enabled": null, 
+                      "script": "\n\tdef buildColumn(field, title, justify, sortable, hdrStyle, rowStyle, width, visible):\n\t\treturn {\n\t\t\t\t  \"field\": field,\n\t\t\t\t  \"visible\": visible,\n\t\t\t\t  \"editable\": False,\n\t\t\t\t  \"render\": \"auto\",\n\t\t\t\t  \"justify\": justify,\n\t\t\t\t  \"align\": \"center\",\n\t\t\t\t  \"resizable\": True,\n\t\t\t\t  \"sortable\": sortable,\n\t\t\t\t  \"sort\": \"none\",\n\t\t\t\t  \"filter\": {\"enabled\": False, \"visible\": \"on-hover\", \"string\": {\"condition\": \"\", \"value\": \"\" }, \"number\": {\"condition\": \"\", \"value\": \"\"}, \"boolean\": {\"condition\": \"\"}, \"date\": {\"condition\": \"\", \"value\": \"\"}},\n\t\t\t\t  \"viewPath\": \"\",\n\t\t\t\t  \"viewParams\": {},\n\t\t\t\t  \"boolean\": \"checkbox\",\n\t\t\t\t  \"number\": \"value\",\n\t\t\t\t  \"progressBar\": {\"max\": 100, \"min\": 0, \"bar\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"track\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"value\": {\"enabled\": True, \"format\": \"0,0.##\", \"justify\": \"center\", \"style\": {\"classes\": \"\"}}},\n\t\t\t\t  \"toggleSwitch\": {\"color\": {\"selected\": \"\", \"unselected\": \"\"}},\n\t\t\t\t  \"NoneFormat\": {\"includeNoneStrings\": False, \"strict\": False, \"NoneFormatValue\": \"\"},\n\t\t\t\t  \"numberFormat\": \"0,0.##\",\n\t\t\t\t  \"dateFormat\": \"MM/DD/YY HH:mm\",\n\t\t\t\t  \"width\": width,\n\t\t\t\t  \"strictWidth\": True,\n\t\t\t\t  \"style\": rowStyle,\n\t\t\t\t  \"header\": {\"title\": title, \"justify\": justify, \"align\": \"center\", \"style\": hdrStyle},\n\t\t\t\t  \"footer\": {\"title\": \"\", \"justify\": \"left\", \"align\": \"center\", \"style\": {\"classes\": \"\" }}\n\t\t\t\t}\n\n\tcolInfo = self.custom.updateColumns\n\tif not colInfo.has_key('columns'): return\n\tif not colInfo.has_key('startingCol'): return\n\tif not colInfo.has_key('numOfCols'): return\t\n\tif colInfo.startingCol is None: return\n\tif colInfo.numOfCols is None: return\n\tif colInfo.columns is None: return\n\n\thdrStyle = {'backgroundColor' : '--kcBlue-10', 'fontWeight': 'bold', 'fontSize' : '12px', 'borderBottomWidth' : '1px' , 'borderBottomStyle' : 'solid','borderBottomColor':'#D5D5D5'}\n\trowStyle = ({'backgroundColor' : '--kcBlue-10', 'fontSize' : '10px','borderRightWidth' : '1px' , 'borderRightStyle' : 'solid','borderRightColor':'#C1C1C1'})\n\tcolHeader = system.dataset.getColumnHeaders(self.props.data)\n\n\tcols = [{'colName':'takenDate', 'title':'Taken Date', 'justify': 'left', 'width':110, 'visible': True}]\n\tif self.custom.updateColumns.displaySettings.showFooter:\n\t\tcols.append({'colName':'shiftName', 'title':'Shift', 'justify': 'left', 'width':70,'sortable':True, 'visible':True})\n\t\tcols.append({'colName':'itemName','title':'Item', 'width':100, 'justify': 'center', 'sortable':False, 'visible': True})\n\t\tcols.append({'colName':'assetPath', 'title':'Asset', 'justify': 'left', 'width':160, 'sortable':False, 'visible': True})\n\t\tcols.append({'colName':'chkShtStateName', 'title':'Status', 'justify': 'left', 'width':70,'sortable':True, 'visible':True})\n\n#\tcols = [{'colName':'takenDate', 'title':'Taken Date', 'justify': 'left', 'width':110, 'visible': True}]\n\n\tfixedColumns = [buildColumn(item['colName'], item['title'], item['justify'], True, hdrStyle, rowStyle, item['width'], item['visible']) for item in cols if item['colName'] in colHeader]\n\n\tself.view.custom.table.columns.fixedColLength = len([i for i in fixedColumns if i['visible']])\n\tself.props.columns = list(fixedColumns) +  colInfo.columns[colInfo.startingCol:colInfo.startingCol + colInfo.numOfCols]\n\n\treturn"
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxTable", 
+              "name": "flxTable"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn value.getColumnCount > 0", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.table.data"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxBody", 
+          "name": "flxBody"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tself.clearData()\n\tself.view.custom.table.data = self.view.getChild(\"root\").getData()\n\n\treturn", 
+          "messageType": "getTableData", 
+          "sessionScope": false, 
+          "pageScope": true
+        }, 
+        {
+          "viewScope": false, 
+          "script": "\n\tself.clearData()\n\n\treturn", 
+          "messageType": "clearTableData", 
+          "sessionScope": false, 
+          "pageScope": true
+        }, 
+        {
+          "viewScope": false, 
+          "script": "\n\tself.clearTableSelection()\n\n\treturn", 
+          "messageType": "clearTableSelection", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [
+        {
+          "params": [], 
+          "script": "\n\tsystem.perspective.print(\"getData() called\")\n\n\tfilters = self.view.params.value.filters\n\tif filters.chkShtId is None: return system.dataset.toDataSet([],[])\n\n\tsystem.perspective.print(\"getData() called\")\n\tchkStates = system.kanoa.utilities.convertDatasetToDict(system.kanoa.quality.sheet.getStates({'enabled': True}), 'chkShtStateName', 'chkShtStateId')\n\tself.view.params.infoBar = {\"showBar\": True, \"text\": \"Getting data...\", \"type\": \"INFO\"}\n\t\n\tchkShtEventInfo = dict(filters)\t\n\tif chkShtEventInfo.has_key('assetPath') and chkShtEventInfo['assetPath'] is not None: chkShtEventInfo['assetPath'] = chkShtEventInfo['assetPath'] + '%'\n\t\n\tif chkShtEventInfo.has_key('itemClasses') and len(chkShtEventInfo['itemClasses']) > 0: chkShtEventInfo['itemClassPath'] = chkShtEventInfo['itemClasses'][0]['itemClassPath'] +'%'\n\tif chkShtEventInfo.has_key('items') and len(chkShtEventInfo['items']) > 0: chkShtEventInfo['itemId'] = chkShtEventInfo['items'][0]['itemId']\n\n\tchkShtEventInfo['chkShtStateIds'] = [chkStates['Approved']]\n\tif chkShtEventInfo.has_key('itemClasses'): chkShtEventInfo.pop('itemClasses')\n\tif chkShtEventInfo.has_key('items'): chkShtEventInfo.pop('items')\t\n\tif chkShtEventInfo.has_key('chkStates'): chkShtEventInfo.pop('chkStates')\n\n\tdata, msg = system.kanoa.quality.analysis.getChkItemEventsByColumn(chkShtEventInfo)\n\n\tself.view.params.infoBar = {\"showBar\": False, \"text\": \"\", \"type\": \"INFO\"}\n\tif data.rowCount == 0: system.perspective.sendMessage('showWarningToast', {'message': 'No checks found'})\n\treturn data", 
+          "name": "getData"
+        }, 
+        {
+          "params": [], 
+          "script": "\n\tsystem.perspective.print(\"clearMatrixData() called\")\n\tself.clearTableSelection()\n\tself.view.custom.table.data = system.dataset.toDataSet([],[])\n\tself.view.params.infoBar = {\"showBar\": False, \"text\": \"\", \"type\": \"INFO\"}\n\n\treturn", 
+          "name": "clearData"
+        }, 
+        {
+          "params": [], 
+          "script": "\n\tsystem.perspective.print(\"clearTableSelection() called\")\n\tself.view.custom.table.selection.col = None\n\tself.view.custom.table.selection.row = None\n\t\n\treturn", 
+          "name": "clearTableSelection"
+        }, 
+        {
+          "params": [
+            "row"
+          ], 
+          "script": "\n\tsystem.perspective.print(\"setTableSelection() called for row %s\"%row)\n\tself.view.custom.table.selection.col = None\n\tself.view.custom.table.selection.row = row\n\t\n\treturn", 
+          "name": "setTableSelection"
+        }
+      ], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "custom.table": {
+      "persistent": true
+    }, 
+    "params.infoBar": {
+      "paramDirection": "output", 
+      "persistent": true
+    }, 
+    "custom.table.getData": {
+      "onChange": {
+        "enabled": null, 
+        "script": "\n\tif currentValue.value:\n\t\tsystem.perspective.sendMessage('getTableData', {})\n\t\timport time\n\t\ttime.sleep(0.5)\n\t\tself.custom.table.getData = False\n\n\treturn\t"
+      }
+    }, 
+    "custom.itemInfo": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn system.kanoa.utilities.convertDatasetToJSON(system.kanoa.quality.config.getChecks({'chkShtId': value or -1}))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.params.value.filters.chkShtId"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.table.columns.totalCols": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn value.getColumnCount()", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.table.data"
+        }
+      }
+    }, 
+    "custom.table.selection.data": {
+      "binding": {
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "bidirectional": true, 
+          "path": "/root/flxBody/flxTable/tblData.props.selection.data"
+        }
+      }
+    }, 
+    "params.tableData": {
+      "binding": {
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.table.data"
+        }
+      }, 
+      "paramDirection": "output", 
+      "persistent": true
+    }, 
+    "params.value": {
+      "onChange": {
+        "enabled": null, 
+        "script": "\n\tif self.params.value.filters.chkShtId is None: self.getChild(\"root\").clearData()\n\treturn"
+      }, 
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "params.selectedDCIs": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn [int(item.replace('dci_','')) for item in value[0]] if len(value) > 0 else []", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.table.selection.data"
+        }
+      }, 
+      "paramDirection": "output", 
+      "persistent": true
+    }, 
+    "custom.table.data": {
+      "onChange": {
+        "enabled": null, 
+        "script": "\t\n\tif currentValue.value is None: return\n\tif self.custom.table.columns.numCols > (currentValue.value.getColumnCount() - self.custom.table.columns.fixedColLength) and currentValue.value.getColumnCount() >  20:\n\t\tself.custom.table.columns.numCols = currentValue.value.getColumnCount() - self.custom.table.columns.fixedColLength"
+      }
+    }
+  }
+}

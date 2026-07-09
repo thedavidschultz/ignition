@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "28ab0090b03143cab2f7020e36eae05b",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "primary_logo_white.png"
+  ],
+  "attributes": {
+    "width": 928,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-07-09T21:17:21Z"
+    },
+    "size": 0,
+    "lastModificationSignature": "8fd243e75ef7d7143b52aef7438c6d4bc93797cd4e75cc950cc9027674c36252",
+    "height": 200
+  }
+}

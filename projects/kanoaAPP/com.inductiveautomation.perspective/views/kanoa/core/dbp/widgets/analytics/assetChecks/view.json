@@ -1,0 +1,358 @@
+{
+  "custom": {
+    "data": {
+      "selected": {}
+    }, 
+    "filters": {
+      "dateRange": {
+        "endDate": {
+          "$ts": 1759906800000, 
+          "$": [
+            "ts", 
+            192, 
+            1759850018972
+          ]
+        }, 
+        "selectedRange": "Today", 
+        "startDate": {
+          "$ts": 1759820400000, 
+          "$": [
+            "ts", 
+            192, 
+            1759850018972
+          ]
+        }
+      }, 
+      "woInfo": {
+        "product": null, 
+        "woId": null, 
+        "scheduleId": null
+      }, 
+      "showBorder": true, 
+      "showAssetPath": true, 
+      "autoUpdateTimerSeconds": null, 
+      "assetId": null, 
+      "assetPath": null
+    }, 
+    "asset": {}
+  }, 
+  "params": {
+    "value": {
+      "showBorder": true, 
+      "showAssetPath": true, 
+      "autoUpdateTimerSeconds": null, 
+      "selectedRange": "Today", 
+      "assetPath": null
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 619, 
+      "height": 274
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "backgroundColor": "--kcSurface", 
+        "overflow": "hidden", 
+        "gap": "5px"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "justify": "space-between", 
+          "style": {
+            "overflow": "visible", 
+            "gap": "10px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "marginRight": "auto"
+              }, 
+              "text": "Checks", 
+              "textStyle": {
+                "color": "--kcOnSurface", 
+                "classes": "kanoa/font/titleLarge"
+              }
+            }, 
+            "meta": {
+              "domId": "lblTitle", 
+              "name": "lblTitle"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }, 
+          {
+            "custom": {
+              "showNav": true
+            }, 
+            "type": "ia.container.flex", 
+            "props": {
+              "alignItems": "center", 
+              "style": {
+                "overflow": "visible", 
+                "gap": "5px"
+              }
+            }, 
+            "children": [
+              {
+                "type": "ia.input.button", 
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/today"
+                    }
+                  }, 
+                  "style": {
+                    "classes": "kanoa/button/flatIcon", 
+                    "width": 30, 
+                    "height": 30
+                  }, 
+                  "text": ""
+                }, 
+                "meta": {
+                  "domId": "btnSchedule", 
+                  "name": "btnSchedule"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "30px"
+                }, 
+                "events": {
+                  "dom": {
+                    "onClick": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\n\t\tsystem.kanoa.utilities.storeAssetPath(self, self.view.custom.filters.assetPath)\n\t\n\t\tparams= {\n\t\t\t\t\t\"path\": \"kanoa/scheduler/operations\",\n\t\t\t\t\t\"name\": \"Schedule\",\n\t\t\t\t\t\"type\": \"view\",\n\t\t\t\t\t\"params\": {}\n\t\t\t\t}\n\t\n\t\tsystem.perspective.sendMessage(\"updateNavigation\", payload=params, scope='page')"
+                      }
+                    }
+                  }
+                }, 
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "type": "property", 
+                      "config": {
+                        "path": "parent.custom.showNav"
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxCntNav", 
+              "name": "flxCntNav"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxHeader", 
+          "name": "flxHeader"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "flex-start", 
+          "alignContent": "flex-start", 
+          "justify": "center", 
+          "style": {
+            "overflow": "hidden", 
+            "gap": "5px"
+          }, 
+          "wrap": "wrap"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.flex-repeater", 
+            "props": {
+              "alignItems": "center", 
+              "elementPosition": {
+                "basis": "40%"
+              }, 
+              "useDefaultViewWidth": false, 
+              "path": "kanoa/core/dbp/widgets/analytics/assetCheckItem", 
+              "elementStyle": {
+                "height": "50px"
+              }, 
+              "style": {
+                "overflow": "scroll"
+              }, 
+              "useDefaultViewHeight": false, 
+              "wrap": "wrap"
+            }, 
+            "meta": {
+              "domId": "flxAssetChecks", 
+              "name": "flxAssetChecks"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\t\n\treturn [{'value': row, 'selected': True if (value['selected'] and value['selected']['chkShtId'] == row['chkShtId']) else False} for row in value['data']]", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr-struct", 
+                  "config": {
+                    "struct": {
+                      "data": "{view.custom.data.chkShtData}", 
+                      "selected": "{view.custom.data.selected}"
+                    }, 
+                    "waitOnAll": true
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxBody", 
+          "name": "flxBody"
+        }, 
+        "position": {
+          "grow": 1, 
+          "shrink": 0
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\t\n\t\n\tself.view.custom.data.selected = payload['chkShtInfo'] if payload['selected'] else {}\n\treturn", 
+          "messageType": "assetCheckSelected", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }, 
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "transforms": [
+            {
+              "code": "\treturn 'kanoa/container' if value.has_key('showBorder') and value['showBorder'] else ''", 
+              "type": "script"
+            }
+          ], 
+          "type": "property", 
+          "overlayOptOut": true, 
+          "config": {
+            "path": "view.custom.filters"
+          }
+        }
+      }
+    }
+  }, 
+  "propConfig": {
+    "custom.asset.tagPath": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\treturn system.kanoa.asset.getAssetTagPath({'assetPath': value})", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.filters.assetPath"
+        }
+      }
+    }, 
+    "custom.data.chkShtData": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\tparamsDict = {'assetPath': value, 'enabled': True, 'chkShtVersionStateName': 'Released'}\n\treturn system.kanoa.utilities.convertDatasetToJSON(system.kanoa.quality.sheet.getSheetsByAsset(paramsDict))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.filters.assetPath"
+        }
+      }
+    }, 
+    "custom.filters": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\treturn system.kanoa.dashboard.getWidgetFilters(value['page'], value['viewParams'], value['sessionCustomProps'], self.session.props.device.timezone.id)", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "sessionCustomProps": "{session.custom.kanoa}", 
+            "page": "{page.props.pageId}", 
+            "viewParams": "{view.params.value}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.asset.tagInfo": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn value.OEE", 
+            "type": "script"
+          }
+        ], 
+        "type": "tag", 
+        "overlayOptOut": true, 
+        "config": {
+          "references": {
+            "1": "{view.custom.asset.tagPath}"
+          }, 
+          "fallbackDelay": 2.5, 
+          "mode": "indirect", 
+          "tagPath": "{1}/Line"
+        }
+      }
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.data": {
+      "persistent": true
+    }, 
+    "custom.asset": {
+      "persistent": true
+    }
+  }
+}

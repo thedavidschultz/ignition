@@ -1,0 +1,3243 @@
+{
+  "custom": {
+    "chkShtEventInfo": [],
+    "display": {
+      "numPages": 0,
+      "pages": []
+    },
+    "infoBar": {
+      "showBar": false,
+      "text": "",
+      "type": "INFO"
+    },
+    "table": {
+      "data": {
+        "$": [
+          "ds",
+          192,
+          1772814851179
+        ],
+        "$columns": [
+          {
+            "data": [],
+            "name": "chkItemId",
+            "type": "Integer"
+          },
+          {
+            "data": [],
+            "name": "chkItemGroupName",
+            "type": "String"
+          },
+          {
+            "data": [],
+            "name": "chkItemName",
+            "type": "String"
+          },
+          {
+            "data": [],
+            "name": "chkItemPath",
+            "type": "String"
+          },
+          {
+            "data": [],
+            "name": "sortOrder",
+            "type": "Integer"
+          },
+          {
+            "data": [],
+            "name": "measNumber",
+            "type": "Integer"
+          },
+          {
+            "data": [],
+            "name": "dataTypeName",
+            "type": "String"
+          },
+          {
+            "data": [],
+            "name": "dataTypeIsNumeric",
+            "type": "Boolean"
+          },
+          {
+            "data": [],
+            "name": "engUnitName",
+            "type": "String"
+          },
+          {
+            "data": [],
+            "name": "summarySum",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "summaryAvg",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "summaryMin",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "summaryMax",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "summaryStdDev",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "summaryRange",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "lcl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "ldl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "lel",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "lsl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "tgt",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "ucl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "udl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "uel",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "usl",
+            "type": "Double"
+          },
+          {
+            "data": [],
+            "name": "chkShtEventId_449931",
+            "type": "String"
+          }
+        ]
+      },
+      "getData": false,
+      "limit": 500,
+      "selection": {
+        "col": null,
+        "row": null
+      }
+    }
+  },
+  "params": {
+    "infoBar": {
+      "showBar": false,
+      "text": "",
+      "type": "INFO"
+    },
+    "selectedDCIs": [],
+    "tableData": {
+      "$": [
+        "ds",
+        201,
+        1772814851179
+      ],
+      "$columns": [
+        {
+          "data": [],
+          "name": "chkItemId",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "chkItemGroupName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "chkItemName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "chkItemPath",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "sortOrder",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "measNumber",
+          "type": "Integer"
+        },
+        {
+          "data": [],
+          "name": "dataTypeName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "dataTypeIsNumeric",
+          "type": "Boolean"
+        },
+        {
+          "data": [],
+          "name": "engUnitName",
+          "type": "String"
+        },
+        {
+          "data": [],
+          "name": "summarySum",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "summaryAvg",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "summaryMin",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "summaryMax",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "summaryStdDev",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "summaryRange",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "lcl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "ldl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "lel",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "lsl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "tgt",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "ucl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "udl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "uel",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "usl",
+          "type": "Double"
+        },
+        {
+          "data": [],
+          "name": "chkShtEventId_449931",
+          "type": "String"
+        }
+      ]
+    },
+    "value": {
+      "displaySettings": {
+        "autoRefresh": true,
+        "bradleyMode": false,
+        "showCheckItemPath": false,
+        "showFooter": true,
+        "showItemInfo": false,
+        "showSpec": false,
+        "showSummary": false,
+        "showWide": true
+      },
+      "filters": {
+        "agg": null,
+        "assetPath": null,
+        "chkItemGroupIdList": null,
+        "chkShtId": null,
+        "editMode": false,
+        "endDate": {
+          "$": [
+            "ts",
+            192,
+            1756863831919
+          ],
+          "$ts": 1756882800000
+        },
+        "ignoreZero": true,
+        "itemClasses": [],
+        "items": [],
+        "shift": null,
+        "startDate": {
+          "$": [
+            "ts",
+            192,
+            1756863831919
+          ],
+          "$ts": 1756796400000
+        }
+      }
+    }
+  },
+  "propConfig": {
+    "custom.chkShtEventInfo": {
+      "persistent": true
+    },
+    "custom.display": {
+      "binding": {
+        "config": {
+          "struct": {
+            "chkShtEventInfo": "{view.custom.chkShtEventInfo}"
+          },
+          "waitOnAll": true
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\tlimit \u003d self.custom.table.limit or 500\n\tpages \u003d []\t\n\tnumPages \u003d (len(value[\u0027chkShtEventInfo\u0027]) / limit)\n\t\n\tfor i in range(numPages):\n\t\titem \u003d value[\u0027chkShtEventInfo\u0027][i*limit]\n\t\tfromDate \u003d item[\u0027takenDate\u0027] or item[\u0027scheduledDate\u0027]\n\t\titem \u003d value[\u0027chkShtEventInfo\u0027][(i*limit)+1]\n\t\ttoDate \u003d item[\u0027takenDate\u0027] or item[\u0027scheduledDate\u0027]\t\t\t\n\t\tpages.append({\u0027fromDate\u0027: fromDate, \u0027toDate\u0027: toDate})\n\t\n\tpages.sort()\n\treturn {\u0027numPages\u0027: numPages, \u0027pages\u0027: pages}\n",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.table": {
+      "persistent": true
+    },
+    "custom.table.columns": {
+      "binding": {
+        "config": {
+          "expression": "now(0)"
+        },
+        "transforms": [
+          {
+            "code": "\n\tdimensions \u003d self.page.props.dimensions\n\tnumCols \u003d 15 if dimensions[\u0027viewport\u0027][\u0027width\u0027] \u003c\u003d 1920 else 18\n\n\treturn {\"fixedColLength\": 0, \"numCols\": numCols, \"splitPosition\": \"0%\", \"totalCols\": 0}",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.table.currentPage": {
+      "binding": {
+        "config": {
+          "expression": "now(0)"
+        },
+        "transforms": [
+          {
+            "code": "\treturn 0",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      }
+    },
+    "custom.table.data": {
+      "onChange": {
+        "enabled": null,
+        "script": "\n\tif currentValue.value is None: return\n\tif self.custom.table.columns.numCols \u003e (currentValue.value.getColumnCount() - self.custom.table.columns.fixedColLength) and currentValue.value.getColumnCount() \u003e  20:\n\t\tself.custom.table.columns.numCols \u003d currentValue.value.getColumnCount() - self.custom.table.columns.fixedColLength\n\n\treturn"
+      }
+    },
+    "custom.table.getData": {
+      "onChange": {
+        "enabled": null,
+        "script": "\t\n\tif currentValue.value:\n\t\tsystem.perspective.sendMessage(\u0027getTableData\u0027, {})\n\t\timport time\n\t\ttime.sleep(0.5)\n\t\tself.custom.table.getData \u003d False\n\n\treturn"
+      }
+    },
+    "custom.table.selection.data": {
+      "binding": {
+        "config": {
+          "bidirectional": true,
+          "path": "/root/flxBody/flxTable/tblData.props.selection.data"
+        },
+        "overlayOptOut": true,
+        "type": "property"
+      },
+      "onChange": {
+        "enabled": null,
+        "script": "\n\tpass\n#\tdata \u003d self.custom.table.selection.data\n#\t\n#\tif len(data) \u003d\u003d 0: return\n#\tvalues \u003d []\n#\tfor row in data:\n#\t\tvalues.append({\u0027value\u0027: {\u0027chkItemId\u0027: row[\u0027chkItemId\u0027, \u0027Cell_Name\u0027: \u0027\u0027, \u0027Display_Name\u0027: row[\u0027Display_Name\u0027]}})\n#\t\t\n#\tparams \u003d {\u0027selection\u0027 : values}\n##\tparams \u003d {\u0027selection\u0027 : [{\u0027value\u0027: {\u0027data_configuration_id\u0027: dci, \u0027Cell_Name\u0027: \u0027\u0027, \u0027Display_Name\u0027: data[0][\u0027Display_Name\u0027]}}]}\n#\tsystem.perspective.sendMessage(\u0027dataItemSelected\u0027, payload \u003d params)\n#\t\n#\treturn"
+      }
+    },
+    "params.infoBar": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.selectedDCIs": {
+      "binding": {
+        "config": {
+          "path": "view.custom.table.selection.data"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\treturn [item[\u0027chkItemId\u0027] for item in value]",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.tableData": {
+      "binding": {
+        "config": {
+          "path": "view.custom.table.data"
+        },
+        "overlayOptOut": true,
+        "type": "property"
+      },
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 717,
+      "width": 1310
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "domId": "lblShow",
+                          "name": "lblShow"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          },
+                          "text": "Show"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "domId": "numCols",
+                          "name": "numCols"
+                        },
+                        "position": {
+                          "basis": "40px",
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.value": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.custom.table.columns.numCols"
+                              },
+                              "overlayOptOut": true,
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "align": "center",
+                          "spinner": {
+                            "enabled": false
+                          },
+                          "style": {
+                            "height": "20px"
+                          }
+                        },
+                        "type": "ia.input.numeric-entry-field"
+                      },
+                      {
+                        "meta": {
+                          "domId": "lblItems",
+                          "name": "lblItems"
+                        },
+                        "position": {
+                          "display": false
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.table.columns.totalCols"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u0027 of %i items\u0027%(value)",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "domId": "lblShowItemsPerPage",
+                          "name": "lblShowItemsPerPage"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "props": {
+                          "style": {
+                            "textAlign": "right"
+                          },
+                          "text": "items per page"
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "domId": "flxCols",
+                      "name": "flxCols",
+                      "tooltip": {
+                        "enabled": true,
+                        "location": "bottom-left",
+                        "text": "Number of columns to display on the table"
+                      }
+                    },
+                    "position": {
+                      "basis": "180px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.table.data"
+                          },
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "code": "\treturn value.rowCount \u003e 0",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "alignItems": "center",
+                      "justify": "center",
+                      "style": {
+                        "backgroundColor": "--kcContainer",
+                        "classes": "kanoa/border",
+                        "gap": "5px",
+                        "height": "30px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\n\tself.view.custom.table.currentPage -\u003d 1\n\tsystem.perspective.sendMessage(\u0027getTableData\u0027, {})\n\timport time\n\ttime.sleep(0.5)\n\tself.view.custom.table.getData \u003d False\n\t\n\treturn"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "domId": "btnLeft",
+                          "name": "btnLeft"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.table.currentPage"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\treturn (value or 0) \u003e 0",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "image": {
+                            "icon": {
+                              "path": "material/keyboard_arrow_left"
+                            }
+                          },
+                          "style": {
+                            "classes": "kanoa/button/flatIcon"
+                          },
+                          "text": ""
+                        },
+                        "type": "ia.input.button"
+                      },
+                      {
+                        "meta": {
+                          "domId": "lblNumPages",
+                          "name": "lblNumPages"
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "currentPage": "{view.custom.table.currentPage}",
+                                  "numPages": "{view.custom.display.numPages}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\treturn \"%s of %s pages\"%(value[\u0027currentPage\u0027]+1, value[\u0027numPages\u0027])",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "component": {
+                            "onActionPerformed": {
+                              "config": {
+                                "script": "\t\n\tself.view.custom.table.currentPage +\u003d 1\n\tsystem.perspective.sendMessage(\u0027getTableData\u0027, {})\n\timport time\n\ttime.sleep(0.5)\n\tself.view.custom.table.getData \u003d False\n\t\n\treturn"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "domId": "btnRight",
+                          "name": "btnRight"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.enabled": {
+                            "binding": {
+                              "config": {
+                                "struct": {
+                                  "currentPage": "{view.custom.table.currentPage}",
+                                  "numPages": "{view.custom.display.numPages}"
+                                },
+                                "waitOnAll": true
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\n\treturn (value[\u0027currentPage\u0027] or 0) \u003c value[\u0027numPages\u0027] - 1",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "expr-struct"
+                            }
+                          }
+                        },
+                        "props": {
+                          "image": {
+                            "icon": {
+                              "path": "material/keyboard_arrow_right"
+                            }
+                          },
+                          "style": {
+                            "classes": "kanoa/button/flatIcon"
+                          },
+                          "text": ""
+                        },
+                        "type": "ia.input.button"
+                      }
+                    ],
+                    "meta": {
+                      "domId": "flxPage",
+                      "name": "flxPage"
+                    },
+                    "position": {
+                      "basis": "260px",
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "meta.visible": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.display.numPages"
+                          },
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "code": "\treturn value \u003e 0",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "justify": "center",
+                      "style": {
+                        "gap": "5px"
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  },
+                  {
+                    "children": [
+                      {
+                        "meta": {
+                          "domId": "lblLeftBlank",
+                          "name": "lblLeftBlank"
+                        },
+                        "position": {
+                          "display": false,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "position.basis": {
+                            "binding": {
+                              "config": {
+                                "path": "view.custom.table.editMode"
+                              },
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\treturn \u00270px\u0027 if value else \u0027260px\u0027",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "meta": {
+                          "domId": "lblTitle",
+                          "name": "lblTitle"
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.style": {
+                            "binding": {
+                              "config": {
+                                "path": "../splitScrollBar.props.split.position"
+                              },
+                              "enabled": false,
+                              "overlayOptOut": true,
+                              "transforms": [
+                                {
+                                  "code": "\t\n\tposValue \u003d int(value.replace(\u0027%\u0027, \u0027\u0027))\n\tdirection \u003d \u0027left\u0027 if posValue \u003c 50 else \u0027right\u0027\n\tif direction \u003d\u003d \u0027right\u0027: posValue \u003d100 - posValue\n\tposValue +\u003d 8\n\t\n\tself.props.text \u003d u\u0027 ⬅ \u0027 + \u0027drag to scroll columns\u0027 if direction \u003d\u003d \u0027left\u0027 else \u0027drag to scroll columns\u0027 + u\u0027 ➡ \u0027\n\t\n\treturn {\u0027classes\u0027: \u0027\u0027, \u0027position\u0027: \u0027absolute\u0027, direction: \u0027%s%%\u0027%posValue}",
+                                  "type": "script"
+                                }
+                              ],
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "text": "Drag to scroll➡"
+                        },
+                        "type": "ia.display.label"
+                      },
+                      {
+                        "events": {
+                          "system": {
+                            "onStartup": {
+                              "config": {
+                                "script": "\tself.props.split.position \u003d \u00270%\u0027"
+                              },
+                              "scope": "G",
+                              "type": "script"
+                            }
+                          }
+                        },
+                        "meta": {
+                          "domId": "splitScrollBar",
+                          "name": "splitScrollBar"
+                        },
+                        "position": {
+                          "grow": 1,
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.split.position": {
+                            "binding": {
+                              "config": {
+                                "bidirectional": true,
+                                "path": "view.custom.table.columns.splitPosition"
+                              },
+                              "overlayOptOut": true,
+                              "type": "property"
+                            }
+                          }
+                        },
+                        "props": {
+                          "split": {
+                            "size": 12
+                          },
+                          "style": {
+                            "backgroundColor": "--kcBlue-10",
+                            "classes": "kanoa/border"
+                          }
+                        },
+                        "type": "ia.container.split"
+                      },
+                      {
+                        "meta": {
+                          "domId": "lblRightBlank",
+                          "name": "lblRightBlank"
+                        },
+                        "position": {
+                          "basis": "10px",
+                          "shrink": 0
+                        },
+                        "type": "ia.display.label"
+                      }
+                    ],
+                    "meta": {
+                      "domId": "flxScrollBar",
+                      "name": "flxScrollBar"
+                    },
+                    "position": {
+                      "grow": 1
+                    },
+                    "propConfig": {
+                      "position.display": {
+                        "binding": {
+                          "config": {
+                            "struct": {
+                              "filters": "{view.params.value.filters}",
+                              "table": "{view.custom.table}"
+                            },
+                            "waitOnAll": true
+                          },
+                          "enabled": false,
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "code": "\t\n\treturn value.filters.chkShtId is not None and value.table.data.rowCount \u003e 0 and value.table.columns.numCols \u003c (value.table.columns.totalCols - value.table.columns.fixedColLength)",
+                              "type": "script"
+                            }
+                          ],
+                          "type": "expr-struct"
+                        }
+                      }
+                    },
+                    "type": "ia.container.flex"
+                  }
+                ],
+                "meta": {
+                  "domId": "flxTableHdr",
+                  "name": "flxTableHdr"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "props": {
+                  "alignItems": "center",
+                  "style": {
+                    "background-color": "--kcSurfaceVariant",
+                    "gap": "5px",
+                    "overflow": "hidden",
+                    "padding": "3px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "custom": {
+                  "updateColumns": {}
+                },
+                "events": {
+                  "component": {
+                    "onRowDoubleClick": {
+                      "config": {
+                        "script": "\n\tsystem.perspective.print(\u0027dc with %s\u0027%self.view.params.selectedDCIs)\n\tif len(self.view.params.selectedDCIs) \u003d\u003d 0: return\n\n\tchkItemId \u003d self.view.params.selectedDCIs[0]\n\tsystem.perspective.print(\u0027sending msg chkItemSelected\u0027)\n\tsystem.perspective.sendMessage(\u0027chkItemSelected\u0027, {\u0027chkItemId\u0027: chkItemId})\n\t\n\treturn"
+                      },
+                      "scope": "G",
+                      "type": "script"
+                    }
+                  }
+                },
+                "meta": {
+                  "domId": "tblData",
+                  "name": "tblData"
+                },
+                "position": {
+                  "basis": "400px",
+                  "grow": 1
+                },
+                "propConfig": {
+                  "custom.selection": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.selection"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\tif len(value.data) \u003e 1:\n\t\trows \u003d self.custom.selection.rows\n\t\tcols \u003d self.custom.selection.cols\n\t\trows.append(value.selectedRow)\n\t\tcols.append(value.selectedColumn)\n\telse:\n\t\trows \u003d []\n\t\tcols \u003d []\n\t\n\treturn {\u0027rows\u0027: list(set(rows)), \u0027cols\u0027: list(set(cols))}",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "custom.updateColumns": {
+                    "onChange": {
+                      "enabled": null,
+                      "script": "\n\tdef buildColumn(field, title, justify, sortable, hdrStyle, width, viewPath, viewParams, visible, bgColor):\n\t\n\t\trowStyle \u003d ({\u0027backgroundColor\u0027 : bgColor, \u0027fontSize\u0027 : \u002710px\u0027,\u0027borderRightWidth\u0027 : \u00271px\u0027 , \u0027borderRightStyle\u0027 : \u0027solid\u0027,\u0027borderRightColor\u0027:\u0027#C1C1C1\u0027, \u0027height\u0027: \u002740px\u0027})\n\t\n\t\treturn {\n\t\t\t\t  \"field\": field,\n\t\t\t\t  \"visible\": visible,\n\t\t\t\t  \"editable\": False,\n\t\t\t\t  \"render\": \"auto\",\n\t\t\t\t  \"justify\": justify,\n\t\t\t\t  \"align\": \"center\",\n\t\t\t\t  \"resizable\": True,\n\t\t\t\t  \"sortable\": sortable,\n\t\t\t\t  \"sort\": \"none\",\n\t\t\t\t  \"filter\": {\"enabled\": False, \"visible\": \"on-hover\", \"string\": {\"condition\": \"\", \"value\": \"\" }, \"number\": {\"condition\": \"\", \"value\": \"\"}, \"boolean\": {\"condition\": \"\"}, \"date\": {\"condition\": \"\", \"value\": \"\"}},\n\t\t\t\t  \"viewPath\": viewPath,\n\t\t\t\t  \"viewParams\": viewParams,\n\t\t\t\t  \"boolean\": \"checkbox\",\n\t\t\t\t  \"number\": \"value\",\n\t\t\t\t  \"progressBar\": {\"max\": 100, \"min\": 0, \"bar\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"track\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"value\": {\"enabled\": True, \"format\": \"0,0.##\", \"justify\": \"center\", \"style\": {\"classes\": \"\"}}},\n\t\t\t\t  \"toggleSwitch\": {\"color\": {\"selected\": \"\", \"unselected\": \"\"}},\n\t\t\t\t  \"NoneFormat\": {\"includeNoneStrings\": False, \"strict\": False, \"NoneFormatValue\": \"\"},\n\t\t\t\t  \"numberFormat\": \"0,0.##\",\n\t\t\t\t  \"dateFormat\": \"MM/DD/YYYY HH:mm\",\n\t\t\t\t  \"width\": width,\n\t\t\t\t  \"strictWidth\": True,\n\t\t\t\t  \"style\": rowStyle,\n\t\t\t\t  \"header\": {\"title\": title, \"justify\": justify, \"align\": \"center\", \"style\": hdrStyle},\n\t\t\t\t  \"footer\": {\"title\": \"\", \"justify\": \"left\", \"align\": \"center\", \"style\": {\"classes\": \"\" }}\n\t\t\t\t}\n\n#\tsystem.perspective.print(\"updateCols() called\")\n\n\tcolInfo \u003d self.custom.updateColumns\n\tif not colInfo.has_key(\u0027columns\u0027): return\n\tif not colInfo.has_key(\u0027startingCol\u0027): return\n\tif not colInfo.has_key(\u0027numOfCols\u0027): return\t\n\tif colInfo.startingCol is None: return\n\tif colInfo.numOfCols is None: return\n\tif colInfo.columns is None: return\n\n\tblue \u003d \u0027--kcBlue-10\u0027\n\tgreen \u003d \u0027--kcGreen-10\u0027\n\torange \u003d \u0027--kcOrange-10\u0027\n\tgray \u003d \u0027--kcGray-10\u0027\n\tif \u0027dark\u0027 in self.session.props.theme:\n\t\tblue \u003d \u0027--kcBlue-80\u0027\n\t\tgreen \u003d \u0027--kcGreen-80\u0027\n\t\torange \u003d \u0027--kcOrange-80\u0027\n\t\tgray \u003d \u0027--kcGray-80\u0027\n\n\thdrStyle \u003d {\u0027backgroundColor\u0027 : gray, \u0027fontWeight\u0027: \u0027bold\u0027, \u0027fontSize\u0027 : \u002712px\u0027, \u0027borderBottomWidth\u0027 : \u00271px\u0027 , \u0027borderBottomStyle\u0027 : \u0027solid\u0027,\u0027borderBottomColor\u0027:\u0027#D5D5D5\u0027}\n\tcolHeader \u003d system.dataset.getColumnHeaders(self.view.custom.table.data)\n\tdisplaySettings \u003d self.custom.updateColumns.displaySettings\n\t\t\t\n\n\tcols \u003d [\n\t\t\t\t{\u0027colName\u0027:\u0027chkItemId\u0027, \u0027title\u0027:\u0027chkItemId\u0027, \u0027sortable\u0027: True, \u0027justify\u0027: \u0027center\u0027, \u0027width\u0027:450, \u0027viewPath\u0027: \u0027kanoa/qds/analysis/tableGroupLabel\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: False, \u0027backgroundColor\u0027 : \u0027\u0027},\n\t\t\t\t{\u0027colName\u0027:\u0027chkItemName\u0027, \u0027title\u0027:\u0027Check\u0027, \u0027sortable\u0027: True, \u0027justify\u0027: \u0027center\u0027, \u0027width\u0027:450, \u0027viewPath\u0027: \u0027kanoa/qds/analysis/tableGroupLabel\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showCheckItemPath else False, \u0027backgroundColor\u0027 : blue},\n\t\t\t\t{\u0027colName\u0027:\u0027chkItemPath\u0027, \u0027title\u0027:\u0027Check\u0027, \u0027sortable\u0027: True, \u0027justify\u0027: \u0027center\u0027, \u0027width\u0027:320, \u0027viewPath\u0027: \u0027kanoa/qds/analysis/tableGroupLabel\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: False if displaySettings.showCheckItemPath else True, \u0027backgroundColor\u0027 : blue},\n\t\t\t\t{\u0027colName\u0027:\u0027engUnitName\u0027,\u0027title\u0027:\u0027Units\u0027, \u0027sortable\u0027: True, \u0027width\u0027:60, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showItemInfo else False, \u0027backgroundColor\u0027 : blue},\n\t\t\t\t{\u0027colName\u0027:\u0027points\u0027,\u0027title\u0027:\u0027Trend\u0027, \u0027sortable\u0027: False, \u0027width\u0027:120, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027kanoa/qds/analysis/charts/sparkline\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True,\u0027backgroundColor\u0027 : blue},\n\t\t\t\t{\u0027colName\u0027:\u0027Alert\u0027,\u0027title\u0027:\u0027Alert\u0027, \u0027sortable\u0027: False, \u0027width\u0027:60, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027kanoa/qds/analysis/tableCellIcon\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True, \u0027backgroundColor\u0027 : blue},\n\t\t\t\t{\u0027colName\u0027:\u0027summaryMin\u0027,\u0027title\u0027:\u0027Min\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027summaryMax\u0027,\u0027title\u0027:\u0027Max\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027summaryAvg\u0027,\u0027title\u0027: \u0027Average\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027summaryStdDev\u0027,\u0027title\u0027:\u0027Std Dev\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027Calc. LCL\u0027,\u0027title\u0027:\u0027Calc. LCL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027Calc. UCL\u0027,\u0027title\u0027:\u0027Calc. UCL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027summarySum\u0027,\u0027title\u0027:\u0027Sum\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSummary else False, \u0027backgroundColor\u0027 : green},\n\t\t\t\t{\u0027colName\u0027:\u0027lsl\u0027,\u0027title\u0027:\u0027LSL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSpec else False, \u0027backgroundColor\u0027 : orange},\n\t\t\t\t{\u0027colName\u0027:\u0027lcl\u0027,\u0027title\u0027:\u0027LCL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSpec else False, \u0027backgroundColor\u0027 : orange},\n\t\t\t\t{\u0027colName\u0027:\u0027tgt\u0027,\u0027title\u0027:\u0027Target\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSpec else False, \u0027backgroundColor\u0027 : orange},\n\t\t\t\t{\u0027colName\u0027:\u0027ucl\u0027,\u0027title\u0027:\u0027UCL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSpec else False, \u0027backgroundColor\u0027 : orange},\n\t\t\t\t{\u0027colName\u0027:\u0027usl\u0027,\u0027title\u0027:\u0027USL\u0027, \u0027sortable\u0027: True, \u0027width\u0027:80, \u0027justify\u0027: \u0027center\u0027, \u0027viewPath\u0027: \u0027\u0027, \u0027viewParams\u0027: {}, \u0027visible\u0027: True if displaySettings.showSpec else False, \u0027backgroundColor\u0027 : orange},\n\t\t\t]\n\n\tcolHeader +\u003d [\u0027Min\u0027, \u0027Max\u0027, \u0027Average\u0027, \u0027Std Dev\u0027, \u0027Calc. LCL\u0027, \u0027Calc. UCL\u0027, \u0027Sum\u0027, \u0027Alert\u0027, \u0027points\u0027]\n\n\tfixedColumns \u003d []\n\tfor item in cols:\n\t\tif item[\u0027colName\u0027] in colHeader:\n\t\t\tfixedColumns.append(buildColumn(item[\u0027colName\u0027], item[\u0027title\u0027], item[\u0027justify\u0027], item[\u0027sortable\u0027], hdrStyle, item[\u0027width\u0027], item[\u0027viewPath\u0027],  item[\u0027viewParams\u0027], item[\u0027visible\u0027], item[\u0027backgroundColor\u0027]))\n\n#\tfixedColumns \u003d [buildColumn(item[\u0027colName\u0027], item[\u0027title\u0027], item[\u0027justify\u0027], True, hdrStyle, item[\u0027width\u0027], item[\u0027viewPath\u0027],  item[\u0027viewParams\u0027], item[\u0027visible\u0027], item[\u0027backgroundColor\u0027]) for item in cols if item[\u0027colName\u0027] in colHeader]\n\n\tself.view.custom.table.columns.fixedColLength \u003d len([i for i in fixedColumns if i[\u0027visible\u0027]])\n\tself.props.columns \u003d list(fixedColumns) +  colInfo.columns[colInfo.startingCol:colInfo.startingCol + colInfo.numOfCols]\n\n#\tsystem.perspective.print(\"Building Fixed columns ended\")\n\n\treturn"
+                    }
+                  },
+                  "custom.updateColumns.columns": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "chkShtEventInfo": "{view.custom.chkShtEventInfo}",
+                          "data": "{view.custom.table.data}",
+                          "displaySettings": "{view.params.value.displaySettings}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\tdef getChkShtColName(chkShtEventId):\n\t\tfor item in value[\u0027chkShtEventInfo\u0027]:\n\t\t\tif item[\u0027chkShtEventId\u0027] \u003d\u003d int(chkShtEventId.replace(\u0027chkShtEventId_\u0027,\u0027\u0027)): return system.date.format(item[\u0027takenDate\u0027] or item[\u0027scheduledDate\u0027], \u0027MM-dd-yy HH:mm\u0027)\n\t\treturn str(chkShtEventId)\n\n\tdef buildColumn(field, title, justify, sortable, hdrStyle, rowStyle, visible):\n\t\treturn {\n\t\t\t\t  \"field\": field,\n\t\t\t\t  \"visible\": visible,\n\t\t\t\t  \"editable\": False,\n\t\t\t\t  \"render\": \"auto\",\n\t\t\t\t  \"justify\": justify,\n\t\t\t\t  \"align\": \"center\",\n\t\t\t\t  \"resizable\": True,\n\t\t\t\t  \"sortable\": sortable,\n\t\t\t\t  \"sort\": \"none\",\n\t\t\t\t  \"filter\": {\"enabled\": False, \"visible\": \"on-hover\", \"string\": {\"condition\": \"\", \"value\": \"\" }, \"number\": {\"condition\": \"\", \"value\": \"\"}, \"boolean\": {\"condition\": \"\"}, \"date\": {\"condition\": \"\", \"value\": \"\"}},\n\t\t\t\t  \"viewPath\": \"\",\n\t\t\t\t  \"viewParams\": {},\n\t\t\t\t  \"boolean\": \"checkbox\",\n\t\t\t\t  \"number\": \"value\",\n\t\t\t\t  \"progressBar\": {\"max\": 100, \"min\": 0, \"bar\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"track\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"value\": {\"enabled\": True, \"format\": \"0,0.##\", \"justify\": \"center\", \"style\": {\"classes\": \"\"}}},\n\t\t\t\t  \"toggleSwitch\": {\"color\": {\"selected\": \"\", \"unselected\": \"\"}},\n\t\t\t\t  \"NoneFormat\": {\"includeNoneStrings\": False, \"strict\": False, \"NoneFormatValue\": \"\"},\n\t\t\t\t  \"numberFormat\": \"0,0.##\",\n\t\t\t\t  \"dateFormat\": \"MM/DD/YYYY HH:mm\",\n\t\t\t\t  \"width\": 80,\n\t\t\t\t  \"strictWidth\": True,\n\t\t\t\t  \"style\": rowStyle,\n\t\t\t\t  \"header\": {\"title\": title, \"justify\": justify, \"align\": \"center\", \"style\": hdrStyle},\n\t\t\t\t  \"footer\": {\"title\": \"\", \"justify\": \"left\", \"align\": \"center\", \"style\": {\"classes\": \"\" }}\n\t\t\t\t}\n\n\thdrStyle \u003d {\u0027backgroundColor\u0027 : \u0027--kcPrimaryContainer\u0027, \u0027fontWeight\u0027: \u0027bold\u0027, \u0027fontSize\u0027 : \u002710px\u0027, \u0027borderBottomWidth\u0027 : \u00271px\u0027 , \u0027borderBottomStyle\u0027 : \u0027solid\u0027,\u0027borderBottomColor\u0027:\u0027#D5D5D5\u0027}\n\n\tcolHeader \u003d system.dataset.getColumnHeaders(value[\u0027data\u0027])\n\tcolHeader \u003d [hdr for hdr in colHeader if \u0027chkShtEventId_\u0027 in hdr]\t\n\n\trowStyle \u003d ({\u0027fontSize\u0027 : \u002710px\u0027,\u0027borderRightWidth\u0027 : \u00271px\u0027 , \u0027borderRightStyle\u0027 : \u0027solid\u0027,\u0027borderRightColor\u0027:\u0027#C1C1C1\u0027})\n\treturn [buildColumn(colName, getChkShtColName(colName), \u0027center\u0027, False, hdrStyle, rowStyle, True) for colName in colHeader]\t#This list is ordered by the items sort order\t",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "custom.updateColumns.displaySettings": {
+                    "binding": {
+                      "config": {
+                        "path": "view.params.value.displaySettings"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "custom.updateColumns.numOfCols": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.table.columns.numCols"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "custom.updateColumns.startingCol": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "cols": "{this.custom.updateColumns.columns}",
+                          "numCols": "{this.custom.updateColumns.numOfCols}",
+                          "splitPercent": "{view.custom.table.columns.splitPosition}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\tminStartCol \u003d 0 \t\t\t\t\t\t\t\t#this is our min value for 0%\n\tmaxStartCol \u003d len(value.cols) - value.numCols\t#this should be our max value for 100%\n\tincrement \u003d (maxStartCol - minStartCol) / 100.0\n\n \tsplitPosition \u003d int(value.splitPercent.replace(\u0027%\u0027,\u0027\u0027))\n\treturn int(splitPosition * increment)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "custom.updateColumns.totalCols": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.table.columns.totalCols"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.data": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.table.data"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\tdata \u003d system.kanoa.utilities.convertDatasetToJSON(value)\n\n\tfor row in data:\n\t\tdci \u003d row[\u0027chkItemId\u0027]\n\t\tvalues \u003d []\n\t\talerts \u003d []\n\t\tclcl \u003d None\n\t\tcucl \u003d None\n\t\tfor item in sorted(row):\t\t#This section calculates lcl and ucl and color codes the values\n\t\t\tif not (\u0027chkShtEventId_\u0027 in item and row[item] is not None and row[\u0027dataTypeIsNumeric\u0027]): continue\n\t\t\ttry:\n\t\t\t\tvalues.append(float(row[item]))\n\t\t\texcept:\n\t\t\t\tcontinue\n\n\t\t\tmean \u003d system.math.mean(values)\n\t\t\tstdDev \u003d system.math.standardDeviation(values)\n\t\t\tclcl \u003d mean - (3*stdDev)\n\t\t\tcucl \u003d mean + (3*stdDev)\n\n\t\tif len(values) \u003d\u003d 0: min, max, mean, stdDev, sum, lcl, ucl \u003d [None] * 7\n\t\t\n\t\tfor item in sorted(row):\t\t#This section calculates lcl and ucl and color codes the values\n\t\t\tif not (\u0027chkShtEventId_\u0027 in item and row[item] is not None and row[\u0027dataTypeIsNumeric\u0027]): continue\n\t\t\ttry:\n\t\t\t\tchkItemValue \u003d float(row[item])\n\t\t\texcept:\n\t\t\t\tcontinue\n\t\t\tif row[\u0027lsl\u0027] and chkItemValue \u003c row[\u0027lsl\u0027]:\n\t\t\t\talerts.append(\u0027LSL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcRed-30\u0027}}\n\t\t\telif row[\u0027lcl\u0027] and chkItemValue \u003c row[\u0027lcl\u0027]:\n\t\t\t\talerts.append(\u0027LCL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcOrange-30\u0027}}\t\t\t\t\n\t\t\telif row[\u0027usl\u0027] and chkItemValue \u003e row[\u0027usl\u0027]:\n\t\t\t\talerts.append(\u0027USL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcRed-30\u0027}}\n\t\t\telif row[\u0027ucl\u0027] and chkItemValue \u003e row[\u0027ucl\u0027]:\n\t\t\t\talerts.append(\u0027UCL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcOrange-30\u0027}}\n\t\t\telif chkItemValue \u003c clcl:\n\t\t\t\talerts.append(\u0027cLCL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcYellow-30\u0027}}\n\t\t\telif chkItemValue \u003e cucl:\n\t\t\t\talerts.append(\u0027cUCL\u0027)\n\t\t\t\trow[item] \u003d {\u0027value\u0027: chkItemValue, \u0027style\u0027:{\"marginTop\": \u00272px\u0027, \"marginBottom\": \u00272px\u0027, \u0027classes\u0027: \u0027kanoa/border\u0027, \u0027backgroundColor\u0027: \u0027--kcYellow-30\u0027}}\n\n\t\trow[\u0027Calc. LCL\u0027] \u003d clcl\n\t\trow[\u0027Calc. UCL\u0027] \u003d cucl\n\t\talerts \u003d list(set(alerts))\n\t\tif \u0027LSL\u0027 in alerts or \u0027USL\u0027 in alerts: row[\u0027Alert\u0027] \u003d {\"icon\": \"material/warning\", \"toolTip\": \"Outside of spec limits\", \"color\": \"--kcRed-50\"}\n\t\telif \u0027LCL\u0027 in alerts or \u0027UCL\u0027 in alerts: row[\u0027Alert\u0027] \u003d {\"icon\": \"material/warning\", \"toolTip\": \"Outside of control limits\", \"color\": \"--kcOrange-50\"}\n\t\telif \u0027cLCL\u0027 in alerts or \u0027cUCL\u0027 in alerts: row[\u0027Alert\u0027] \u003d {\"icon\": \"material/warning\", \"toolTip\": \"Outside of calculated control limits\", \"color\": \"--kcYellow-50\"}\n\t\telse: row[\u0027Alert\u0027] \u003d {\"icon\": \"\", \"toolTip\": \"\", \"color\": \"\"}\n\t\t\n\t\trow[\u0027points\u0027] \u003d {\u0027points\u0027: values, \u0027controlLimits\u0027: {\u0027min\u0027: row[\u0027summaryMin\u0027], \u0027max\u0027: row[\u0027summaryMax\u0027], \u0027lsl\u0027: row[\u0027lsl\u0027], \u0027lcl\u0027: row[\u0027lcl\u0027] or clcl, \u0027tgt\u0027: row[\u0027tgt\u0027], \u0027ucl\u0027: row[\u0027ucl\u0027] or cucl, \u0027usl\u0027: row[\u0027usl\u0027], \u0027mean\u0027: row[\u0027summaryAvg\u0027], \u0027stdDev\u0027: row[\u0027summaryStdDev\u0027]}}\n\n\t\trow[\u0027chkItemName\u0027] \u003d {\u0027value\u0027: row[\u0027chkItemGroupName\u0027] + \u0027 - \u0027 + row[\u0027chkItemName\u0027], \u0027backgroundColor\u0027: \u0027#FFFF00\u0027}\n\t\trow[\u0027chkItemPath\u0027] \u003d {\u0027value\u0027: row[\u0027chkItemGroupName\u0027] + \u0027 - \u0027 + row[\u0027chkItemPath\u0027], \u0027backgroundColor\u0027: \u0027#FFFF00\u0027}\n\n\treturn data",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.enableHeaderGroups": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "displaySettings": "{view.params.value.displaySettings}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn value.displaySettings[\u0027showFooter\u0027]",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.footerGroups": {
+                    "binding": {
+                      "config": {
+                        "struct": {
+                          "chkShtEventInfo": "{view.custom.chkShtEventInfo}",
+                          "cols": "{this.props.columns}",
+                          "data": "{this.props.data}",
+                          "displaySettings": "{view.params.value.displaySettings}"
+                        },
+                        "waitOnAll": true
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\tdef getChkShtInfo(chkShtEventId):\n\t\tfor item in value[\u0027chkShtEventInfo\u0027]:\n\t\t\tif item[\u0027chkShtEventId\u0027] \u003d\u003d chkShtEventId: return item\n\t\treturn None\n\t\n\tdef buildFootCol(title, span, justify, fontWeight):\n\t\treturn {\"title\": title, \"span\": span, \"justify\": justify, \"align\": \"center\", \"style\": {\"classes\": \"\", \u0027padding\u0027:\u00275px\u0027, \u0027backgroundColor\u0027:\u0027--kcGray-10\u0027, \u0027fontWeight\u0027: fontWeight}}\n\n\tif not value.displaySettings.showFooter: return []\n\n\tresourceFooterItems \u003d [\u0027Item\u0027, \u0027Asset\u0027, \u0027Shift\u0027, \u0027Taken By\u0027] if value.displaySettings.showFooter else []\n\tstatusFooterItems \u003d [\u0027Failed Checks\u0027] if value.displaySettings.showFooter else []\n\t\n\tfooterItems \u003d resourceFooterItems + statusFooterItems\n\tfixedColLength \u003d self.view.custom.table.columns.fixedColLength\n\tfooters \u003d [[buildFootCol(footerItems[y], fixedColLength, \u0027right\u0027, \u0027bold\u0027) for i in range(len(value.cols))] for y in range(len(footerItems))]\n\n\tdata \u003d value[\u0027data\u0027]\n\tif len(data) \u003d\u003d 0: return []\n\t\n\tfooterCols \u003d []\n\tfor col in value[\u0027cols\u0027]:\n\t\tif \u0027chkShtEventId_\u0027 not in col.field: continue\t\t\n\t\tfooterCols.append(col[\u0027field\u0027])\n\n\tfor i, col in enumerate(footerCols):\n\t\tchkShtInfo \u003d getChkShtInfo(int(col.replace(\u0027chkShtEventId_\u0027,\u0027\u0027)))\n\t\t\n\t\ty \u003d 0\n\t\tif len(resourceFooterItems) \u003e 0:\n\t\t\tfooters[y][i+1] \u003d buildFootCol(chkShtInfo[\u0027itemName\u0027], 1, \u0027right\u0027, \u0027normal\u0027)\n\t\t\tfooters[y+1][i+1] \u003d buildFootCol(chkShtInfo[\u0027assetPath\u0027].replace(\u0027\\\\\u0027, \u0027 \u003e \u0027), 1, \u0027right\u0027, \u0027normal\u0027)\n\t\t\tfooters[y+2][i+1] \u003d buildFootCol(chkShtInfo[\u0027shiftName\u0027], 1, \u0027right\u0027, \u0027normal\u0027)\n\t\t\tfooters[y+3][i+1] \u003d buildFootCol(chkShtInfo[\u0027submittedByUser\u0027], 1, \u0027right\u0027, \u0027normal\u0027)\n\t\t\ty \u003d 4\n\n\t\tif len(statusFooterItems) \u003e 0:\tfooters[y][i+1] \u003d buildFootCol(chkShtInfo[\u0027failedChecks\u0027], 1, \u0027right\u0027, \u0027normal\u0027)\n\n\treturn footers",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "expr-struct"
+                    }
+                  },
+                  "props.pager.bottom": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.data"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\treturn len(value) \u003e self.props.pager.initialOption",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.selection.selectedColumn": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.table.selection.col"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  },
+                  "props.selection.selectedRow": {
+                    "binding": {
+                      "config": {
+                        "bidirectional": true,
+                        "path": "view.custom.table.selection.row"
+                      },
+                      "overlayOptOut": true,
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "cells": {
+                    "style": {
+                      "padding": "5px"
+                    }
+                  },
+                  "columns": [
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "chkItemId",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "chkItemId"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "kanoa/qds/analysis/tableGroupLabel",
+                      "visible": false,
+                      "width": 450
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "chkItemName",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Check"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcBlue-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "kanoa/qds/analysis/tableGroupLabel",
+                      "visible": false,
+                      "width": 450
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "chkItemPath",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Check"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcBlue-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "kanoa/qds/analysis/tableGroupLabel",
+                      "visible": true,
+                      "width": 320
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "engUnitName",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Units"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcBlue-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 60
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "points",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Trend"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcBlue-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "kanoa/qds/analysis/charts/sparkline",
+                      "visible": true,
+                      "width": 120
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "Alert",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Alert"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcBlue-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "kanoa/qds/analysis/tableCellIcon",
+                      "visible": true,
+                      "width": 60
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "summaryMin",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Min"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "summaryMax",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Max"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "summaryAvg",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Average"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "summaryStdDev",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Std Dev"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "Calc. LCL",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Calc. LCL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "Calc. UCL",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Calc. UCL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "summarySum",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Sum"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcGreen-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "lsl",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "LSL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcOrange-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "lcl",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "LCL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcOrange-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "tgt",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "Target"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcOrange-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "ucl",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "UCL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcOrange-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "usl",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcGray-10",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "12px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "USL"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": true,
+                      "strictWidth": true,
+                      "style": {
+                        "backgroundColor": "--kcOrange-10",
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px",
+                        "height": "40px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": false,
+                      "width": 80
+                    },
+                    {
+                      "NoneFormat": {
+                        "NoneFormatValue": "",
+                        "includeNoneStrings": false,
+                        "strict": false
+                      },
+                      "align": "center",
+                      "boolean": "checkbox",
+                      "dateFormat": "MM/DD/YYYY HH:mm",
+                      "editable": false,
+                      "field": "chkShtEventId_449931",
+                      "filter": {
+                        "boolean": {
+                          "condition": ""
+                        },
+                        "date": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "enabled": false,
+                        "number": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "string": {
+                          "condition": "",
+                          "value": ""
+                        },
+                        "visible": "on-hover"
+                      },
+                      "footer": {
+                        "align": "center",
+                        "justify": "left",
+                        "style": {
+                          "classes": ""
+                        },
+                        "title": ""
+                      },
+                      "header": {
+                        "align": "center",
+                        "justify": "center",
+                        "style": {
+                          "backgroundColor": "--kcPrimaryContainer",
+                          "borderBottomColor": "#D5D5D5",
+                          "borderBottomStyle": "solid",
+                          "borderBottomWidth": "1px",
+                          "fontSize": "10px",
+                          "fontWeight": "bold"
+                        },
+                        "title": "chkShtEventId_449931"
+                      },
+                      "justify": "center",
+                      "number": "value",
+                      "numberFormat": "0,0.##",
+                      "progressBar": {
+                        "bar": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "max": 100,
+                        "min": 0,
+                        "track": {
+                          "color": "",
+                          "style": {
+                            "classes": ""
+                          }
+                        },
+                        "value": {
+                          "enabled": true,
+                          "format": "0,0.##",
+                          "justify": "center",
+                          "style": {
+                            "classes": ""
+                          }
+                        }
+                      },
+                      "render": "auto",
+                      "resizable": true,
+                      "sort": "none",
+                      "sortable": false,
+                      "strictWidth": true,
+                      "style": {
+                        "borderRightColor": "#C1C1C1",
+                        "borderRightStyle": "solid",
+                        "borderRightWidth": "1px",
+                        "fontSize": "10px"
+                      },
+                      "toggleSwitch": {
+                        "color": {
+                          "selected": "",
+                          "unselected": ""
+                        }
+                      },
+                      "viewParams": {},
+                      "viewPath": "",
+                      "visible": true,
+                      "width": 80
+                    }
+                  ],
+                  "dragOrderable": false,
+                  "enableFooterGroups": true,
+                  "filter": {
+                    "enabled": true,
+                    "results": {
+                      "enabled": true
+                    }
+                  },
+                  "footerGroupStyle": {
+                    "borderColor": "#AAAAAA",
+                    "borderStyle": "solid",
+                    "borderWidth": "1px",
+                    "classes": "kanoa/font/default"
+                  },
+                  "nullFormat": {
+                    "includeNullStrings": true
+                  },
+                  "pager": {
+                    "activeOption": 50,
+                    "initialOption": 50
+                  },
+                  "resizeMode": "fixed",
+                  "rows": {
+                    "striped": {
+                      "enabled": false
+                    }
+                  },
+                  "selection": {
+                    "mode": "multiple interval"
+                  },
+                  "style": {
+                    "borderStyle": "none"
+                  }
+                },
+                "type": "ia.display.table"
+              }
+            ],
+            "meta": {
+              "domId": "flxTable",
+              "name": "flxTable"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.table.data"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "code": "\treturn value.getColumnCount \u003e 0",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "direction": "column",
+              "style": {
+                "gapX": "5px",
+                "overflow": "hidden",
+                "paddingX": "5px"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "domId": "flxBody",
+          "name": "flxBody"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--kcGray-0",
+            "borderColor": "--kcGray-0",
+            "classes": "kanoa/border",
+            "gap": "5px"
+          }
+        },
+        "type": "ia.container.flex"
+      }
+    ],
+    "meta": {
+      "domId": "root",
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "backgroundColor": "--kcSurface",
+        "classes": "kanoa/font/default",
+        "overflow": "hidden"
+      }
+    },
+    "scripts": {
+      "customMethods": [
+        {
+          "name": "getData",
+          "params": [],
+          "script": "\t\n\tfilters \u003d dict(self.view.params.value.filters)\n\tif (filters[\u0027chkShtId\u0027] or None) is None:\n\t\tself.view.custom.chkShtEventInfo \u003d []\n\t\treturn system.dataset.toDataSet([],[])\n\t\n\tfilters[\u0027limit\u0027] \u003d self.view.custom.table.limit\n\t\n\tif self.view.custom.table.currentPage \u003e 0: \n\t\tfilters[\u0027fromDate\u0027] \u003d self.view.custom.display.pages[self.view.custom.table.currentPage][\u0027fromDate\u0027]\n\t\tfilters[\u0027toDate\u0027] \u003d self.view.custom.display.pages[self.view.custom.table.currentPage][\u0027toDate\u0027]\n\n#\tsystem.perspective.print(\"chkItemRowView - getData() called with %s\"%filters)\n\tself.view.params.infoBar \u003d {\"showBar\": True, \"text\": \"Getting data...\", \"type\": \"INFO\"}\n\t\n\timport java.lang\t\n\ttry:\n\t\tfilters[\u0027chkShtStateNames\u0027] \u003d [\u0027Approved\u0027]\n\t\t\n\t\tdata \u003d system.kanoa.quality.event.getChkShtEvents(filters)\n\t\tself.view.custom.chkShtEventInfo \u003d system.kanoa.utilities.convertDatasetToJSON(system.dataset.sort(data, \u0027scheduledDate\u0027))\n\t\t\n\t\tfilters[\u0027chkShtStateIds\u0027] \u003d [system.kanoa.utilities.getFieldValue(\u0027chkShtStateId\u0027, system.kanoa.quality.sheet.getStates({\u0027chkShtName\u0027: \u0027Approved\u0027}))]\n\t\tdata, msg \u003d system.kanoa.quality.analysis.getChkItemEventsByRow(filters)\n\t\t\n\t\tif msg: \n\t\t\tmsg \u003d \u0027Failed to get check item events. %s\u0027%msg\n\t\t\tsystem.perspective.print(msg)\n\t\t\tsystem.perspective.sendMessage(\u0027showFailerToast\u0027, {\u0027message\u0027: msg})\n\t\t\n\t\tself.view.params.infoBar \u003d {\"showBar\": False, \"text\": \"\", \"type\": \"INFO\"}\n\texcept java.lang.Exception, e:\n\t\tself.view.params.infoBar \u003d {\"showBar\": False, \"text\": e.cause, \"type\": \"ERROR\"}\n\n\treturn data"
+        },
+        {
+          "name": "clearData",
+          "params": [],
+          "script": "\n\tsystem.perspective.print(\"clearData() called\")\n\tself.clearTableSelection()\n\tself.view.custom.table.data \u003d system.dataset.toDataSet([],[])\n\tself.view.custom.infoBar \u003d {\"showBar\": False, \"text\": \"\", \"type\": \"INFO\"}\n\n\treturn"
+        },
+        {
+          "name": "clearTableSelection",
+          "params": [],
+          "script": "\n\tsystem.perspective.print(\"clearTableSelection() called\")\n\tself.view.custom.table.selection.col \u003d None\n\tself.view.custom.table.selection.row \u003d None\n\t\n\treturn"
+        },
+        {
+          "name": "setTableSelection",
+          "params": [
+            "row"
+          ],
+          "script": "\n\tsystem.perspective.print(\"setTableSelection() called for row %s\"%row)\n\tself.view.custom.table.selection.col \u003d None\n\tself.view.custom.table.selection.row \u003d row\n\t\n\treturn"
+        }
+      ],
+      "extensionFunctions": null,
+      "messageHandlers": [
+        {
+          "messageType": "getTableData",
+          "pageScope": true,
+          "script": "\n\tsystem.perspective.print(\"getTableData() msg rcvd with %s\"%payload)\n\n\tself.clearData()\n\tself.view.custom.table.data \u003d self.view.getChild(\"root\").getData()\n\n\treturn",
+          "sessionScope": false,
+          "viewScope": false
+        },
+        {
+          "messageType": "clearTableData",
+          "pageScope": true,
+          "script": "\n\tsystem.perspective.print(\"clearTableData() msg rcvd with %s\"%payload)\n\n\tself.clearData()\n\n\treturn",
+          "sessionScope": false,
+          "viewScope": false
+        },
+        {
+          "messageType": "clearTableSelection",
+          "pageScope": true,
+          "script": "\n\tsystem.perspective.print(\"clearTableData() msg rcvd with %s\"%payload)\n\n\tself.clearTableSelection()\n\n\treturn",
+          "sessionScope": false,
+          "viewScope": false
+        }
+      ]
+    },
+    "type": "ia.container.flex"
+  }
+}

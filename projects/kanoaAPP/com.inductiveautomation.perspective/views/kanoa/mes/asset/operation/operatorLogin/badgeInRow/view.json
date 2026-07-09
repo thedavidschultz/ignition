@@ -1,0 +1,794 @@
+{
+  "custom": {
+    "userAction": {
+      "canUpdate": true, 
+      "canRead": true, 
+      "canCreate": true, 
+      "canDelete": true
+    }, 
+    "display": {
+      "showEdit": false, 
+      "showBadgeOut": false, 
+      "showDelete": false
+    }, 
+    "security": {
+      "userId": 5, 
+      "userCRUD": {
+        "configureQuality": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "configureAssets": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "scheduleShifts": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "editOperations": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "scheduleOperations": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "configureItems": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "enterQualityCheck": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "configureSecurity": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "approveQualityCheck": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }, 
+        "isGatewayAdmin": true, 
+        "operateAssets": {
+          "enabled": true, 
+          "assets": [
+            "Kanoa Testing\\AAA", 
+            "Kanoa Testing\\BBB", 
+            "Kanoa Testing\\CCC"
+          ]
+        }
+      }, 
+      "config": {
+        "userSource": "default", 
+        "userSources": "[\"default\"]", 
+        "allowGuest": "1"
+      }
+    }
+  }, 
+  "params": {
+    "value": {
+      "rangeStart": {
+        "$ts": 1736769600000, 
+        "$": [
+          "ts", 
+          0, 
+          1736908546678
+        ]
+      }, 
+      "attributeAssetLinkId": 8, 
+      "createdByUser": "SYSTEM", 
+      "endDate": null, 
+      "rangeEnd": {
+        "$ts": 1736917200000, 
+        "$": [
+          "ts", 
+          0, 
+          1736908546678
+        ]
+      }, 
+      "attributeEventId": 105, 
+      "attributeId": 16, 
+      "changedDate": null, 
+      "createdDate": {
+        "$ts": 1736906828413, 
+        "$": [
+          "ts", 
+          0, 
+          1736908546678
+        ]
+      }, 
+      "durationSecs": 1855, 
+      "createdBy": 1, 
+      "assetId": 45, 
+      "assetPath": "MSA\\NNA\\USM4\\Fixed Gas\\Flame Detector", 
+      "changedBy": null, 
+      "tStamp": {
+        "$ts": 1736906828347, 
+        "$": [
+          "ts", 
+          0, 
+          1736908546678
+        ]
+      }, 
+      "attributeName": "Operator_Jason", 
+      "changedByUser": null, 
+      "endAttributeEventId": null, 
+      "value": "jason", 
+      "startDate": {
+        "$ts": 1736906828347, 
+        "$": [
+          "ts", 
+          0, 
+          1736908546678
+        ]
+      }, 
+      "attributePath": "Operators\\Operator_Jason"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 430, 
+      "height": 38
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "justify": "space-between", 
+      "style": {
+        "padding": "2px", 
+        "classes": "kanoa/containerVariant kanoa/font/default", 
+        "overflow": "hidden", 
+        "borderStyle": "none"
+      }
+    }, 
+    "children": [
+      {
+        "custom": {
+          "fontColor": "value"
+        }, 
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "overflow": "hidden", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblBadgeNum", 
+              "name": "lblBadgeNum"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "100px"
+            }, 
+            "events": {
+              "dom": {
+                "onClick": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\n\tsystem.perspective.sendMessage(\"badgeSelected\", {'badgeNum': self.view.params.value.value})\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\treturn value['value'] or ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblBadgedIn", 
+              "name": "lblBadgedIn"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "85px"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn not value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.userAction.canUpdate"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\ttry:\n\t\treturn system.date.format(value['startDate'], \"MM/dd HH:mm\")\n\texcept:\n\t\treturn value['startDate']", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.date-time-input", 
+            "props": {
+              "format": "MM/DD HH:mm", 
+              "formattedValue": "01/14 18:07"
+            }, 
+            "meta": {
+              "domId": "dtiStartDate", 
+              "name": "dtiStartDate"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "85px"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.userAction.canUpdate"
+                  }
+                }
+              }, 
+              "props.value": {
+                "onChange": {
+                  "enabled": null, 
+                  "script": "\t\n\tif origin == 'Browser':\n\t\tsystem.perspective.print(\"dtiStartDate change %s\"%origin)\n\t\tparams = self.view.params.value\n\t\tstartDate = self.props.value\n\t\tif params['endDate'] and startDate >= params['endDate']:\n\t\t\tsystem.perspective.sendMessage(\"showWarningToast\", {'message': \"Start date is after end date\"})\n\t\t\treturn\n\t\t\t\n\t\tattributeEventInfo = {'attributeEventId': params['attributeEventId'], 'attributeAssetLinkId': params['attributeAssetLinkId'], 'value': params['value'], 'tStamp': startDate}\n\t\tsystem.perspective.print(\"calling updateAttributeEvent() with %s\"%attributeEventInfo)\n\t\tsystem.kanoa.attribute.updateAttributeEvent(attributeEventInfo, self.view.custom.security.userId)\n\t\t\n\tsystem.perspective.sendMessage(\"operatorEventUpdated\", {})\n\n\treturn"
+                }, 
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.startDate"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "color": ""
+              }, 
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblBadgedOut", 
+              "name": "lblBadgedOut"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "85px"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn not value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.userAction.canUpdate"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\ttry:\n\t\treturn system.date.format(value['endDate'], \"MM/dd HH:mm\")\n\texcept:\n\t\treturn value['endDate'] or ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.date-time-input", 
+            "props": {
+              "dismissOnSelect": false, 
+              "format": "MM/DD HH:mm", 
+              "formattedValue": null
+            }, 
+            "meta": {
+              "domId": "dtiEndDate", 
+              "name": "dtiEndDate"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "85px"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.userAction.canUpdate"
+                  }
+                }
+              }, 
+              "props.value": {
+                "onChange": {
+                  "enabled": null, 
+                  "script": "\t\n\tif origin == 'Browser':\n\t\tsystem.perspective.print(\"dtiEndDate change %s\"%origin)\n\t\tparams = self.view.params.value\n\t\tendDate = self.props.value\n\t\tif endDate <= params['startDate']:\n\t\t\tsystem.perspective.sendMessage(\"showWarningToast\", {'message': \"End date is before start date\"})\n\t\t\treturn\n\t\tif params['endAttributeEventId'] is None:\n\t\t\tkanoaScripts.custom.ops.operators.enterBadge(params['assetId'], params['value'], False, endDate)\n\t\t\tsystem.perspective.sendMessage('operatorEventUpdated', {})\n\t\telse:\n\t\t\tattributeEventInfo = {'attributeEventId': params['endAttributeEventId'], 'attributeAssetLinkId': params['attributeAssetLinkId'], 'value': None, 'tStamp': endDate}\n\t\t\tsystem.kanoa.attribute.updateAttributeEvent(attributeEventInfo, self.view.custom.security.userId)\n\n\t\tsystem.perspective.sendMessage(\"operatorEventUpdated\", {})\n\n\treturn"
+                }, 
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.endDate"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "color": ""
+              }, 
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblDuration", 
+              "name": "lblDuration"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "90px"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.display.durationSecs"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxRow", 
+          "name": "flxRow"
+        }, 
+        "position": {
+          "grow": 1
+        }, 
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn '' if value['value'] == '' or value['endDate'] is not None else 'kanoa/border'", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value"
+              }
+            }
+          }, 
+          "props.style.backgroundColor": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn '--kcBlue-10' if value is None else ''", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.endDate"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "style": {
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "--kcRed-60", 
+                  "path": "material/delete_forever"
+                }
+              }, 
+              "style": {
+                "backgroundColor": "--kcVariant", 
+                "classes": "kanoa/button/flatIcon", 
+                "width": "24px", 
+                "height": "24px"
+              }, 
+              "text": ""
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true, 
+                "delay": 0, 
+                "location": "bottom-right", 
+                "text": "Delete Entry"
+              }, 
+              "domId": "btnDeleteEntry", 
+              "name": "btnDeleteEntry"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "24px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tmsg = \"Are you sure you want to delete this entry?\"\n\tsystem.perspective.openPopup(\"UserConfirmPopup\", \"kanoa/core/templates/inputs/confirm\", {'text':msg, 'messageHandler':'deleteOperatorEvent', 'inputPayload': self.view.params.value}, title='Delete Entry', resizable=True, draggable=True, showCloseIcon=True)\t\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.display.showDelete"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "--kcBlue-40", 
+                  "path": "material/edit"
+                }
+              }, 
+              "style": {
+                "backgroundColor": "--kcVariant", 
+                "classes": "kanoa/button/flatIcon", 
+                "width": "24px", 
+                "height": "24px"
+              }, 
+              "text": ""
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true, 
+                "delay": 0, 
+                "location": "bottom-right", 
+                "text": "Edit Entry"
+              }, 
+              "domId": "btnEditEntry", 
+              "name": "btnEditEntry"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "display": false, 
+              "basis": "24px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tsystem.perspective.sendMessage('operatorEventUpdated', {})\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "enabled": false, 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.display.showEdit"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/follow_the_signs"
+                }
+              }, 
+              "style": {
+                "backgroundColor": "--kcVariant", 
+                "classes": "kanoa/button/flatIcon", 
+                "width": "24px", 
+                "height": "24px"
+              }, 
+              "text": ""
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true, 
+                "location": "bottom-right", 
+                "text": "Badge Out"
+              }, 
+              "domId": "btnBadgeOut", 
+              "name": "btnBadgeOut"
+            }, 
+            "position": {
+              "shrink": 0
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tvalues = self.view.params.value\n\tsystem.kanoa.operators.enterBadge(values['assetId'], values['value'], False, system.date.now())\n\tsystem.perspective.sendMessage('operatorEventUpdated', {})\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.display.showBadgeOut"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxAction", 
+          "name": "flxAction"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tsystem.perspective.print(\"deleteOperatorEvent() called with %s\"%payload)\n\tif payload['userInput'] != 'OK': return\n\tif payload['inputPayload']['attributeEventId'] == self.view.params.value.attributeEventId:\n\n\t\tparams = self.view.params.value\n\t\tuserId = self.view.custom.security.userId\n\t\tsystem.kanoa.attribute.deleteAttributeEvent(params['attributeEventId'], userId)\n\t\t\n\t\tif params['endAttributeEventId']: system.kanoa.attribute.deleteAttributeEvent(params['endAttributeEventId'], userId)\n\t\n\t\tsystem.perspective.sendMessage(\"operatorEventUpdated\", {})\n\t\n\treturn", 
+          "messageType": "deleteOperatorEvent", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }, 
+    "events": {
+      "dom": {
+        "onMouseEnter": {
+          "type": "script", 
+          "scope": "G", 
+          "config": {
+            "script": "\t\n\tuserAction = self.view.custom.userAction\n\tself.view.custom.display.showEdit = userAction['canUpdate']\n\tself.view.custom.display.showDelete = userAction['canDelete']\n\tself.view.custom.display.showBadgeOut = self.view.params.value.endDate is None\n\t\n\treturn"
+          }
+        }, 
+        "onMouseLeave": {
+          "type": "script", 
+          "scope": "G", 
+          "config": {
+            "script": "\n\tself.view.custom.display.showEdit = False\n\tself.view.custom.display.showDelete = False\n\tself.view.custom.display.showBadgeOut = False\n\t\n\treturn"
+          }
+        }
+      }
+    }
+  }, 
+  "propConfig": {
+    "custom.security": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tsecConfig = system.kanoa.utilities.convertDatasetToDict(system.kanoa.security.getConfig({}), 'configName', 'configValue')\n\tuserId = system.kanoa.security.getIDPUserId(value['user'])\n\tuserCRUD = system.kanoa.security.getUserAssetCRUD(userId)\n\t\n\treturn {\"userId\": userId, \"config\": secConfig, \"userCRUD\": userCRUD}", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "user": "{session.props.auth.user}"
+          }, 
+          "waitOnAll": false
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.userAction": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tsecurity = value['security']\n\tcanCreate = False\n\tcanEdit = False\n\tif security['userCRUD'] is not None and security['userId'] is not None:\n\t\tif security['userCRUD']['isGatewayAdmin'] or security['userCRUD']['editOperations']['enabled']: \n\t\t\tcanCreate = True \n\t\t\tcanEdit = True\n\t\n\treturn {\"canCreate\": canCreate, \"canDelete\": canEdit, \"canRead\": True, \"canUpdate\": canEdit}", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "security": "{view.custom.security}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.display": {
+      "persistent": true
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.display.updateTimer": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\t#If there is no end date, i.e. operator is still badged in, we will update the durationSecs\n\tif self.params.value.endDate: return\n\tif system.date.now() > self.params.value.rangeEnd: return\n\t\n\tself.refreshBinding(\"custom.display.durationSecs\")\n\t\t\n\treturn value\n", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr", 
+        "overlayOptOut": true, 
+        "config": {
+          "expression": "now(60000)"
+        }
+      }
+    }, 
+    "custom.display.durationSecs": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tif value['endDate']:\n\t\tdurationSecs = value['durationSecs']\n\telse:\n\t\tstartDate = value['startDate'] if value['startDate'] > value['rangeStart'] else value['rangeStart']\n\t\tendDate = system.date.now() if system.date.now() < value['rangeEnd'] else value['rangeEnd']\n\t\tdurationSecs = system.date.secondsBetween(startDate, endDate)\n\n\ttry:\n\t\tint(durationSecs)\n\t\tif (durationSecs or 0) <= 0: return ''\n\t\tif durationSecs <= 60: return '< 1 min'\n\t\treturn system.kanoa.utilities.secondsToText(durationSecs, {'showDays': False, 'showSecs': False, 'roundUp': True})\n\texcept:\n\t\treturn durationSecs", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.params.value"
+        }
+      }
+    }
+  }
+}

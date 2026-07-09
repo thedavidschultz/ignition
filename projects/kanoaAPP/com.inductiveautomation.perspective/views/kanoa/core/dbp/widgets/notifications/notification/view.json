@@ -1,0 +1,156 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": {
+      "navInfo": {
+        "viewPath": "kanoa/qds/qdsDashboard", 
+        "popup": false, 
+        "viewName": "Scheduled Checks", 
+        "viewParams": {
+          "value": {
+            "chkShtStates": [
+              "Due"
+            ], 
+            "assetPath": "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 3"
+          }
+        }
+      }, 
+      "icon": "material/fact_check", 
+      "bgColor": "-kcBlue-40", 
+      "iconColor": "--kcOrange-30", 
+      "text": "1 Quality Check Due"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 434, 
+      "height": 77
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "backgroundColor": "--kcBlue-10", 
+        "borderColor": "--kcBlue-10", 
+        "margin": "5px", 
+        "classes": "kanoa/border kanoa/font/default"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "padding": "5px", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.icon", 
+            "meta": {
+              "domId": "ico", 
+              "name": "ico"
+            }, 
+            "position": {
+              "basis": "30px"
+            }, 
+            "propConfig": {
+              "props.color": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.iconColor"
+                  }
+                }
+              }, 
+              "props.path": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.icon"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "color": "--kcGray-100"
+              }
+            }, 
+            "meta": {
+              "domId": "lblNotification", 
+              "name": "lblNotification"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.text"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxMain", 
+          "name": "flxMain"
+        }, 
+        "position": {
+          "basis": "200px"
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "events": {
+      "dom": {
+        "onClick": {
+          "type": "script", 
+          "scope": "G", 
+          "config": {
+            "script": "\t\n\tparams = self.view.params.value\n\t\n\tsystem.perspective.print('click %s'%params['navInfo'])\n\t\n\tif params.has_key('navInfo') and params['navInfo']['viewPath']:\n\t\tnavInfo = params['navInfo']\n\t\tif navInfo['popup']:\n\t\t\tsystem.perspective.openPopup(navInfo['viewName'] + 'Popup', navInfo['viewPath'], {'value': dict(navInfo['viewParams'])}, title=navInfo['viewName'], draggable=True, resizable=True, showCloseIcon=True)\n\t\telse:\n\t\t\tviewParams = system.util.jsonDecode(system.util.jsonEncode(navInfo['viewParams']))\n\t\t\tsystem.perspective.sendMessage(\"updateNavigation\", {\"path\": navInfo['viewPath'], \"name\": 'Scheduled Checks', \"type\": 'view', \"params\": viewParams})\n\t\n\treturn"
+          }
+        }
+      }
+    }, 
+    "propConfig": {
+      "props.style.cursor": {
+        "binding": {
+          "transforms": [
+            {
+              "code": "\t\n\treturn 'pointer' if value.has_key('navInfo') and value['navInfo']['viewPath'] is not None else None", 
+              "type": "script"
+            }
+          ], 
+          "type": "property", 
+          "overlayOptOut": true, 
+          "config": {
+            "path": "view.params.value"
+          }
+        }
+      }
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

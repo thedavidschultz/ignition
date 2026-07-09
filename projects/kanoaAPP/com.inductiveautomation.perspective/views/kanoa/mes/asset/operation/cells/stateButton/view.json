@@ -1,0 +1,204 @@
+{
+  "custom": {
+    "enabled": false
+  }, 
+  "params": {
+    "value": {
+      "assetTypeId": 5, 
+      "assetTypeName": "cell", 
+      "stateTypeName": "Planned Downtime", 
+      "enabled": true, 
+      "linkEnabled": true, 
+      "changedDate": null, 
+      "stateEnabled": false, 
+      "stateName": "CIP", 
+      "assetId": 46, 
+      "assetPath": "MSA\\NNA\\USM4\\Fixed Gas\\Flame Detector\\Board Stack", 
+      "changedBy": null, 
+      "reservedBySystem": false, 
+      "stateCategoryId": null, 
+      "assetGroupName": null, 
+      "stateTypeId": 1, 
+      "stateAssetLinkId": 168, 
+      "stateId": 5, 
+      "assetGroupId": null, 
+      "parentId": 45, 
+      "stateColor": null, 
+      "stateCategoryName": null, 
+      "createdDate": {
+        "$ts": 1734010133470, 
+        "$": [
+          "ts", 
+          192, 
+          1735937217061
+        ]
+      }, 
+      "createdBy": 5, 
+      "tagPath": "[Kanoa]MSA/NNA/USM4/Fixed Gas/Flame Detector/Board Stack", 
+      "stateCode": 4, 
+      "stateAssetGroupName": null, 
+      "currentState": "CIP", 
+      "iconPath": "kanoa/other", 
+      "stateTypeColor": "#66FFFF"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 228, 
+      "height": 35
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "3px", 
+        "backgroundColor": "--kcSurface"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.input.button", 
+        "props": {
+          "image": {
+            "icon": {}
+          }, 
+          "justify": "start", 
+          "style": {}, 
+          "textStyle": {
+            "classes": "kanoa/font/labelLarge"
+          }
+        }, 
+        "meta": {
+          "domId": "btnState", 
+          "name": "btnState"
+        }, 
+        "position": {
+          "grow": 1, 
+          "basis": "34px"
+        }, 
+        "events": {
+          "dom": {
+            "onClick": {
+              "type": "script", 
+              "scope": "G", 
+              "config": {
+                "script": "\n\tuserId = system.kanoa.security.getIDPUserId(self.session.props.auth.user)\n\tvalues = self.view.params.value\n\tstateInfo = {\n\t\t\t\t\t'assetId': values['assetId'],\n\t\t\t\t\t'assetStateId': values['assetId'],\n\t\t\t\t\t'stateCode': values['stateCode'],\n\t\t\t\t\t'tStamp': system.date.now(), \n\t\t\t\t\t'note': None\n\t\t\t\t}\n\t\t\t\t\n\tsystem.perspective.print(\"addStateEvent() called with %s\"%stateInfo)\n\tstateEventId = system.kanoa.event.addStateEvent(stateInfo, userId)\n\tsystem.perspective.print(\"addStateEvent() returned with %s\"%stateEventId)\n\t\n\t#We'll update the OEE state values for display purposes\n\ttagPath = '%s%s'%(values['tagPath'], '/Line/OEE/')\n\tstateInfo = system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.asset.getAssetStates({'assetId': values['assetId'], 'stateCode':values['stateCode']}),0)\n\t\n\ttagPathList = [tagPath+'stateName', tagPath+'stateTypeName', tagPath+'stateTypeColor', tagPath+'stateColor', tagPath+'stateIconPath']\n\ttagPathValues = [stateInfo['stateName'], stateInfo['stateTypeName'] or '', stateInfo['stateTypeColor'] or '', stateInfo['stateColor'] or stateInfo['stateTypeColor'] or '', stateInfo['iconPath'] or '']\n\tsystem.tag.writeBlocking(tagPathList, tagPathValues)\n\t\t\n\tsystem.perspective.sendMessage('showSuccessfulToast', {'message': 'State has been changed'})\n\t\n\t#Now we'll check if we need to update the line\n\tparentPath = \"\\\\\".join(values['assetPath'].split(\"\\\\\")[:-1])\n\tassets = system.kanoa.utilities.convertDatasetToJSON(system.kanoa.asset.getAssets({'assetPath': parentPath + '\\\\%'}))\n\ttagPathList = [asset['tagPath'] + '/Line/OEE/StateTypeName' for asset in assets]\n\ttagPathValues = system.tag.readBlocking(tagPathList)\n\tassetStateTypeList = list(set([tagValue.value for tagValue in tagPathValues]))\n\tsystem.perspective.print(\"assetStateTypeList %s\"%assetStateTypeList)\n\n\ttagPathList = [asset['tagPath'] + '/Line/OEE/StateName' for asset in assets]\n\ttagPathValues = system.tag.readBlocking(tagPathList)\n\tassetStateList = list(set([tagValue.value for tagValue in tagPathValues]))\n\tsystem.perspective.print(\"assetStateList %s\"%assetStateList)\n\n\tif 'Running' in assetStateTypeList: parentState = 'Running'\n\telif 'Unplanned Downtime' in assetStateTypeList:  parentState = 'Idle' if len(assetStateList) == 1 and assetStateList[0] == 'Idle' else 'Faulted'\n\telif 'Planned Downtime' in assetStateTypeList: parentState = 'Planned Down'\n\telse: parentState = 'Idle'\n\n\tparentTagPath = system.kanoa.asset.getAssetTagPath({'assetPath': parentPath})\n\tcurrentStateName = system.tag.read(parentTagPath + '/Line/OEE/stateName').value\n\t\n\tif currentStateName == parentState:\n\t\tsystem.perspective.print(\"Line is already in state %s\"%parentState)\n\telse:\n\t\tsystem.perspective.print(\"Setting Line to state %s\"%parentState)\n\t\t\n\t\tassetStateInfo = system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.asset.getAssetStates({'assetId': values['parentId'], 'stateName': parentState}),0)\n\t\tif assetStateInfo['stateCode']:\n\t\t\tstateInfo = {\n\t\t\t\t\t\t\t'assetId': values['parentId'],\n\t\t\t\t\t\t\t'assetStateId': values['parentId'],\n\t\t\t\t\t\t\t'stateCode': assetStateInfo['stateCode'],\n\t\t\t\t\t\t\t'tStamp': system.date.now(), \n\t\t\t\t\t\t\t'note': None\n\t\t\t\t\t\t}\n\n\t\t\tsystem.perspective.print(\"addStateEvent() called for the line with %s\"%stateInfo)\n\t\t\tstateEventId = system.kanoa.event.addStateEvent(stateInfo, userId)\n\t\t\tsystem.perspective.print(\"addStateEvent() returned with %s\"%stateEventId)\n\t\t\t\n\t\t\t#We'll update the OEE state values for display purposes\n\t\t\ttagPath = '%s%s'%(parentTagPath, '/Line/OEE/')\t\t\n\t\t\ttagPathList = [tagPath+'stateName', tagPath+'stateTypeName', tagPath+'stateTypeColor', tagPath+'stateColor', tagPath+'stateIconPath']\n\t\t\ttagPathValues = [assetStateInfo['stateName'], assetStateInfo['stateTypeName'] or '', assetStateInfo['stateTypeColor'] or '', assetStateInfo['stateColor'] or assetStateInfo['stateTypeColor'] or '', assetStateInfo['iconPath'] or '']\n\t\t\tsystem.tag.writeBlocking(tagPathList, tagPathValues)\n\t\telse:\n\t\t\tsystem.perspective.print(\"Couldn't find a stateCode for assetId %s %s\"%(values['parentId'], parentState))\n\t\n\treturn\n\n"
+              }
+            }
+          }
+        }, 
+        "propConfig": {
+          "props.style.cursor": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn 'pointer' if value else ''", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "this.props.enabled"
+              }
+            }
+          }, 
+          "props.style.classes": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn 'kanoa/button/outlined' if value else 'kanoa/button/filled'", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "view.custom.enabled"
+              }
+            }
+          }, 
+          "props.style.color": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn '-kcGray-00' if value else '-kcGray-100'", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "view.custom.enabled"
+              }
+            }
+          }, 
+          "props.image.icon.path": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.params.value.iconPath"
+              }
+            }
+          }, 
+          "props.text": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.params.value.stateName"
+              }
+            }
+          }, 
+          "props.enabled": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.custom.enabled"
+              }
+            }
+          }, 
+          "props.image.icon.color": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn value['stateColor'] if value['stateColor'] is not None else value['stateTypeColor']", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "view.params.value"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "custom.enabled": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\treturn False if (value['currentState'] or 'Unknown') == value['stateName'] else True", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.params.value"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

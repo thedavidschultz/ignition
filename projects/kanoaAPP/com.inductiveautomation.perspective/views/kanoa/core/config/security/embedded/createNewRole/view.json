@@ -1,0 +1,296 @@
+{
+  "custom": {
+    "errorMessage": "New role name cannot be blank.", 
+    "hasEdited": false
+  }, 
+  "params": {
+    "values": {
+      "assetPath": ""
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 375, 
+      "height": 136
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "classes": "kanoa/font/default kanoa/popup"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "text": "New Role"
+            }, 
+            "meta": {
+              "domId": "lblRoleName", 
+              "name": "lblRoleName"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "60px"
+            }
+          }, 
+          {
+            "type": "ia.input.text-field", 
+            "props": {
+              "deferUpdates": false
+            }, 
+            "meta": {
+              "domId": "txtRoleName", 
+              "name": "txtRoleName"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "events": {
+              "dom": {
+                "onFocus": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tsystem.perspective.print('focus triggered')\n\tself.view.custom.hasEdited = True"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "props.text": {
+                "persistent": false
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxRoleName", 
+          "name": "flxRoleName"
+        }, 
+        "position": {
+          "basis": "63px"
+        }
+      }, 
+      {
+        "type": "ia.display.label", 
+        "props": {
+          "textStyle": {
+            "color": "red", 
+            "textAlign": "center"
+          }
+        }, 
+        "meta": {
+          "domId": "lblErrorMsg", 
+          "name": "lblErrorMsg"
+        }, 
+        "position": {
+          "basis": "32px"
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\tif not value['hasEdited']: return ''\n\treturn value['errorMessage']", 
+                  "type": "script"
+                }
+              ], 
+              "type": "expr-struct", 
+              "config": {
+                "struct": {
+                  "errorMessage": "{view.custom.errorMessage}", 
+                  "hasEdited": "{view.custom.hasEdited}"
+                }, 
+                "waitOnAll": true
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "alignContent": "center", 
+          "justify": "center", 
+          "style": {
+            "padding": "5px", 
+            "overflow": "hidden", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/check_box"
+                }
+              }, 
+              "style": {
+                "classes": "kanoa/button/filled"
+              }, 
+              "text": "OK", 
+              "primary": false
+            }, 
+            "meta": {
+              "tooltip": {
+                "tail": false, 
+                "enabled": true, 
+                "delay": 0, 
+                "location": "bottom", 
+                "style": {
+                  "classes": "kanoa/tooltipError"
+                }, 
+                "sustain": 1000
+              }, 
+              "domId": "btnOK", 
+              "name": "btnOK"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "120px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tnewRoleName = self.parent.parent.getChild(\"flxRoleName\").getChild(\"txtRoleName\").props.text\n\tsystem.perspective.sendMessage(\"addRole\", payload = {'roleName': newRoleName, 'userSource': None}, scope='page')\n\tsystem.perspective.closePopup('')\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "meta.tooltip.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn 'Role name already exists' if value in system.user.getRoles('default') else ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "config": {
+                    "path": ".../flxRoleName/txtRoleName.props.text"
+                  }
+                }
+              }, 
+              "props.enabled": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn value == ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.errorMessage"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/exit_to_app"
+                }
+              }, 
+              "style": {
+                "classes": "kanoa/button/outlined"
+              }, 
+              "text": "Close", 
+              "primary": false
+            }, 
+            "meta": {
+              "domId": "btnClose", 
+              "name": "btnClose"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "120px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\tsystem.perspective.closePopup('')"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "tooltip": {
+            "delay": 0
+          }, 
+          "domId": "flxButtons", 
+          "name": "flxButtons"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "custom.hasEdited": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn False", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr", 
+        "config": {
+          "expression": "now(0)"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.errorMessage": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\tif value == '' or value is None: return 'New role name cannot be blank.'\n\tif value == 'Administrator' or value == 'Gateway Admin': return 'Cannot use a reserved role name.'\n\troleNames = [row['roleName'] for row in system.kanoa.utilities.convertDatasetToJSON(system.kanoa.security.getRoles({}))]\n\tif value in roleNames: return 'Role name already exists.'\n\treturn ''", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "/root/flxRoleName/txtRoleName.props.text"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "params.values": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

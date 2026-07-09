@@ -1,0 +1,107 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": {}
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 649, 
+      "height": 37
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "overflow": "hidden", 
+        "gap": 5
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "overflow": "hidden"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.view", 
+            "props": {
+              "params": {
+                "endDate": {
+                  "$ts": 1720767600000, 
+                  "$": [
+                    "ts", 
+                    192, 
+                    1720748469868
+                  ]
+                }, 
+                "dates": {
+                  "endDate": null, 
+                  "startDate": {
+                    "$ts": 1735496642153, 
+                    "$": [
+                      "ts", 
+                      192, 
+                      1737557442741
+                    ]
+                  }
+                }, 
+                "selectedRange": "Current Run", 
+                "startDate": {
+                  "$ts": 1720681200000, 
+                  "$": [
+                    "ts", 
+                    192, 
+                    1720748469869
+                  ]
+                }
+              }, 
+              "path": "kanoa/core/templates/selectors/date/dateRangeSelectorCompact"
+            }, 
+            "meta": {
+              "domId": "evDateSelector", 
+              "name": "evDateSelector"
+            }, 
+            "position": {
+              "grow": 1
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxWidget", 
+          "name": "flxWidget"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tsystem.perspective.print(\"widgetAssetSelected msg rcvd with %s\"%payload)\n\tassetPath = payload['selection'][0]['value']['path'] if len(payload['selection']) > 0 else None\n\t\n\tsystem.kanoa.utilities.storeAssetPath(self, assetPath)\n\t\n\treturn", 
+          "messageType": "widgetAssetSelected", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

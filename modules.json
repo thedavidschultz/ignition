@@ -143,5 +143,23 @@
     "filename": "/usr/local/bin/ignition/user-lib/modules/Vision-module.modl",
     "onStartup": "enabled",
     "certFingerprint": "0299d53c38bdbe7ca79bd6c778a5bab884e4c813"
+  },
+  "com.kanoacon.mes.kanoaMES": {
+    "filename": "/usr/local/bin/ignition/user-lib/modules/KanoaMES_83_1.14.8.modl",
+    "onStartup": "enabled",
+    "certFingerprint": "7b576d42b0f0a0f1553977e2bdf029c7a1e3a298",
+    "licenseAgreementHash": 20236654
+  },
+  "com.mussonindustrial.embr.charts": {
+    "filename": "/usr/local/bin/ignition/user-lib/modules/Embr-Charts-Ignition83-3.1.0.modl",
+    "onStartup": "enabled",
+    "certFingerprint": "e5a3cf3f06627c175b68b0122ac8f2c3f9c992e2",
+    "licenseAgreementHash": 3266212556
+  },
+  "uk.co.bijc.bijccalendar": {
+    "filename": "/usr/local/bin/ignition/user-lib/modules/BIJC_Calendar_Component_v1.83.1.modl",
+    "onStartup": "enabled",
+    "certFingerprint": "1aabb4e61c26fecb88f72153fbd7bcedcda364b6",
+    "licenseAgreementHash": 2198985981
   }
 }

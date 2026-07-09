@@ -1,0 +1,747 @@
+{
+  "custom": {
+    "assetShiftOEEData": null,
+    "displayOptions": {},
+    "filters": {
+      "assetId": null,
+      "assetPath": null,
+      "dateRange": {
+        "endDate": {
+          "$": [
+            "ts",
+            0,
+            1769104389276
+          ],
+          "$ts": 1768806000000
+        },
+        "selectedRange": "Today",
+        "startDate": {
+          "$": [
+            "ts",
+            0,
+            1769104389276
+          ],
+          "$ts": 1768719600000
+        }
+      },
+      "fontSizeMultiplier": 2,
+      "selectedRange": null,
+      "shiftIndex": 0,
+      "woInfo": {
+        "product": null,
+        "scheduleId": null,
+        "woId": null
+      }
+    },
+    "oeeColors": null,
+    "oeeInfo": {
+      "a": 0,
+      "assetName": "",
+      "oee": 0,
+      "p": 0,
+      "q": 0,
+      "shift": "",
+      "shiftStart": null
+    }
+  },
+  "params": {
+    "value": {
+      "assetPath": null,
+      "fontSizeMultiplier": 2,
+      "shiftIndex": 0
+    }
+  },
+  "propConfig": {
+    "custom.assetShiftOEEData": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "direct",
+          "tagPath": "[Kanoa]kanoa/timers/getAssetShiftOEETimer/data"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\treturn system.kanoa.utilities.convertDatasetToJSON(value)\n\t\n#\tvalues \u003d []\n#\t\n#\tfor row in system.kanoa.utilities.convertDatasetToJSON(value):\n#\t\tif row[\u0027assetId\u0027] \u003d\u003d self.custom.filters.assetId:\tvalues.append(row)\n#\t\n#\treturn values",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.displayOptions": {
+      "persistent": true
+    },
+    "custom.displayOptions.fontSize": {
+      "binding": {
+        "config": {
+          "path": "view.params.value"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\tif value.has_key(\u0027fontSizeMultiplier\u0027): return \u0027{}vw\u0027.format(value[\u0027fontSizeMultiplier\u0027])\n\t\n\treturn \u00272vw\u0027",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      }
+    },
+    "custom.filters": {
+      "binding": {
+        "config": {
+          "struct": {
+            "sessionProps": "{session.custom.kanoa}",
+            "viewParams": "{view.params.value}"
+          },
+          "waitOnAll": true
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\n\tif value[\u0027viewParams\u0027] is None: return {}\n\t\n\tpage \u003d self.page.props.pageId\n\tsessionCustomProps \u003d value[\u0027sessionProps\u0027]\n\n\tfilters \u003d system.kanoa.dashboard.getWidgetFilters(page, value[\u0027viewParams\u0027], sessionCustomProps, self.session.props.device.timezone.id)\n\tfilters[\u0027selectedRange\u0027] \u003d value[\u0027viewParams\u0027][\u0027selectedRange\u0027] if value[\u0027viewParams\u0027].has_key(\u0027selectedRange\u0027) else None\n\t\t\n\treturn filters",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.oeeColors": {
+      "binding": {
+        "config": {
+          "path": "view.custom.oeeInfo"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\n\treturn system.kanoa.event.getOEEColors({\u0027assetPath\u0027: self.custom.filters.assetPath}, value[\u0027oee\u0027], value[\u0027a\u0027], value[\u0027p\u0027], value[\u0027q\u0027])",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.oeeInfo": {
+      "binding": {
+        "config": {
+          "struct": {
+            "data": "{view.custom.assetShiftOEEData}",
+            "filters": "{view.custom.filters}",
+            "params": "{view.params.value}"
+          },
+          "waitOnAll": true
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\tassetName \u003d value[\u0027params\u0027][\u0027assetPath\u0027].split(\u0027\\\\\u0027)[-1] if value[\u0027params\u0027][\u0027assetPath\u0027] else \u0027\u0027\n\toeeInfo \u003d {\u0027a\u0027: 0.0, \u0027p\u0027: 0.0, \u0027q\u0027: 0.0, \u0027oee\u0027: 0.0, \u0027shift\u0027: \u0027\u0027, \u0027shiftStart\u0027: None, \u0027assetName\u0027: assetName}\n\t\t\n\tdata \u003d value[\u0027data\u0027]\n\tshiftIndex \u003d value[\u0027params\u0027][\u0027shiftIndex\u0027]\n\t\n\tif value[\u0027filters\u0027][\u0027assetId\u0027] is None or shiftIndex is None: return oeeInfo\t\n\t\n\tinfo \u003d []\n\tshiftInfo \u003d {}\n\tfor row in data:\n\t\tif value[\u0027filters\u0027][\u0027assetId\u0027] !\u003d row[\u0027assetId\u0027]: continue\n\t\tif row[\u0027modeName\u0027] !\u003d \u0027Production\u0027: continue\n\t\tinfo.append(row)\n\t\tkey \u003d \"%s - %s\"%(row[\u0027shiftName\u0027], system.date.format(row[\u0027shiftStart\u0027], \u0027YY-MM-dd\u0027))\n\t\tif shiftInfo.has_key(key):\n\t\t\tshiftInfo[key][\u0027infeedCount\u0027] +\u003d row[\u0027infeedCount\u0027] or 0.0\n\t\t\tshiftInfo[key][\u0027outfeedCount\u0027] +\u003d row[\u0027outfeedCount\u0027] or 0.0\n\t\t\tshiftInfo[key][\u0027wasteCount\u0027] +\u003d row[\u0027wasteCount\u0027] or 0.0\n\t\t\tshiftInfo[key][\u0027targetCount\u0027] +\u003d row[\u0027targetCount\u0027] or 0.0\n\t\t\tshiftInfo[key][\u0027runtimeSecs\u0027] +\u003d row[\u0027runtimeSecs\u0027] or 0.0\n\t\t\tshiftInfo[key][\u0027unplannedDowntimeSecs\u0027] +\u003d row[\u0027unplannedDowntimeSecs\u0027] or 0.0\n\t\telse:\n\t\t\tshiftInfo[key] \u003d {\t\t\n\t\t\t\t\u0027shiftStart\u0027: row[\u0027shiftStart\u0027], \n\t\t\t\t\u0027modeName\u0027: row[\u0027modeName\u0027], \n\t\t\t\t\u0027shiftName\u0027: row[\u0027shiftName\u0027],\n\t\t\t\t\u0027assetName\u0027: row[\u0027assetName\u0027],\t\t\t\t\n\t\t\t\t\u0027infeedCount\u0027: row[\u0027infeedCount\u0027] or 0.0, \n\t\t\t\t\u0027outfeedCount\u0027: row[\u0027outfeedCount\u0027] or 0.0,\n\t\t\t\t\u0027wasteCount\u0027: row[\u0027wasteCount\u0027] or 0.0,\n\t\t\t\t\u0027rawWasteCount\u0027: row[\u0027rawWasteCount\u0027] or 0.0,\n\t\t\t\t\u0027targetCount\u0027: row[\u0027targetCount\u0027] or 0.0,\n\t\t\t\t\u0027packageCount\u0027: row[\u0027packageCount\u0027] or 1.0,\n\t\t\t\t\u0027runtimeSecs\u0027: row[\u0027runtimeSecs\u0027] or 0.0, \n\t\t\t\t\u0027unplannedDowntimeSecs\u0027: row[\u0027unplannedDowntimeSecs\u0027] or 0.0\n\t\t\t}\n\t\t\n\tif len(shiftInfo) \u003d\u003d 0: return oeeInfo\n\t\n\tfor k,v in shiftInfo.items():\n\t\ttotalSecs \u003d float(v[\u0027runtimeSecs\u0027] or 0) + float(v[\u0027unplannedDowntimeSecs\u0027] or 0)\n\t\tshiftInfo[k][\u0027a\u0027] \u003d float(v[\u0027runtimeSecs\u0027]) / totalSecs if totalSecs \u003e 0 else 0\n\t\tshiftInfo[k][\u0027p\u0027] \u003d (float(v[\u0027infeedCount\u0027]) / float(v[\u0027targetCount\u0027])) if v[\u0027targetCount\u0027] else 1.0\n\t\t\n\t\tif v[\u0027rawWasteCount\u0027]: q \u003d (float(v[\u0027infeedCount\u0027]) - v[\u0027rawWasteCount\u0027]) / float(v[\u0027infeedCount\u0027]) if v[\u0027infeedCount\u0027] else 1.0\n\t\telse: q \u003d ((float(v[\u0027outfeedCount\u0027]) * v[\u0027packageCount\u0027]) / float(v[\u0027infeedCount\u0027])) if v[\u0027infeedCount\u0027] else 1.0\n\t\t\n\t\tshiftInfo[k][\u0027q\u0027] \u003d q\n\t\tshiftInfo[k][\u0027oee\u0027] \u003d shiftInfo[k][\u0027a\u0027] * shiftInfo[k][\u0027p\u0027] * shiftInfo[k][\u0027q\u0027]\n\t\t\n\tshiftInfo \u003d sorted(shiftInfo.items(), key\u003dlambda item: item[1][\u0027shiftStart\u0027], reverse\u003dTrue)\n\t\n\tif len(shiftInfo) - 1 \u003c shiftIndex: return oeeInfo\n\t\n#\treturn shiftInfo[value[\u0027shiftIndex\u0027]][1] if len(shiftInfo) \u003e\u003d value[\u0027shiftIndex\u0027] +1 else []\n\treturn shiftInfo[shiftIndex][1]",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "params.value": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 494,
+      "width": 549
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "domId": "lblAssetName",
+              "name": "lblAssetName"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.displayOptions.fontSize"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oeeInfo.assetName"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginRight": "auto"
+              },
+              "textStyle": {
+                "color": "--kcOnSurface"
+              }
+            },
+            "type": "ia.display.label"
+          },
+          {
+            "meta": {
+              "domId": "lblRange",
+              "name": "lblRange"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.fontSize": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.displayOptions.fontSize"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              },
+              "props.text": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oeeInfo"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif self.view.params.value.shiftIndex \u003d\u003d 0: return \u0027Current Shift\u0027 \n\n\tshiftName \u003d (value[\u0027shiftName\u0027] or \u0027\u0027) if value.has_key(\u0027shiftName\u0027) else \u0027\u0027\n\tshiftStart \u003d system.date.format(value[\u0027shiftStart\u0027], \u0027EEEEE\u0027) if value[\u0027shiftStart\u0027] else \u0027\u0027\n\treturn \"{} {}\".format(shiftName, shiftStart)",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "style": {
+                "marginRight": "auto"
+              },
+              "textStyle": {
+                "color": "--kcOnSurface"
+              }
+            },
+            "type": "ia.display.label"
+          }
+        ],
+        "meta": {
+          "domId": "flxHeader",
+          "name": "flxHeader"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "props": {
+          "alignContent": "center",
+          "alignItems": "center",
+          "justify": "space-between",
+          "style": {
+            "overflow": "visible"
+          },
+          "wrap": "wrap"
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "children": [
+          {
+            "meta": {
+              "domId": "evOEE",
+              "name": "evOEE"
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.params.fontSizeMultiplier": {
+                "binding": {
+                  "config": {
+                    "path": "view.params.value"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif value.has_key(\u0027fontSizeMultiplier\u0027): return value[\u0027fontSizeMultiplier\u0027] * 4\n\t\n\treturn 8",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.params.value": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.oeeInfo"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "code": "\n\treturn value[\u0027oee\u0027] * 100",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.params.value.assetPath": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.asset.eqPath"
+                  },
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "params": {
+                "label": "OEE"
+              },
+              "path": "kanoa/mes/analytics/widgets/assetCard/genericDial",
+              "style": {
+                "overflow": "visible"
+              }
+            },
+            "type": "ia.display.view"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "domId": "lblLabel",
+                      "name": "lblLabel"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "text": "A",
+                      "textStyle": {
+                        "color": "",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "domId": "lblValue",
+                      "name": "lblValue"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.oeeInfo.a"
+                          },
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "percent",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "domId": "flxA",
+                  "name": "flxA"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.oeeColors"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn value[\u0027availability\u0027]",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.style.backgroundColor"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn system.kanoa.utilities.getContrastingColor(value)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "alignContent": "center",
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "borderBottomLeftRadius": "20px",
+                    "borderBottomRightRadius": "20px",
+                    "borderStyle": "solid",
+                    "borderTopLeftRadius": "20px",
+                    "borderTopRightRadius": "20px",
+                    "borderWidth": 1,
+                    "gap": 2,
+                    "minWidth": "65px",
+                    "overflow": "hidden",
+                    "padding": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "domId": "lblLabel-1",
+                      "name": "lblLabel"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "text": "P",
+                      "textStyle": {
+                        "color": "",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "domId": "lblValue-1",
+                      "name": "lblValue"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.oeeInfo.p"
+                          },
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "percent",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "domId": "flxP",
+                  "name": "flxP"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.oeeColors"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn value[\u0027performance\u0027]",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.style.backgroundColor"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn system.kanoa.utilities.getContrastingColor(value)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "borderBottomLeftRadius": "20px",
+                    "borderBottomRightRadius": "20px",
+                    "borderStyle": "solid",
+                    "borderTopLeftRadius": "20px",
+                    "borderTopRightRadius": "20px",
+                    "borderWidth": 1,
+                    "gap": 2,
+                    "minWidth": "65px",
+                    "overflow": "hidden",
+                    "padding": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              },
+              {
+                "children": [
+                  {
+                    "meta": {
+                      "domId": "lblLabel-2",
+                      "name": "lblLabel"
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "props": {
+                      "text": "Q",
+                      "textStyle": {
+                        "color": "",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  },
+                  {
+                    "meta": {
+                      "domId": "lblValue-2",
+                      "name": "lblValue"
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "config": {
+                            "path": "view.custom.oeeInfo.q"
+                          },
+                          "overlayOptOut": true,
+                          "transforms": [
+                            {
+                              "formatType": "numeric",
+                              "formatValue": "percent",
+                              "type": "format"
+                            }
+                          ],
+                          "type": "property"
+                        }
+                      }
+                    },
+                    "props": {
+                      "textStyle": {
+                        "color": "",
+                        "textAlign": "center"
+                      }
+                    },
+                    "type": "ia.display.label"
+                  }
+                ],
+                "meta": {
+                  "domId": "flxQ",
+                  "name": "flxQ"
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.style.backgroundColor": {
+                    "binding": {
+                      "config": {
+                        "path": "view.custom.oeeColors"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn value[\u0027quality\u0027]",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  },
+                  "props.style.color": {
+                    "binding": {
+                      "config": {
+                        "path": "this.props.style.backgroundColor"
+                      },
+                      "overlayOptOut": true,
+                      "transforms": [
+                        {
+                          "code": "\n\treturn system.kanoa.utilities.getContrastingColor(value)",
+                          "type": "script"
+                        }
+                      ],
+                      "type": "property"
+                    }
+                  }
+                },
+                "props": {
+                  "direction": "column",
+                  "justify": "center",
+                  "style": {
+                    "borderBottomLeftRadius": "20px",
+                    "borderBottomRightRadius": "20px",
+                    "borderStyle": "solid",
+                    "borderTopLeftRadius": "20px",
+                    "borderTopRightRadius": "20px",
+                    "borderWidth": 1,
+                    "gap": 2,
+                    "minWidth": "65px",
+                    "overflow": "hidden",
+                    "padding": "5px"
+                  }
+                },
+                "type": "ia.container.flex"
+              }
+            ],
+            "meta": {
+              "domId": "flxAPQ",
+              "name": "flxAPQ"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "props": {
+              "justify": "center",
+              "style": {
+                "gap": 20,
+                "overflow": "hidden"
+              }
+            },
+            "type": "ia.container.flex"
+          }
+        ],
+        "meta": {
+          "domId": "flxGraphs",
+          "name": "flxGraphs"
+        },
+        "position": {
+          "grow": 1
+        },
+        "props": {
+          "direction": "column",
+          "style": {
+            "overflow": "hidden"
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "domId": "lblDebug",
+          "name": "lblDebug"
+        },
+        "position": {
+          "display": false
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.custom.filters"
+              },
+              "overlayOptOut": true,
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "classes": "kanoa/font/default"
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "meta": {
+      "domId": "root",
+      "name": "root"
+    },
+    "propConfig": {
+      "props.style.fontSize": {
+        "binding": {
+          "config": {
+            "path": "view.custom.displayOptions.fontSize"
+          },
+          "overlayOptOut": true,
+          "type": "property"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "classes": "kanoa/containerVariant",
+        "padding": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

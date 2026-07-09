@@ -1,0 +1,19 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json",
+    "kanoa-light-firetruck.css",
+    "variables.css"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "Kanoa MES",
+      "timestamp": "2026-07-09T21:17:21Z"
+    },
+    "uuid": "e8f2343f-ff81-42e5-b2ff-1fe2dd27b45f",
+    "lastModificationSignature": "b3e263e487298df5f12bebfc75041ae0d33c92aeabc628383c46f688014b3ec3"
+  }
+}

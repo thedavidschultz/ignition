@@ -1,0 +1,583 @@
+{
+  "custom": {
+    "userAction": {
+      "canUpdate": true, 
+      "canRead": true, 
+      "canCreate": true, 
+      "canDelete": true
+    }, 
+    "filter": {
+      "dateRange": {
+        "endDate": {
+          "$ts": 1753538400000, 
+          "$": [
+            "ts", 
+            0, 
+            1753723204042
+          ]
+        }, 
+        "selectedRange": "Custom", 
+        "startDate": {
+          "$ts": 1752933600000, 
+          "$": [
+            "ts", 
+            0, 
+            1753723204042
+          ]
+        }
+      }, 
+      "woInfo": {
+        "product": null, 
+        "woId": null, 
+        "scheduleId": null
+      }, 
+      "assetId": null, 
+      "assetPath": "USM1\\SCBA Final Assembly\\G1 Final Assembly\\Backplate Assembly"
+    }, 
+    "security": {
+      "userId": 5, 
+      "userCRUD": {
+        "configureQuality": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "configureAssets": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "scheduleShifts": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "editOperations": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "scheduleOperations": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "configureItems": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "enterQualityCheck": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "configureLots": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "configureSecurity": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "approveQualityCheck": {
+          "enabled": false, 
+          "assets": []
+        }, 
+        "isGatewayAdmin": true, 
+        "operateAssets": {
+          "enabled": false, 
+          "assets": []
+        }
+      }, 
+      "config": {
+        "userSource": "default", 
+        "userSources": "[\"default\"]", 
+        "allowGuest": "1"
+      }
+    }, 
+    "asset": {}, 
+    "itemSelection": {
+      "itemId": null, 
+      "workOrderId": null, 
+      "scheduleId": null
+    }
+  }, 
+  "params": {
+    "value": {
+      "assetPath": "USM1\\SCBA Final Assembly\\G1 Final Assembly\\Backplate Assembly"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 1202, 
+      "height": 696
+    }
+  }, 
+  "root": {
+    "custom": {
+      "mesTagProvider": "[Kanoa]", 
+      "filterStr": ""
+    }, 
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "backgroundColor": "--kcSurface", 
+        "overflow": "hidden", 
+        "gap": "5px"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "gap": "10px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "--kcOnError", 
+                  "path": "material/stop"
+                }
+              }, 
+              "style": {
+                "classes": "kanoa/button/filled", 
+                "height": "48px"
+              }, 
+              "text": "End", 
+              "textStyle": {
+                "classes": "kanoa/font/labelLarge"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "tail": false, 
+                "delay": 0, 
+                "location": "top", 
+                "text": "End"
+              }, 
+              "domId": "btnEnd", 
+              "name": "btnEnd"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "125px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\n\tassetId = self.view.custom.asset.assetInfo.assetId\n\tmodeSourceId = system.kanoa.asset.getModeSourceId('Operator')\n\tmodeCode = system.kanoa.utilities.getFieldValue('modeCode', system.kanoa.asset.getAssetModes({'assetId': assetId, 'modeName': 'Idle'}))\t\n\t\n\tassetOperationInfo = {'assetId': assetId, 'modeCode': modeCode, 'workOrderId': None, 'itemId': None, 'standardRate': None, 'modeSourceId': modeSourceId, 'tStamp': system.date.now(), 'includeChildren': True}\n\tmodeEventId, msg = system.kanoa.event.assetOperationChange(assetOperationInfo, self.view.custom.security.userId)\t\n\tif msg or modeEventId is None: system.perspective.sendMessage('showWarningToast', {'message': 'Could not change asset mode. %s'%msg})\n\telse: system.perspective.sendMessage('showSuccessfulToast', {'message': 'Asset has been set to Idle'})\n\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif not value['action']['canUpdate']: return False\n\tif value['itemSelection']['workOrderId'] is None: return False\n\t\n\ttagInfo = value['tagOEEInfo']\n\tif tagInfo['modeName'] == 'Production' and tagInfo['workOrderName']: return True\n\treturn False\n", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr-struct", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "struct": {
+                      "tagOEEInfo": "{view.custom.asset.tagInfo}", 
+                      "action": "{view.custom.userAction}", 
+                      "itemSelection": "{view.custom.itemSelection}"
+                    }, 
+                    "waitOnAll": true
+                  }
+                }
+              }, 
+              "props.enabled": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif not value['action']['canUpdate']: return False\n\tif value['tagOEEInfo'] is not None and value['tagOEEInfo']['modeName'] not in ('Idle'): return True\n\t\n\treturn False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr-struct", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "struct": {
+                      "tagOEEInfo": "{view.custom.asset.tagInfo}", 
+                      "action": "{view.custom.userAction}"
+                    }, 
+                    "waitOnAll": true
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "--kcOnPrimary", 
+                  "path": "material/not_started"
+                }
+              }, 
+              "style": {
+                "classes": "kanoa/button/filled", 
+                "height": "48px"
+              }, 
+              "text": "Start", 
+              "textStyle": {
+                "classes": "kanoa/font/labelLarge"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "tail": false, 
+                "delay": 0, 
+                "location": "top", 
+                "text": "Start"
+              }, 
+              "domId": "btnStart", 
+              "name": "btnStart"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "125px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\t#The user selection is stored in session custom properties\n\n\titemSelection = self.view.custom.itemSelection\n\tassetId = self.view.custom.asset.assetInfo.assetId\n\tif itemSelection['workOrderId'] is None: return\n\tworkOrderId = itemSelection['workOrderId']\n\titemId = itemSelection['itemId']\n\tmodeName = 'Production'\n\tsystem.tag.writeBlocking([system.kanoa.asset.getAssetTagPath({'assetId':assetId}) + '/Line/OEE/scheduleBlockId'], [None]) #Clear the scheduleBlockId. We should put this in the assetOperationChange, but for now, we'll call it from here\n\n\tmodeSourceId = system.kanoa.asset.getModeSourceId('Operator')\n\tmodeCode = system.kanoa.utilities.getFieldValue('modeCode', system.kanoa.asset.getAssetModes({'assetId': assetId, 'modeName': modeName}))\t\n\t\n\tstandardRate = None\n\tassetOperationInfo = {'assetId': assetId, 'modeCode': modeCode, 'workOrderId': workOrderId, 'itemId': itemId, 'standardRate': standardRate, 'modeSourceId': modeSourceId, 'tStamp': system.date.now(), 'includeChildren': True}\n\tmodeEventId, msg = system.kanoa.event.assetOperationChange(assetOperationInfo, self.view.custom.security.userId)\n\tif msg: system.perspective.sendMessage('showWarningToast', {'message': 'Could not change asset mode. %s'%msg})\n\telse: system.perspective.sendMessage('showSuccessfulToast', {'message': 'Asset has been set to %s'%modeName})\n\t\t\n\tsystem.tag.writeBlocking([system.kanoa.asset.getAssetTagPath({'assetId':assetId}) + '/Line/OEE/refresh'], [True]) #Let's refresh thie assetTagInfo\n\t\t\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif not value['action']['canUpdate']: return False\n\tif value['itemSelection']['workOrderId'] is None: return False\n\t\n\tworkOrderName = system.kanoa.utilities.getFieldValue('workOrderName', system.kanoa.order.getProductionOrders({'workOrderId': value['itemSelection']['workOrderId']}))\n\n\tif workOrderName is None: return False\n\tif value['tagOEEInfo']['workOrderName'] != workOrderName: return True\n\t\n\treturn False\n", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr-struct", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "struct": {
+                      "tagOEEInfo": "{view.custom.asset.tagInfo}", 
+                      "action": "{view.custom.userAction}", 
+                      "itemSelection": "{view.custom.itemSelection}"
+                    }, 
+                    "waitOnAll": true
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxActions", 
+          "name": "flxActions"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "gap": 5
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "textAlign": "right", 
+                "classes": "kanoa/font/default"
+              }, 
+              "text": "Filter..."
+            }, 
+            "meta": {
+              "domId": "lblTxtFilter", 
+              "name": "lblTxtFilter"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }, 
+          {
+            "type": "ia.input.text-field", 
+            "props": {
+              "style": {
+                "classes": "kanoa/border kanoa/font/default"
+              }, 
+              "deferUpdates": false
+            }, 
+            "meta": {
+              "domId": "txtFilter", 
+              "name": "txtFilter"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "150px"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "/root.custom.filterStr"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxCntFilter", 
+          "name": "flxCntFilter"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "basis": "30px"
+        }
+      }, 
+      {
+        "type": "ia.display.flex-repeater", 
+        "props": {
+          "alignItems": "flex-start", 
+          "alignContent": "flex-start", 
+          "path": "kanoa/mes/asset/runControl/woInfo", 
+          "style": {
+            "gap": "5px"
+          }, 
+          "wrap": "wrap"
+        }, 
+        "meta": {
+          "domId": "flxRptOrders", 
+          "name": "flxRptOrders"
+        }, 
+        "position": {
+          "grow": 1
+        }, 
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\n\tdata = value['data']\n\t\t\n\tinstances = []\n\tfilterStr = value['filterStr'].lower()\n\tif filterStr != '':\n\t\tfor row in data:\n\t\t\tif filterStr in row['workOrderName'].lower() or filterStr in row['itemName'].lower():\n\t\t\t\tinstances.append({'value': row})\n\t\t\n\t\treturn instances\n\telse:\n\t\treturn [{'value': value} for value in data]\n", 
+                  "type": "script"
+                }
+              ], 
+              "type": "expr-struct", 
+              "overlayOptOut": true, 
+              "config": {
+                "struct": {
+                  "data": "{parent.custom.data}", 
+                  "filterStr": "{parent.custom.filterStr}"
+                }, 
+                "waitOnAll": true
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "propConfig": {
+      "custom.woData": {
+        "binding": {
+          "type": "tag", 
+          "config": {
+            "references": {
+              "1": "{this.custom.mesTagProvider}"
+            }, 
+            "fallbackDelay": 2.5, 
+            "mode": "indirect", 
+            "tagPath": "{1}kanoa/timers/getActiveOrdersTimer/data"
+          }
+        }
+      }, 
+      "custom.data": {
+        "binding": {
+          "transforms": [
+            {
+              "code": "\n\tif len(value['assetItems']) == 0: return []\n\n\tworkOrders = system.dataset.toPyDataSet(value['activeWorkOrders'])\n\tdeleteRows = [i for i, workOrder in enumerate(workOrders) if workOrder['itemId'] not in value['assetItems']]\n\tdata = system.dataset.deleteRows(value['activeWorkOrders'], deleteRows)\n\tdata = system.dataset.sort(data, 'workOrderName')\n\treturn system.kanoa.utilities.convertDatasetToJSON(data)", 
+              "type": "script"
+            }
+          ], 
+          "type": "expr-struct", 
+          "overlayOptOut": true, 
+          "config": {
+            "struct": {
+              "activeWorkOrders": "{this.custom.woData}", 
+              "assetItems": "{this.custom.assetItems}"
+            }, 
+            "waitOnAll": true
+          }
+        }
+      }, 
+      "custom.assetItems": {
+        "binding": {
+          "transforms": [
+            {
+              "code": "\t\n\titemSourceId = system.kanoa.utilities.getFieldValue('itemSourceId', system.kanoa.item.getItemSource({'itemSourceName': 'Output'}))\n\titems = system.dataset.toPyDataSet(system.kanoa.item.getAssetItems({'itemSourceId': itemSourceId, 'assetPath': value or '-1', 'enabled':True}))\n\treturn [item['itemId'] for item in items]", 
+              "type": "script"
+            }
+          ], 
+          "type": "property", 
+          "overlayOptOut": true, 
+          "config": {
+            "path": "view.custom.filter.assetPath"
+          }
+        }
+      }
+    }
+  }, 
+  "events": {
+    "system": {
+      "onStartup": {
+        "type": "script", 
+        "scope": "G", 
+        "config": {
+          "script": "\t\n\tself.getChild(\"root\").custom.mesTagProvider = system.kanoa.config.getTagProvider('MES')\t"
+        }
+      }
+    }
+  }, 
+  "propConfig": {
+    "custom.security": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tsecConfig = system.kanoa.utilities.convertDatasetToDict(system.kanoa.security.getConfig({}), 'configName', 'configValue')\n\tuserId = system.kanoa.security.getIDPUserId(value['user'])\t\n\tuserCRUD = system.kanoa.security.getUserAssetCRUD(userId)\n\t\n\treturn {\"userId\": userId, \"config\": secConfig, \"userCRUD\": userCRUD}", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "user": "{session.props.auth.user}"
+          }, 
+          "waitOnAll": false
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.filter": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\treturn system.kanoa.dashboard.getWidgetFilters(value['page'], value['viewParams'], value['sessionCustomProps'], self.session.props.device.timezone.id)", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "sessionCustomProps": "{session.custom.kanoa}", 
+            "page": "{page.props.pageId}", 
+            "viewParams": "{view.params.value}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.userAction": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\tassetPath = value['assetPath']\n\tsecurity = value['security']\n\tcanCreate = False\n\tcanEdit = False\n\tif security['userCRUD'] is not None and security['userId'] is not None:\n\t\tif security['userCRUD']['isGatewayAdmin'] or security['userCRUD']['operateAssets']['enabled']: \n\t\t\tcanCreate = True\n\t\t\tcanEdit = True if assetPath else False\n\t\t\n\t\telif assetPath and security['userCRUD']['operateAssets']['enabled']:\n\t\t\tif len(security['userCRUD']['operateAssets']['assets']) == 0:\n\t\t\t\tcanEdit = True\n\t\t\telse:\n\t\t\t\tfor path in security['userCRUD']['operateAssets']['assets']:\n\t\t\t\t\tif path in assetPath: \n\t\t\t\t\t\tcanEdit = True\n\t\t\t\t\t\tbreak\n\t\n\treturn {\"canCreate\": canCreate, \"canDelete\": canEdit, \"canRead\": True, \"canUpdate\": canEdit}", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "security": "{view.custom.security}", 
+            "assetPath": "{view.custom.filter.assetPath}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.asset.tagInfo": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn value.OEE", 
+            "type": "script"
+          }
+        ], 
+        "type": "tag", 
+        "overlayOptOut": true, 
+        "config": {
+          "references": {
+            "1": "{view.custom.asset.assetInfo.tagPath}"
+          }, 
+          "fallbackDelay": 2.5, 
+          "mode": "indirect", 
+          "tagPath": "{1}/Line"
+        }
+      }
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.asset": {
+      "persistent": true
+    }, 
+    "custom.itemSelection": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn system.kanoa.utilities.getPageObject(self, 'itemSelection')", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "session.custom.kanoa"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.asset.assetInfo": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\treturn system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.asset.getAssets({'assetPath': value}), 0)", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.filter.assetPath"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,435 @@
+{
+  "custom": {
+    "uuid": null, 
+    "breakpoint": {
+      "request": "", 
+      "active": {
+        "rowGap": 5, 
+        "description": null, 
+        "columnCount": 20, 
+        "columnGap": 5, 
+        "size": null, 
+        "name": "Desktop", 
+        "columnWidth": null, 
+        "id": "4d352d6e-d69a-41f3-b32e-b8b65238b5a3", 
+        "rowCount": 20, 
+        "state": "new", 
+        "rowHeight": null, 
+        "upperEnd": 99999
+      }
+    }, 
+    "grid": {
+      "dimentions": {}, 
+      "storedItems": [], 
+      "widgetItems": []
+    }, 
+    "dashboard": {
+      "folder": null, 
+      "selected": {
+        "private": false, 
+        "siteCode": "", 
+        "roles": [], 
+        "icon": "", 
+        "description": "", 
+        "showOnMobile": true, 
+        "positions": {}, 
+        "type": "dashboard", 
+        "widgets": {}, 
+        "enabled": true, 
+        "folderId": null, 
+        "divisionCode": "", 
+        "path": "", 
+        "sortOrder": null, 
+        "iconColor": "", 
+        "name": "", 
+        "breakpoints": {
+          "b6251665b-0a0c-4223-a9bd-2e53490bf515": {
+            "rowGap": 5, 
+            "description": null, 
+            "columnCount": 10, 
+            "columnGap": 5, 
+            "size": 960, 
+            "name": "Tablet", 
+            "columnWidth": null, 
+            "id": "6251665b-0a0c-4223-a9bd-2e53490bf515", 
+            "rowCount": 25, 
+            "state": "new", 
+            "rowHeight": 50, 
+            "upperEnd": 960
+          }, 
+          "b4d352d6e-d69a-41f3-b32e-b8b65238b5a3": {
+            "rowGap": 5, 
+            "description": null, 
+            "columnCount": 20, 
+            "columnGap": 5, 
+            "size": null, 
+            "name": "Desktop", 
+            "columnWidth": null, 
+            "id": "4d352d6e-d69a-41f3-b32e-b8b65238b5a3", 
+            "rowCount": 20, 
+            "state": "new", 
+            "rowHeight": null, 
+            "upperEnd": 99999
+          }, 
+          "b64e278b6-1f97-4593-8104-fb3928ea42f6": {
+            "rowGap": 5, 
+            "description": null, 
+            "columnCount": 5, 
+            "columnGap": 5, 
+            "size": 590, 
+            "name": "Mobile", 
+            "columnWidth": null, 
+            "id": "64e278b6-1f97-4593-8104-fb3928ea42f6", 
+            "rowCount": 30, 
+            "state": "new", 
+            "rowHeight": 50, 
+            "upperEnd": 590
+          }
+        }, 
+        "id": "804d3cf2-8614-4c6e-9b1b-0b6c13f15b50", 
+        "state": "new", 
+        "locked": false, 
+        "username": ""
+      }
+    }, 
+    "getData": false, 
+    "onMobile": null
+  }, 
+  "params": {
+    "dashboardName": "", 
+    "selectId": ""
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 1800
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "border": "inset", 
+            "backgroundColor": "#444", 
+            "width": "100%", 
+            "height": "100%"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.dashboard", 
+            "props": {
+              "pack": false, 
+              "editingToggle": false, 
+              "stretch": {}
+            }, 
+            "meta": {
+              "domId": "dashboard", 
+              "name": "dashboard"
+            }, 
+            "position": {
+              "shrink": 0
+            }, 
+            "propConfig": {
+              "props.widgets": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.grid.widgetItems"
+                  }
+                }
+              }, 
+              "props.style.backgroundColor": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn '#000000' if 'dark' in value else ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "config": {
+                    "path": "session.props.theme"
+                  }
+                }
+              }, 
+              "props.style.width": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.grid.dimentions.width"
+                  }
+                }
+              }, 
+              "props.stretch.rowCount": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.breakpoint.active.rowCount"
+                  }
+                }
+              }, 
+              "props.style.height": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.grid.dimentions.height"
+                  }
+                }
+              }, 
+              "props.stretch.columnCount": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.breakpoint.active.columnCount"
+                  }
+                }
+              }, 
+              "props.stretch.columnGutterSize": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.breakpoint.active.columnGap"
+                  }
+                }
+              }, 
+              "props.stretch.rowGutterSize": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.breakpoint.active.rowGap"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxGrid", 
+          "name": "flxGrid"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\t\n\tif payload['callerId'] != self.view.custom.uuid: return\n\t\n\tselectId = gp.global.scripts.makeInt(payload['selectId'])\n\t\n\tif self.view.params.selectId != selectId:\n\t\tself.view.params.selectId = selectId\n\telse:\n\t\tself.view.custom.getData = True\n\t", 
+          "messageType": "dashboardViewer.selectId", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [
+        {
+          "params": [], 
+          "script": "\t\n\tself.view.custom.grid.widgetItems = []\n\t\n\tselectId = self.view.params.selectId\n\tdashboard = self.setDashboard(selectId)\n\t", 
+          "name": "getData"
+        }, 
+        {
+          "params": [
+            "id='undefined'"
+          ], 
+          "script": "\t\n\tid = gp.global.scripts.makeInt(id if id != 'undefined' else self.view.params.selectId)\n\t\n\tres = gp.dashboards.db.getDashboard(id)\n\t\n\tif res['passed']:\n\t\tdashboard = res['data']\n\telse:\n\t\tdashboard = gp.dashboards.db.getEmptyDashboard()\n\t\n\tdashboard['name'] = dashboard['name'] or ''\n\tdashboard['description'] = dashboard['description'] or ''\n\tdashboard['icon'] = dashboard['icon'] or ''\n\tdashboard['iconColor'] = dashboard['iconColor'] or ''\n\tdashboard['username'] = dashboard['username'] or ''\n\tdashboard['roles'] = dashboard['roles'] or []\n\tdashboard['divisionCode'] = dashboard['divisionCode'] or ''\n\tdashboard['siteCode'] = dashboard['siteCode'] or ''\n\t\n\treturn dashboard \n\t", 
+          "name": "getDashboard"
+        }, 
+        {
+          "params": [
+            "id='undefined'"
+          ], 
+          "script": "\t\n\t### SET DASHBOARDS ###\n\tdashboard = self.getDashboard(id)\n\t\n\tself.view.custom.dashboard.selected = dashboard\n\t\n\t### SET FOLDER ###\n\tfolder = self.setFolder(dashboard)\n\t\n\t### SET ACTIVE BREAKPOINT ###\n\tbreakpoints = dashboard['breakpoints']\n\tactiveBreakpoint = self.setActiveBreakpoint(breakpoints, '')\n\t\n\treturn dashboard\n\t", 
+          "name": "setDashboard"
+        }, 
+        {
+          "params": [
+            "breakpoints='undefined'", 
+            "request='undefined'"
+          ], 
+          "script": "\t\n\tbreakpointDict = breakpoints if breakpoints != 'undefined' else self.view.custom.dashboard.selected.breakpoints\n\tbreakpointList = [bp for bp in (breakpointDict and breakpointDict.values() or []) if not bp['state'] in ['deleted', 'dropped']]\n\tbreakpoints = sorted(breakpointList, key=lambda bp: bp['upperEnd'])\n\t\n\trequested = (request or None) if request != 'undefined' else self.view.custom.breakpoint.request\n\t\n\tmaxBreakpoint = breakpoints[-1] if breakpoints else None\n\t\n\tif requested is None:\n\t\t# If there is no breakpoint requested, then get the breakpoint with the larges size.\n\t\treturn maxBreakpoint\n\telif str(requested).isdigit():\n\t\tsize = int(requested)\n\t\tfor breakpoint in breakpoints:\n\t\t\tif size <= breakpoint['upperEnd']:\n\t\t\t\treturn breakpoint\n\t\t\t\t\n\t\treturn maxBreakpoint\n\telse:\n\t\trequest = str(requested).lower()\n\t\t\n\t\tfor breakpoint in breakpoints:\n\t\t\tname = str(breakpoint['name']).lower()\n\t\t\t\n\t\t\tif name == request:\n\t\t\t\treturn breakpoint\n\t\t\n\t\treturn maxBreakpoint\n\t", 
+          "name": "getActiveBreakpoint"
+        }, 
+        {
+          "params": [
+            "breakpoints='undefined'", 
+            "request='undefined'"
+          ], 
+          "script": "\t\n\tif request != 'undefined':\n\t\tself.view.custom.breakpoint.request = request\n\t\n\tactiveBreakpoint = self.getActiveBreakpoint(breakpoints, request)\n\tself.view.custom.breakpoint.active = activeBreakpoint\n\t\n\t### SET WIDGET ITEMS ###\n\twidgetItems = self.setWidgetItems(breakpoint=activeBreakpoint)\n\t\n\treturn activeBreakpoint\n\t", 
+          "name": "setActiveBreakpoint"
+        }, 
+        {
+          "params": [
+            "dashboard='undefined'", 
+            "breakpoint='undefined'"
+          ], 
+          "script": "\t\n\tdashboard = dashboard if dashboard != 'undefined' else self.view.custom.dashboard.selected\n\twidgets = dashboard['widgets']\n\tpositions = dashboard['positions']\n\tbreakpoint = breakpoint if breakpoint != 'undefined' else self.getActiveBreakpoint(dashboard['breakpoints'])\n\tcallerId = self.view.custom.uuid\n\twraperPath = 'kanoa/core/dbp/marquee/embedded/wrapper'\n\t\n\twidgetItems = gp.dashboardWidgets.db.buildWidgetItems(widgets, positions, breakpoint, callerId, wraperPath=wraperPath)\n\t\n\treturn widgetItems\n\t", 
+          "name": "getWidgetItems"
+        }, 
+        {
+          "params": [
+            "dashboard='undefined'", 
+            "breakpoint='undefined'"
+          ], 
+          "script": "\t\n\twidgetItems = self.getWidgetItems(dashboard, breakpoint)\n\t\n\tself.view.custom.grid.storedItems = widgetItems\n\tself.view.custom.grid.widgetItems = widgetItems\n\t\n\treturn widgetItems\n\t", 
+          "name": "setWidgetItems"
+        }, 
+        {
+          "params": [
+            "dashboard='undefined'"
+          ], 
+          "script": "\t\n\tdashboard = dashboard if dashboard != 'undefined' else self.getDashboard()\n\t\n\tfolderId = dashboard['folderId']\n\tres = gp.folders.db.getFolder(folderId)\n\t\n\tfolder = res['data']\n\t\n\treturn folder\n\t", 
+          "name": "getFolder"
+        }, 
+        {
+          "params": [
+            "dashboard='undefined'"
+          ], 
+          "script": "\t\n\tdashboard = dashboard if dashboard != 'undefined' else self.getDashboard()\n\tfolder = self.getFolder(dashboard)\n\t\n\tself.view.custom.dashboard.folder = folder\n\t", 
+          "name": "setFolder"
+        }
+      ], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "custom.dashboard": {
+      "persistent": true
+    }, 
+    "custom.uuid": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\treturn str(system.kanoa.utilities.numbers.getUUID())", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr", 
+        "config": {
+          "expression": "0"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.grid.dimentions.height": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tsize = value.rowHeight\n\tgap = value.rowGap\n\tcount = value.rowCount\n\t\n\treturn '100%' if not size else ((size * count) + (gap * (count + 1)))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.breakpoint.active"
+        }
+      }
+    }, 
+    "custom.getData": {
+      "onChange": {
+        "enabled": null, 
+        "script": "\t\n\tif not currentValue.value: return\n\tself.custom.getData = False\n\t\n\tself.getChild(\"root\").getData()\n\t"
+      }, 
+      "persistent": true
+    }, 
+    "custom.grid.dimentions.width": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tsize = value.columnWidth\n\tgap = value.columnGap\n\tcount = value.columnCount\n\t\n\treturn '100%' if not size else ((size * count) + (gap * (count + 1)))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.breakpoint.active"
+        }
+      }
+    }, 
+    "params.dashboardName": {
+      "binding": {
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.custom.dashboard.selected.name"
+        }
+      }, 
+      "paramDirection": "output", 
+      "persistent": true
+    }, 
+    "custom.onMobile": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\tpages = value\n\tpageId = self.page.props.pageId\n\tpath = 'onMobile'\n\t\n\tonMobile = kanoa.page.getValue(pages, pageId, path)\n\t\n\treturn onMobile", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "session.custom.pages"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.breakpoint.size": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\twidth = value.primaryWidth or value.defaultWidth\n\t\n\treturn width", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "primaryWidth": "{page.props.dimensions.primaryView.width}", 
+            "defaultWidth": "{view.props.defaultSize.width}"
+          }, 
+          "waitOnAll": true
+        }
+      }
+    }, 
+    "custom.grid": {
+      "persistent": true
+    }, 
+    "custom.breakpoint": {
+      "persistent": true
+    }, 
+    "params.selectId": {
+      "onChange": {
+        "enabled": null, 
+        "script": "\t\n\tpValue = gp.global.scripts.makeInt(previousValue and previousValue.value)\n\tcValue = gp.global.scripts.makeInt(currentValue and currentValue.value)\n\tif pValue == cValue: return\n\t\n\tself.getChild(\"root\").getData()\n\t"
+      }, 
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

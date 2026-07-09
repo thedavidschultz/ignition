@@ -1,0 +1,207 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": {
+      "itemStateId": 139, 
+      "itemClassName": "FL5000", 
+      "counterId": 42, 
+      "counterName": "infeed", 
+      "itemId": 403, 
+      "itemClassPath": "FL5000", 
+      "itemPath": "FL5000\\10225125", 
+      "assetId": 45, 
+      "assetPath": "MSA\\NNA\\USM4\\Fixed Gas\\Flame Detector", 
+      "counterTypeName": "infeed", 
+      "workOrderName": null, 
+      "itemStatePath": "Flame Detector\\Board Stack\\New Item", 
+      "workOrderId": null, 
+      "value": 8
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 356, 
+      "height": 24
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "justify": "space-between", 
+      "style": {
+        "padding": "2px", 
+        "overflow": "hidden"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "overflow": "hidden", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblItemName", 
+              "name": "lblItemName"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "80px"
+            }, 
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn '--kcRed-60' if value == 'waste' else ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.counterName"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\titemName = value['itemPath'].split(\"\\\\\")[-1]\n\treturn \"{}\".format(itemName)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblItemState", 
+              "name": "lblItemState"
+            }, 
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn '--kcRed-60' if value == 'waste' else ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.counterName"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\titemStateName = value['itemStatePath'].split(\"\\\\\")[-1] if value['itemStatePath'] else None\n\tlabel = \"%s - %s\"%(value['counterName'].title(), itemStateName) if itemStateName else \"%s\"%(value['counterName'].title())\n\treturn \"{}\".format(label)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "textAlign": "right"
+              }
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true
+              }, 
+              "domId": "lblItemQty", 
+              "name": "lblItemQty"
+            }, 
+            "position": {
+              "grow": 1, 
+              "shrink": 0
+            }, 
+            "propConfig": {
+              "props.style.color": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn '--kcRed-60' if value == 'waste' else ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value.counterName"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tunits = 'units' if value['value'] != 1 else 'unit '\n\titemName = value['itemPath'].split(\"\\\\\")[-1]\n\t\n\treturn \"{:,} {}\".format(value['value'], units)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxRow1", 
+          "name": "flxRow1"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "custom": {
+    "timerTag": {
+      "debug": true, 
+      "data": null, 
+      "updateTrigger": {
+        "$ts": 1753723847887, 
+        "$": [
+          "ts", 
+          192, 
+          1753723847887
+        ]
+      }, 
+      "description": "Checks the schedule to see if the asset mode should be changed", 
+      "update": false, 
+      "intervalSecs": 60, 
+      "error": "", 
+      "lastUpdated": {
+        "$ts": 1753723848626, 
+        "$": [
+          "ts", 
+          192, 
+          1753723848626
+        ]
+      }, 
+      "enable": true
+    }
+  }, 
+  "params": {
+    "value": {
+      "canEdit": false, 
+      "tagPath": "[Kanoa]kanoa/timers/checkAssetScheduleTimer"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 1113, 
+      "height": 60
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "margin": "5px", 
+        "classes": "kanoa/container kanoa/font/default", 
+        "minHeight": "60px", 
+        "gap": "5px"
+      }, 
+      "wrap": "wrap"
+    }, 
+    "children": [
+      {
+        "type": "ia.display.label", 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom", 
+            "text": "Timer"
+          }, 
+          "domId": "lblTagName", 
+          "name": "lblTagName"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "basis": "160px"
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn value.split('/')[-1]", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.tagPath"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.display.label", 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom", 
+            "text": "Update frequency"
+          }, 
+          "domId": "lblTimer", 
+          "name": "lblTimer"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "basis": "180px"
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\t\n\treturn 'Updates every %s seconds'%value", 
+                  "type": "script"
+                }
+              ], 
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/intervalSecs"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.display.label", 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom-left", 
+            "text": "Timer description"
+          }, 
+          "domId": "lblDescription", 
+          "name": "lblDescription"
+        }, 
+        "position": {
+          "grow": 1
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn value or ''", 
+                  "type": "script"
+                }
+              ], 
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/description"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.display.label", 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom", 
+            "text": "Shows wthe last time this timer function ran"
+          }, 
+          "domId": "lblLastUpdated", 
+          "name": "lblLastUpdated"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\toffset = self.session.props.device.timezone.utcOffset\n\treturn 'Last update %s'%system.date.format(system.date.addHours(value, offset), 'YY-MM-dd HH:mm:ss')", 
+                  "type": "script"
+                }
+              ], 
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/lastUpdated"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.display.label", 
+        "meta": {
+          "tooltip": {
+            "location": "bottom"
+          }, 
+          "domId": "lblLastError", 
+          "name": "lblLastError"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn value or ''", 
+                  "type": "script"
+                }
+              ], 
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/error"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.input.checkbox", 
+        "props": {
+          "text": "Enabled"
+        }, 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom", 
+            "text": "Timer can be disabled or enabled"
+          }, 
+          "domId": "chkEnabled", 
+          "name": "chkEnabled"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "bidirectional": true, 
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/enable"
+              }
+            }
+          }, 
+          "props.enabled": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.canEdit"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.input.checkbox", 
+        "props": {
+          "text": "Update"
+        }, 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom-left", 
+            "text": "When true, an update is taking place"
+          }, 
+          "domId": "chkUpdate", 
+          "name": "chkUpdate"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "bidirectional": true, 
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/update"
+              }
+            }
+          }, 
+          "props.enabled": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.canEdit"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.input.checkbox", 
+        "props": {
+          "text": "Debug"
+        }, 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom-left", 
+            "text": "When true, an update is taking place"
+          }, 
+          "domId": "chkDebug", 
+          "name": "chkDebug"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.selected": {
+            "binding": {
+              "type": "tag", 
+              "overlayOptOut": true, 
+              "config": {
+                "bidirectional": true, 
+                "references": {
+                  "tagPath": "{view.params.value.tagPath}"
+                }, 
+                "fallbackDelay": 2.5, 
+                "mode": "indirect", 
+                "tagPath": "{tagPath}/debug"
+              }
+            }
+          }, 
+          "props.enabled": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.canEdit"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.timerTag": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\ttags = system.tag.browse(value)\n\ttagValues = {}\n\tfor tag in tags:\n\t\ttagValues[str(tag['fullPath']).split('/')[-1]] = tag['value']\n\t\t\n\treturn tagValues", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.params.value.tagPath"
+        }
+      }, 
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "155e895cc18be50ab414ed102a79737b",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "mes_logo.png"
+  ],
+  "attributes": {
+    "width": 910,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-07-09T21:17:22Z"
+    },
+    "size": 0,
+    "lastModificationSignature": "24d74ccc8fdb825152d67f0b6d73841f9f28184a67c4462598f6b34eda9d32aa",
+    "height": 131
+  }
+}

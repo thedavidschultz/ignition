@@ -1,0 +1,216 @@
+{
+  "custom": {
+    "marquee": {
+      "msg": null, 
+      "marqueeDisplayId": 25, 
+      "marqueeId": 12
+    }, 
+    "lastUpdated": {
+      "$ts": 1737557901820, 
+      "$": [
+        "ts", 
+        192, 
+        1751050135716
+      ]
+    }
+  }, 
+  "params": {
+    "siteCode": "Texas", 
+    "screenName": "TV3", 
+    "location": "Break Room"
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 1500
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "backgroundColor": "--kcSurface00", 
+        "overflow": "hidden"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "padding": "5px", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblSiteCode", 
+              "name": "lblSiteCode"
+            }, 
+            "position": {
+              "shrink": 0
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn 'siteCode: %s'%value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.siteCode"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblLocation", 
+              "name": "lblLocation"
+            }, 
+            "position": {
+              "shrink": 0
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn 'location: %s'%value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.location"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblScreenName", 
+              "name": "lblScreenName"
+            }, 
+            "position": {
+              "shrink": 0
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn 'screenName: %s'%value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.screenName"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxDebug", 
+          "name": "flxDebug"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "display": false
+        }
+      }, 
+      {
+        "type": "ia.display.view", 
+        "props": {
+          "path": "kanoa/core/dbp/marquee/marqueeDisplay"
+        }, 
+        "meta": {
+          "domId": "marqueeDisplay", 
+          "name": "marqueeDisplay"
+        }, 
+        "position": {
+          "grow": 1
+        }, 
+        "propConfig": {
+          "props.params.marqueeId": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "bidirectional": true, 
+                "path": "view.custom.marquee.marqueeId"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "custom.marquee": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tif value['siteCode'] is None or value['location'] is None or value['screenName'] is None:\n\t\treturn {'marqueeDisplayId': None, 'marqueeId': None, 'msg': None}\n\n\tparamsDict = {'siteCode': value['siteCode'], 'location': value['location'], 'screenName': value['screenName'], 'enabled': True}\n\tmarqueeDisplayInfo = system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.dashboard.getMarqueeDisplay(paramsDict),0)\n\t\n\tif marqueeDisplayInfo['marqueeDisplayId'] is None:\n\t\tuserId = system.kanoa.security.getIDPUserId(self.session.props.auth.user)\n\t\tmarqueeDisplayInfo = paramsDict\n\t\tmarqueeDisplayInfo['marqueeId'] = None\n\t\tmarqueeDisplayInfo['enabled'] = True\n\t\tmarqueeDisplayInfo['theme'] = self.session.props.theme\n\t\tmarqueeDisplayId, msg = system.kanoa.dashboard.addMarqueeDisplay(marqueeDisplayInfo, userId)\n\t\tmarqueeId = None\n\telse: \n\t\tmarqueeId = marqueeDisplayInfo['marqueeId']\n\t\tmarqueeDisplayId = marqueeDisplayInfo['marqueeDisplayId']\n\t\tif marqueeDisplayInfo['theme']: self.session.props.theme = marqueeDisplayInfo['theme']\n\t\tmsg = None\n\t\n\treturn {'marqueeDisplayId': marqueeDisplayId, 'marqueeId': marqueeId, 'msg': msg}", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "siteCode": "{view.params.siteCode}", 
+            "screenName": "{view.params.screenName}", 
+            "lastUpdated": "{view.custom.lastUpdated}", 
+            "location": "{view.params.location}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "params.siteCode": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "params.location": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.lastUpdated": {
+      "binding": {
+        "type": "tag", 
+        "overlayOptOut": true, 
+        "config": {
+          "fallbackDelay": 2.5, 
+          "mode": "direct", 
+          "tagPath": "[Kanoa]kanoa/marquees/lastUpdated"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "params.screenName": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,1409 @@
+{
+  "custom": {
+    "assetInfo": {
+      "assetGroupColor": null,
+      "assetGroupId": 1,
+      "assetGroupName": "Packaging",
+      "assetId": 2531,
+      "assetName": "Box Line 2",
+      "assetPath": "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 2",
+      "assetTypeId": 5,
+      "assetTypeName": "line",
+      "assetTypePath": "enterprise\\site\\area\\line",
+      "displayPath": "Kanoa Box Co \u003e Box Plant \u003e Packaging \u003e Box Line 2",
+      "enabled": true,
+      "iconPath": "kanoa/line",
+      "oeeEnabled": true,
+      "parentId": 1709,
+      "path": "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 2",
+      "processTypeId": 2,
+      "processTypeName": "discrete",
+      "sortOrder": 1,
+      "tagPath": "[Kanoa]/Kanoa Box Co/Box Plant/Packaging/Box Line 2",
+      "timeZone": "Eastern Standard Time"
+    },
+    "info": {
+      "showBar": false,
+      "text": "",
+      "type": "INFO"
+    },
+    "mesTagProvider": "[Kanoa]",
+    "scheduleData": null,
+    "scheduleEvents": {
+      "$": [
+        "ds",
+        192,
+        1767914482642
+      ],
+      "$columns": [
+        {
+          "data": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            null
+          ],
+          "name": "notes",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "In Progress"
+          ],
+          "name": "workOrderStatusName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1000
+          ],
+          "name": "scheduledQty",
+          "type": "Double"
+        },
+        {
+          "data": [
+            1767690000000,
+            1767776400000,
+            1767862800000,
+            1767949200000,
+            1767758400000,
+            1767844800000,
+            1767931200000,
+            1768017600000,
+            1767769200000,
+            1767855600000,
+            1767942000000,
+            1768028400000,
+            1767704400000,
+            1767790800000,
+            1767877200000,
+            1768136400000,
+            1767722400000,
+            1767808800000,
+            1767895200000,
+            1768154400000,
+            1767985800000
+          ],
+          "name": "endDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            6,
+            6,
+            6,
+            6,
+            5,
+            5,
+            5,
+            5,
+            1,
+            1,
+            1,
+            1,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
+          ],
+          "name": "modeTypeId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "7e30e34d-2143-42d7-8456-cc9d885113c1",
+            "46b8eac4-88e5-4ee6-bff1-add20e9f77e1",
+            "68489177-488c-456c-801a-63f1cf283b11",
+            "7bc5ad08-9aa8-4c5e-9816-0aff7e3971c0",
+            "f23bba98-0757-4fc3-90f4-ae8d2fd610e5",
+            "5a6baf88-a453-406c-8cf5-7835c8a8de5b",
+            "5eaf571e-fa21-4e9a-b637-2381fad60e07",
+            "66a12746-1585-4866-9ebd-458d386553d5",
+            "00270afa-5a9f-499f-a3ce-a25bbcd494c8",
+            "fd5c1139-8312-4553-966e-eaa565d47897",
+            "dffd74ee-8268-458b-85ee-17eca4614326",
+            "f5ba0e81-1b40-47c4-b4f0-a30a9dc5319e",
+            "210a6f06-60bf-4a72-99f9-cee3c19e08ca",
+            "a3ae4e7a-0993-4328-8ae1-50f938f6c419",
+            "59098272-9d83-4ff0-87e9-b8de12083973",
+            "439a1691-082f-4042-8eb3-e88f49b81f51",
+            "40055b38-afb3-4584-b41b-683efbb1ce65",
+            "90099941-32d1-48ac-80a0-7893737aabd2",
+            "fb85239e-ac58-485c-b49d-0146e7665a02",
+            "fd4646b4-a28a-479a-9133-62823adca506",
+            "49491499-e739-428c-b923-b88bb63511ed"
+          ],
+          "name": "uuid",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1763776600417,
+            1763776600417,
+            1763776600417,
+            1763776600417,
+            null
+          ],
+          "name": "changedDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Blue Boxes"
+          ],
+          "name": "itemName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5,
+            5,
+            5,
+            5,
+            null
+          ],
+          "name": "changedBy",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Boxes that are blue"
+          ],
+          "name": "itemDescription",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "units"
+          ],
+          "name": "outfeedUnits",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Setup",
+            "Setup",
+            "Setup",
+            "Setup",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Cleaning",
+            "Cleaning",
+            "Cleaning",
+            "Cleaning",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production"
+          ],
+          "name": "modeTypeName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            198
+          ],
+          "name": "itemId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            1141
+          ],
+          "name": "workOrderId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            1767686400000,
+            1767772800000,
+            1767859200000,
+            1767945600000,
+            1767690000000,
+            1767776400000,
+            1767862800000,
+            1767949200000,
+            1767758400000,
+            1767844800000,
+            1767931200000,
+            1768017600000,
+            1767693600000,
+            1767780000000,
+            1767866400000,
+            1768125600000,
+            1767704400000,
+            1767790800000,
+            1767877200000,
+            1768136400000,
+            1767970800000
+          ],
+          "name": "startDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            1739174400000,
+            1739174400000,
+            1739174400000,
+            1739174400000,
+            1739178000000,
+            1739178000000,
+            1739178000000,
+            1739178000000,
+            1739246400000,
+            1739246400000,
+            1739246400000,
+            1739246400000,
+            1760950800000,
+            1760950800000,
+            1760950800000,
+            1760950800000,
+            1760961600000,
+            1760961600000,
+            1760961600000,
+            1760961600000,
+            1767970800000
+          ],
+          "name": "initialStartDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            "Changeover",
+            "Changeover",
+            "Changeover",
+            "Changeover",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Cleaning",
+            "Cleaning",
+            "Cleaning",
+            "Cleaning",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production",
+            "Production"
+          ],
+          "name": "modeName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "#0000FF"
+          ],
+          "name": "itemColor",
+          "type": "String"
+        },
+        {
+          "data": [
+            "#91c5ee",
+            "#91c5ee",
+            "#91c5ee",
+            "#91c5ee",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#fad467",
+            "#fad467",
+            "#fad467",
+            "#fad467",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#0000FF"
+          ],
+          "name": "color",
+          "type": "String"
+        },
+        {
+          "data": [
+            3019,
+            3019,
+            3019,
+            3019,
+            3035,
+            3035,
+            3035,
+            3035,
+            3018,
+            3018,
+            3018,
+            3018,
+            4396,
+            4396,
+            4396,
+            4396,
+            4395,
+            4395,
+            4395,
+            4395,
+            4438
+          ],
+          "name": "scheduleBlockId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "#00D9D9"
+          ],
+          "name": "statusColor",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Pacific Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time",
+            "Eastern Standard Time"
+          ],
+          "name": "timezone",
+          "type": "String"
+        },
+        {
+          "data": [
+            5,
+            5,
+            5,
+            5,
+            2,
+            2,
+            2,
+            2,
+            6,
+            6,
+            6,
+            6,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2,
+            2
+          ],
+          "name": "modeId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            510,
+            901,
+            901,
+            901,
+            901,
+            901,
+            901,
+            901,
+            901,
+            2531
+          ],
+          "name": "assetId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Industries\\Buffalo Bakery\\Production\\Mix Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 1",
+            "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 2"
+          ],
+          "name": "assetPath",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2026-01-06 01:00:00",
+            "2026-01-07 01:00:00",
+            "2026-01-08 01:00:00",
+            "2026-01-09 01:00:00",
+            "2026-01-06 20:00:00",
+            "2026-01-07 20:00:00",
+            "2026-01-08 20:00:00",
+            "2026-01-09 20:00:00",
+            "2026-01-06 23:00:00",
+            "2026-01-07 23:00:00",
+            "2026-01-08 23:00:00",
+            "2026-01-09 23:00:00",
+            "2026-01-06 08:00:00",
+            "2026-01-07 08:00:00",
+            "2026-01-08 08:00:00",
+            "2026-01-11 08:00:00",
+            "2026-01-06 13:00:00",
+            "2026-01-07 13:00:00",
+            "2026-01-08 13:00:00",
+            "2026-01-11 13:00:00",
+            "2026-01-09 14:10:00"
+          ],
+          "name": "end",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Cases"
+          ],
+          "name": "itemUnitName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "2026-01-06 00:00:00",
+            "2026-01-07 00:00:00",
+            "2026-01-08 00:00:00",
+            "2026-01-09 00:00:00",
+            "2026-01-06 01:00:00",
+            "2026-01-07 01:00:00",
+            "2026-01-08 01:00:00",
+            "2026-01-09 01:00:00",
+            "2026-01-06 20:00:00",
+            "2026-01-07 20:00:00",
+            "2026-01-08 20:00:00",
+            "2026-01-09 20:00:00",
+            "2026-01-06 05:00:00",
+            "2026-01-07 05:00:00",
+            "2026-01-08 05:00:00",
+            "2026-01-11 05:00:00",
+            "2026-01-06 08:00:00",
+            "2026-01-07 08:00:00",
+            "2026-01-08 08:00:00",
+            "2026-01-11 08:00:00",
+            "2026-01-09 10:00:00"
+          ],
+          "name": "start",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            3
+          ],
+          "name": "workOrderStatusId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "#91c5ee",
+            "#91c5ee",
+            "#91c5ee",
+            "#91c5ee",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#fad467",
+            "#fad467",
+            "#fad467",
+            "#fad467",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a",
+            "#00639a"
+          ],
+          "name": "modeColor",
+          "type": "String"
+        },
+        {
+          "data": [
+            1740757936560,
+            1740757936560,
+            1740757936560,
+            1740757936560,
+            1740758028043,
+            1740758028043,
+            1740758028043,
+            1740758028043,
+            1740757913700,
+            1740757913700,
+            1740757913700,
+            1740757913700,
+            1761155780307,
+            1761155780307,
+            1761155780307,
+            1761155780307,
+            1761155769463,
+            1761155769463,
+            1761155769463,
+            1761155769463,
+            1767913822277
+          ],
+          "name": "createdDate",
+          "type": "Date"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "Kanoa Box Co\\Blue Boxes"
+          ],
+          "name": "itemPath",
+          "type": "String"
+        },
+        {
+          "data": [
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            18,
+            5
+          ],
+          "name": "createdBy",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dMO,TU,WE,TH,FR",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            "FREQ\u003dWEEKLY;INTERVAL\u003d1;BYWEEKDAY\u003dTU,MO,SU,TH,WE",
+            null
+          ],
+          "name": "rruleStr",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            "ABC123"
+          ],
+          "name": "workOrderName",
+          "type": "String"
+        },
+        {
+          "data": [
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Mix Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 1",
+            "Box Line 2"
+          ],
+          "name": "assetName",
+          "type": "String"
+        },
+        {
+          "data": [
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            5
+          ],
+          "name": "itemUnitId",
+          "type": "Integer"
+        },
+        {
+          "data": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            null
+          ],
+          "name": "scheduleBlockName",
+          "type": "String"
+        }
+      ]
+    },
+    "tagInfo": {
+      "availability": 0,
+      "durationSecs": 377,
+      "endDate": null,
+      "iconPath": "kanoa/production",
+      "infeedCount": 0,
+      "infeedRateSecs": null,
+      "infeedUnits": "units",
+      "itemId": 198,
+      "itemName": "Blue Boxes",
+      "modeColor": "#00639a",
+      "modeName": "Production",
+      "modeSourceName": "Operator",
+      "modeTypeName": "Production",
+      "outfeedCount": 0,
+      "outfeedRatePerMinute": 0,
+      "outfeedUnits": "units",
+      "packageCount": 1,
+      "performance": 0,
+      "period": "Hour",
+      "plannedDowntimeSecs": null,
+      "quality": 1,
+      "refresh": false,
+      "reqdQty": 1000,
+      "runtimeSecs": null,
+      "scheduleBlockId": 4438,
+      "scheduleEnd": null,
+      "scheduleStart": null,
+      "shiftEnd": 1767960000000,
+      "shiftId": 517,
+      "shiftName": "No Shift Defined",
+      "shiftNameId": 9,
+      "shiftStart": 1767909600000,
+      "standardRate": 100,
+      "startDate": 1767914101473,
+      "stateColor": null,
+      "stateIconPath": null,
+      "stateName": null,
+      "stateTypeColor": null,
+      "stateTypeName": null,
+      "targetCount": null,
+      "unplannedDowntimeSecs": null,
+      "userName": "jason",
+      "wasteCount": 0,
+      "wasteUnits": "units",
+      "woActualQty": 0,
+      "woRemainingMinutes": null,
+      "workOrderId": 1141,
+      "workOrderName": "ABC123"
+    }
+  },
+  "params": {
+    "values": {
+      "enableSelector": true,
+      "linePath": "Kanoa Box Co\\Box Plant\\Packaging\\Box Line 2"
+    }
+  },
+  "propConfig": {
+    "custom.assetInfo": {
+      "binding": {
+        "config": {
+          "path": "view.params.values.linePath"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\t\n\tassetPath \u003d value or None\n\tassetInfo \u003d system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.asset.getAssets({\u0027assetPath\u0027:assetPath or \u0027None\u0027}), 0)\n\tif assetPath:\n\t\ttimezones \u003d system.kanoa.date.getAssetTimeZoneInfo(assetPath)\n\t\ttimezone \u003d timezones[assetPath][\u0027timeZone\u0027] if timezones.has_key(assetPath) else \u0027UTC\u0027\n\telse:\n\t\ttimezone \u003d \u0027UTC\u0027\n\t\n\tassetInfo[\u0027timeZone\u0027] \u003d timezone\n\t\n\treturn assetInfo\t",
+            "type": "script"
+          }
+        ],
+        "type": "property"
+      },
+      "persistent": true
+    },
+    "custom.info": {
+      "persistent": true
+    },
+    "custom.mesTagProvider": {
+      "binding": {
+        "config": {
+          "expression": "now(0)"
+        },
+        "transforms": [
+          {
+            "code": "\treturn system.kanoa.config.getTagProvider(\u0027Core\u0027)",
+            "type": "script"
+          }
+        ],
+        "type": "expr"
+      },
+      "persistent": true
+    },
+    "custom.scheduleData": {
+      "binding": {
+        "config": {
+          "struct": {
+            "assetInfo": "{view.custom.assetInfo}",
+            "scheduleEvents": "{view.custom.scheduleEvents}"
+          },
+          "waitOnAll": true
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\n\tassetId \u003d value[\u0027assetInfo\u0027][\u0027assetId\u0027] if value[\u0027assetInfo\u0027] else None\n\tif assetId is None: return []\n\tif value[\u0027scheduleEvents\u0027] is None or value[\u0027scheduleEvents\u0027].rowCount \u003d\u003d 0: return []\n\t\n\tself.custom.info \u003d {\"showBar\": True, \"text\": \"Checking schedule for %s\"%value[\u0027assetInfo\u0027][\u0027assetName\u0027], \"type\": \"INFO\"}\n\ttry:\n\t\tdata \u003d system.dataset.sort(value[\u0027scheduleEvents\u0027], \u0027startDate\u0027, False)\n\t\tdata \u003d system.dataset.toPyDataSet(data)\n\t\tdeleteRows \u003d [i for i, row in enumerate(data) if row[\u0027assetId\u0027] !\u003d value[\u0027assetInfo\u0027][\u0027assetId\u0027]]\n\t\tdata \u003d system.dataset.deleteRows(data, deleteRows)\t\n\t\tdata \u003d system.dataset.sort(data, \u0027startDate\u0027, False)\t\n\t\tdata \u003d system.kanoa.utilities.convertDatasetToJSON(data)\n\t\t\n\t\tworkOrderIdList \u003d list(set([row[\u0027workOrderId\u0027] for row in data if row[\u0027workOrderId\u0027]]))\n\t\tif len(workOrderIdList) \u003e 0: \n\t\t\tworkOrderData \u003d system.kanoa.utilities.convertDatasetToDict(system.kanoa.order.getProductionOrders({\u0027workOrderIdList\u0027: workOrderIdList, \u0027ignoreActualQty\u0027: False}), \u0027workOrderId\u0027, None)\n\t\t\n\t\trows \u003d []\n\t\t\n\t\tfor row in data:\n\t\t\tif row[\u0027assetId\u0027] !\u003d value[\u0027assetInfo\u0027][\u0027assetId\u0027]: continue\n\t\t\tif row[\u0027workOrderId\u0027] and not workOrderData[row[\u0027workOrderId\u0027]][\u0027canExecute\u0027]: continue\n\t\t\t\n\t\t\trow[\"enableSelector\"] \u003d self.params.values.enableSelector\n\t\t\trow[\u0027timezone\u0027] \u003d value[\u0027assetInfo\u0027][\u0027timeZone\u0027]\n\t\t\trow[\u0027startDate\u0027] \u003d system.date.addMinutes(row[\u0027startDate\u0027], system.kanoa.date.getTimeZoneOffsetMins(row[\u0027timezone\u0027], row[\u0027startDate\u0027]))\n\t\t\trow[\u0027endDate\u0027] \u003d system.date.addMinutes(row[\u0027endDate\u0027], system.kanoa.date.getTimeZoneOffsetMins(row[\u0027timezone\u0027], row[\u0027startDate\u0027]))\n\t\t\tif row[\u0027workOrderId\u0027]:\n\t\t\t\twoInfo \u003d workOrderData[row[\u0027workOrderId\u0027]]\n\t\t\t\trow[\"scheduleId\"] \u003d row[\u0027scheduleBlockId\u0027]\n\t\t\t\trow[\u0027actualQty\u0027] \u003d woInfo[\u0027actualQty\u0027]\n\t\t\t\trow[\u0027reqdQty\u0027] \u003d woInfo[\u0027reqdQty\u0027]\n\t\t\t\trow[\u0027% Complete\u0027] \u003d woInfo[\u0027reqdQty\u0027] or 0 / woInfo[\u0027actualQty\u0027] if (woInfo[\u0027actualQty\u0027] or 0) \u003e 0 else None\n\t\t\t\trow[\u0027itemUnitName\u0027] \u003d woInfo[\u0027itemUnitName\u0027]\n\t\t\t\trow[\u0027itemColor\u0027] \u003d woInfo[\u0027itemColor\u0027] or woInfo[\u0027itemClassColor\u0027]\n\t\t\t\trow[\u0027workOrderSourceImagePath\u0027] \u003d woInfo[\u0027workOrderSourceImagePath\u0027] if row[\u0027modeName\u0027] \u003d\u003d \u0027Production\u0027 else \u0027No image\u0027\n\t\t\t\trow[\u0027itemUnitName\u0027] \u003d woInfo[\u0027itemUnitName\u0027]\n\t\t\t\tif woInfo[\u0027dueDate\u0027]: row[\u0027dueDate\u0027] \u003d system.date.addMinutes(woInfo[\u0027dueDate\u0027], system.kanoa.date.getTimeZoneOffsetMins(row[\u0027timezone\u0027], woInfo[\u0027dueDate\u0027]))\n\t\t\t\trow[\u0027workOrderStatusName\u0027] \u003d woInfo[\u0027workOrderStatusName\u0027]\n\t\t\t\trow[\u0027statusColor\u0027] \u003d woInfo[\u0027statusColor\u0027]\n\t\t\t\trow[\u0027note\u0027] \u003d woInfo[\u0027note\u0027]\n\t\t\t\trow[\u0027canSchedule\u0027] \u003d woInfo[\u0027canSchedule\u0027]\n\t\t\t\trow[\u0027canExecute\u0027] \u003d woInfo[\u0027canExecute\u0027]\n\t\t\telse:\n\t\t\t\trow[\"scheduleId\"] \u003d row[\u0027scheduleBlockId\u0027]\n\t\t\t\trow[\u0027reqdQty\u0027] \u003d None\n\t\t\t\trow[\u0027actualQty\u0027] \u003d None\n\t\t\t\trow[\u0027% Complete\u0027] \u003d None\n\t\t\t\trow[\u0027itemUnitName\u0027] \u003d None\n\t\t\t\trow[\u0027workOrderSourceImagePath\u0027] \u003d None\n\t\t\t\trow[\u0027itemUnitName\u0027] \u003d None\n\t\t\t\trow[\u0027itemColor\u0027] \u003d None\n\t\t\t\trow[\u0027dueDate\u0027] \u003d None\n\t\t\t\trow[\u0027workOrderStatusName\u0027] \u003d None\n\t\t\t\trow[\u0027statusColor\u0027] \u003d None\n\t\t\t\trow[\u0027note\u0027] \u003d None\n\t\t\t\trow[\u0027canSchedule\u0027] \u003d False\n\t\t\t\trow[\u0027canExecute\u0027] \u003d False\n\t\t\t\n\t\t\trows.append(row)\n\texcept:\n\t\tpass\n\t\n\tself.custom.info \u003d {\"showBar\": False, \"text\": \"\", \"type\": \"INFO\"}\n\treturn rows",
+            "type": "script"
+          }
+        ],
+        "type": "expr-struct"
+      },
+      "persistent": true
+    },
+    "custom.scheduleEvents": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{this.custom.mesTagProvider}"
+          },
+          "tagPath": "{1}kanoa/timers/getActiveAssetScheduleTimer/data"
+        },
+        "overlayOptOut": true,
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "custom.tagInfo": {
+      "binding": {
+        "config": {
+          "fallbackDelay": 2.5,
+          "mode": "indirect",
+          "references": {
+            "1": "{view.params.values.linePath}"
+          },
+          "tagPath": "[Kanoa]{1}/Line"
+        },
+        "overlayOptOut": true,
+        "transforms": [
+          {
+            "code": "\treturn value.OEE",
+            "type": "script"
+          }
+        ],
+        "type": "tag"
+      },
+      "persistent": true
+    },
+    "params.instances": {
+      "paramDirection": "output",
+      "persistent": true
+    },
+    "params.values": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  },
+  "props": {
+    "defaultSize": {
+      "height": 528,
+      "width": 1242
+    }
+  },
+  "root": {
+    "children": [
+      {
+        "children": [
+          {
+            "meta": {
+              "domId": "evProgressBar",
+              "name": "evProgressBar"
+            },
+            "position": {
+              "basis": "40px",
+              "grow": 1,
+              "shrink": 0
+            },
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "config": {
+                    "path": "this.props.params.values"
+                  },
+                  "overlayOptOut": true,
+                  "transforms": [
+                    {
+                      "code": "\treturn value.showBar or value.text or None is not None",
+                      "type": "script"
+                    }
+                  ],
+                  "type": "property"
+                }
+              },
+              "props.params.values": {
+                "binding": {
+                  "config": {
+                    "path": "view.custom.info"
+                  },
+                  "overlayOptOut": true,
+                  "type": "property"
+                }
+              }
+            },
+            "props": {
+              "path": "kanoa/core/templates/displays/progressBar"
+            },
+            "type": "ia.display.view"
+          }
+        ],
+        "meta": {
+          "domId": "flxCntInfo",
+          "name": "flxCntInfo"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "config": {
+                "path": "view.custom.info"
+              },
+              "overlayOptOut": true,
+              "transforms": [
+                {
+                  "code": "\treturn value.showBar  or value.text or None is not None",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "style": {
+            "backgroundColor": "--kcSurface",
+            "classes": "kanoa/border",
+            "gap": 5,
+            "overflow": "hidden",
+            "padding": 5
+          }
+        },
+        "type": "ia.container.flex"
+      },
+      {
+        "meta": {
+          "domId": "flxRptScheduleEvents",
+          "name": "flxRptScheduleEvents"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.instances": {
+            "binding": {
+              "config": {
+                "path": "view.custom.scheduleData"
+              },
+              "overlayOptOut": true,
+              "transforms": [
+                {
+                  "code": "\t\n\tdata \u003d [{\u0027output\u0027: None, \u0027values\u0027: row} for row in value]\n\treturn sorted(data, key\u003dlambda x: x[\u0027values\u0027][\u0027startDate\u0027])",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "props": {
+          "elementPosition": {
+            "basis": "auto"
+          },
+          "path": "kanoa/mes/asset/runControl/event",
+          "style": {
+            "gap": "5px"
+          },
+          "useDefaultViewHeight": false,
+          "useDefaultViewWidth": false,
+          "wrap": "wrap"
+        },
+        "type": "ia.display.flex-repeater"
+      },
+      {
+        "meta": {
+          "domId": "lblDebug",
+          "name": "lblDebug"
+        },
+        "position": {
+          "basis": "32px",
+          "display": false
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "config": {
+                "path": "view.params.values"
+              },
+              "overlayOptOut": true,
+              "transforms": [
+                {
+                  "code": "\treturn str(value)",
+                  "type": "script"
+                }
+              ],
+              "type": "property"
+            }
+          }
+        },
+        "type": "ia.display.label"
+      }
+    ],
+    "custom": {
+      "mesTagProvider": "[Kanoa]"
+    },
+    "meta": {
+      "domId": "root",
+      "name": "root"
+    },
+    "propConfig": {
+      "custom.scheduleData": {
+        "binding": {
+          "config": {
+            "fallbackDelay": 2.5,
+            "mode": "indirect",
+            "references": {
+              "1": "{this.custom.mesTagProvider}"
+            },
+            "tagPath": "{1}kanoa/mes/eventSchedule/ScheduleData"
+          },
+          "type": "tag"
+        }
+      }
+    },
+    "props": {
+      "direction": "column",
+      "style": {
+        "padding": "5px"
+      }
+    },
+    "type": "ia.container.flex"
+  }
+}

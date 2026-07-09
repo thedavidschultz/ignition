@@ -1,0 +1,677 @@
+{
+  "custom": {
+    "data": {}, 
+    "filters": {
+      "showGroupBySelector": true, 
+      "stacked": false, 
+      "dateRange": {
+        "endDate": {
+          "$ts": 1760227200000, 
+          "$": [
+            "ts", 
+            0, 
+            1760731558773
+          ]
+        }, 
+        "selectedRange": "Today", 
+        "startDate": {
+          "$ts": 1760104800000, 
+          "$": [
+            "ts", 
+            0, 
+            1760731558773
+          ]
+        }
+      }, 
+      "woInfo": {
+        "product": null, 
+        "woId": null, 
+        "scheduleId": null
+      }, 
+      "groupBy": "Asset", 
+      "showStacked": true, 
+      "showMetricSelector": true, 
+      "metricType": "Duration", 
+      "showAssetPath": true, 
+      "assetId": null, 
+      "assetPath": null, 
+      "showShowBySelector": true
+    }, 
+    "chart": {}
+  }, 
+  "params": {
+    "value": {
+      "showGroupBySelector": true, 
+      "stacked": false, 
+      "groupBy": "Asset", 
+      "showStacked": true, 
+      "showMetricSelector": true, 
+      "metricType": "Duration", 
+      "showAssetPath": true, 
+      "assetPath": null, 
+      "showShowBySelector": true
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 954, 
+      "height": 450
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": 3, 
+        "backgroundColor": "--kcSurface", 
+        "classes": "kanoa/font/default", 
+        "overflow": "hidden", 
+        "gap": 5
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "classes": "kanoa/font/labelLarge"
+              }, 
+              "text": "Performance Loss Reasons ", 
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblTitle", 
+              "name": "lblTitle"
+            }, 
+            "position": {
+              "grow": 1
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblAsset", 
+              "name": "lblAsset"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tassetPath = system.kanoa.utilities.formatPath(value['assetPath'], {}) if value['showAssetPath'] else ''\n\treturn '%s'%(assetPath)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxHeader", 
+          "name": "flxHeader"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "justify": "center", 
+          "style": {
+            "padding": "5px", 
+            "overflow": "visible", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblMetric", 
+              "name": "lblMetric"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn True if value.has_key('showMetricSelector') and value['showMetricSelector'] else False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tmetricType = value['metricType'] if value.has_key('showMetricSelector') and not value['showMetricSelector'] else ''\n\treturn 'Summarized by %s'%(metricType)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.dropdown", 
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "kanoa/font/default"
+              }, 
+              "style": {
+                "classes": "kanoa/font/default", 
+                "minWidth": "160px"
+              }
+            }, 
+            "meta": {
+              "domId": "ddMetric", 
+              "name": "ddMetric"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn True if value.has_key('showMetricSelector') and value['showMetricSelector'] else False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }, 
+              "props.options": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn [{'label': 'Duration', 'value': 'Duration'}, \n\t{'label': 'Occurrence', 'value': 'Occurrence'}]\n\t", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr", 
+                  "config": {
+                    "expression": "now(0)"
+                  }
+                }
+              }, 
+              "props.value": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.metricType"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblGroupBy", 
+              "name": "lblGroupBy"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tgroupBy = value['groupBy'] if value.has_key('showGroupBySelector') and not value['showGroupBySelector'] else ''\n\treturn 'Grouped by %s'%(groupBy)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.dropdown", 
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "kanoa/font/default"
+              }, 
+              "style": {
+                "classes": "kanoa/font/default", 
+                "minWidth": "160px"
+              }
+            }, 
+            "meta": {
+              "domId": "ddGroup", 
+              "name": "ddGroup"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn True if value.has_key('showGroupBySelector') and value['showGroupBySelector'] else False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }, 
+              "props.options": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn [{'label': 'Asset', 'value': 'Asset'}, \n\t{'label': 'Reason', 'value': 'Reason'}, \n\t{'label': 'Work Order', 'value': 'Work Order'},\n\t{'label': 'Item', 'value': 'Item'},\n\t{'label': 'Line', 'value': 'Line'}]\n\t", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr", 
+                  "config": {
+                    "expression": "now(0)"
+                  }
+                }
+              }, 
+              "props.value": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.groupBy"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.checkbox", 
+            "props": {
+              "text": "Stacked"
+            }, 
+            "meta": {
+              "domId": "chkStacked", 
+              "name": "chkStacked"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.filters.showStacked"
+                  }
+                }
+              }, 
+              "props.selected": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.stacked"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxOptions", 
+          "name": "flxOptions"
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "overflow": "hidden"
+          }
+        }, 
+        "children": [
+          {
+            "type": "kyvislabs.display.apexchart", 
+            "props": {
+              "type": "bar", 
+              "options": {
+                "plotOptions": {
+                  "bar": {
+                    "dataLabels": {
+                      "total": {
+                        "dropShadow": {
+                          "blur": 2, 
+                          "enabled": true, 
+                          "top": 1, 
+                          "left": 0, 
+                          "opacity": 0.25
+                        }, 
+                        "enabled": true, 
+                        "offsetY": -10, 
+                        "style": {
+                          "color": "#444", 
+                          "fontSize": "13px", 
+                          "fontWeight": 500
+                        }
+                      }
+                    }, 
+                    "horizontal": false
+                  }
+                }, 
+                "legend": {
+                  "position": "bottom"
+                }, 
+                "tooltip": {
+                  "y": {
+                    "formatter": "function(val) { return val.toFixed(1) + ' min'; }"
+                  }
+                }, 
+                "fill": {
+                  "opacity": 1
+                }, 
+                "title": {
+                  "text": ""
+                }, 
+                "stroke": {
+                  "curve": "monotoneCubic", 
+                  "colors": [
+                    "#000000"
+                  ], 
+                  "width": 1
+                }, 
+                "colors": [
+                  "var(--kcChart-01)", 
+                  "var(--kcChart-02)", 
+                  "var(--kcChart-03)", 
+                  "var(--kcChart-04)", 
+                  "var(--kcChart-05)", 
+                  "var(--kcChart-06)", 
+                  "var(--kcChart-07)", 
+                  "var(--kcChart-08)"
+                ], 
+                "dataLabels": {
+                  "enabled": true
+                }, 
+                "xaxis": {
+                  "type": "category", 
+                  "labels": {
+                    "formatter": "function(val) { if (!val) return ''; var parts = val.split('\\\\'); return parts[parts.length - 1]; }"
+                  }
+                }, 
+                "theme": {}, 
+                "markers": {
+                  "size": 5
+                }, 
+                "chart": {
+                  "type": "bar", 
+                  "toolbar": {
+                    "show": false
+                  }, 
+                  "fontFamily": "Roboto", 
+                  "height": 350
+                }
+              }
+            }, 
+            "meta": {
+              "domId": "apexBar", 
+              "name": "apexBar"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.options.chart.stacked": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.filters.stacked"
+                  }
+                }
+              }, 
+              "props.series": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.chart.series"
+                  }
+                }
+              }, 
+              "props.options.theme.mode": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\tif 'dark' in value: return 'dark'\n\telse: return 'light'", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "config": {
+                    "path": "session.props.theme"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxBody", 
+          "name": "flxBody"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter", 
+              "name": "lblFilter"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filter"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter_0", 
+              "name": "lblFilter_0"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter_1", 
+              "name": "lblFilter_1"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.widgetInfo.params[0].enabled"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxDebug", 
+          "name": "flxDebug"
+        }, 
+        "position": {
+          "grow": 1, 
+          "display": false
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tsystem.perspective.print(\"widgetAssetSelected msg rcvd with %s\"%payload)\n\tassetPath = payload['selection'][0]['value']['path'] if len(payload['selection']) > 0 else None\n\t\n\tsystem.kanoa.utilities.storeAssetPath(self, assetPath)\n\t\n\treturn", 
+          "messageType": "widgetAssetSelected", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "custom.chart.series": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tfrom collections import defaultdict\n\t\n\tif len(value) == 0:\n\t\treturn []\n\t\n\tmetricType = self.view.custom.filters['metricType']  # \"Duration\" or \"Occurrence\"\n\tgroupBy = self.view.custom.filters['groupBy']        # \"Asset\", \"Reason\", \"Work Order\", \"Item\", \"Line\"\n\t\n\t# Grouping logic\n\tgroupKeyMap = {\n\t\t\"Asset\": \"assetPath\",\n\t\t\"Reason\": \"performanceStateName\",\n\t\t\"Work Order\": \"workOrderName\",\n\t\t\"Item\": \"itemName\",\n\t\t\"Line\": \"assetName\"\n\t}\n\t\n\txKey = groupKeyMap.get(groupBy, \"assetPath\")\n\tstackKey = \"performanceStateName\" if xKey != \"performanceStateName\" else \"assetPath\"\n\tvalueKey = \"value\" if metricType == \"Duration\" else None\n\t\n\tstackedMap = defaultdict(lambda: defaultdict(int))\n\txTotals = defaultdict(int)  # For sorting x labels by total impact\n\t\n\t# Aggregate values\n\tfor entry in value:\n\t\tx = entry.get(xKey) or \"Unspecified\"\n\t\tstack = entry.get(stackKey) or \"Unspecified\"\n\t\tval = entry.get(valueKey, 1) if valueKey else 1\n\t\n\t\tstackedMap[stack][x] += val\n\t\txTotals[x] += val\n\t\n\t# Sort x-labels by total descending\n\tsortedXLabels = sorted(xTotals.keys(), key=lambda k: xTotals[k], reverse=True)\n\t\n\t# Build series\n\tseries = []\n\tfor stackName, xDict in stackedMap.items():\n\t\tchartData = [{\"x\": x, \"y\": xDict.get(x, 0)} for x in sortedXLabels]\n\t\tseries.append({\n\t\t\t\"name\": stackName,\n\t\t\t\"data\": chartData\n\t\t})\n\t\n\treturn series", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.data.perfEvents"
+        }
+      }
+    }, 
+    "custom.chart": {
+      "persistent": true
+    }, 
+    "custom.filters": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tfilters = system.kanoa.dashboard.getWidgetFilters(value['page'], value['viewParams'], value['sessionCustomProps'], self.session.props.device.timezone.id)\n\tif not filters.has_key('showAssetPath'): filters['showAssetPath'] = True\n\tif not filters.has_key('showGroupBySelector'): filters['showGroupBySelector'] = True\n\tif not filters.has_key('showMetricSelector'): filters['showMetricSelector'] = True\n\tif not filters.has_key('groupBy'): filters['groupBy'] = \"Reason\"\n\tif not filters.has_key('metricType'): filters['metricType'] = \"Duration\"\n\tif not filters.has_key('stacked'): filters['stacked'] = False\n\tif not filters.has_key('showStacked'): filters['showStacked'] = True\n\treturn filters", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "sessionCustomProps": "{session.custom.kanoa}", 
+            "page": "{page.props.pageId}", 
+            "viewParams": "{view.params.value}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.data.perfEvents": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tfilter = value\n\n\tif (filter['assetPath'] or None) is None: return []\n\tassetPath = filter['assetPath'] + '%'\n\tstartDate = filter['dateRange']['startDate']\n\tendDate = filter['dateRange']['endDate']\n\tmodeEventId = None\n\n\tif assetPath is None: return []\n\t\n\tparamsDict = {'assetPath': assetPath, 'startDate': startDate, 'endDate': endDate, 'modeEventId': modeEventId}\n\treturn system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getPerformanceEvents(paramsDict))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.filters"
+        }
+      }
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.data": {
+      "persistent": true
+    }
+  }
+}

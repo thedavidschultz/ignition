@@ -1,0 +1,165 @@
+[
+  {
+    "name": "assetInfo",
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "expr",
+        "expression": "{[.]../Line/EquipID}",
+        "name": "assetId",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\t\n\tif not initialChange and currentValue.quality.isGood() and previousValue.value !\u003d currentValue.value and currentValue is not None:\t\t\n\t\t\n\t\t\ttagValues \u003d system.tag.readBlocking([\"[.]assetId\", \"[.]shiftNameId\", \"[.]itemId\", \"[.]modeName\", \"[.]toolingId\"])\n\t\t\tstateInfo \u003d {\n\t\t\t\t\t\t\t\u0027assetId\u0027: tagValues[0].value,\n\t\t\t\t\t\t\t\u0027shiftNameId\u0027: tagValues[1].value,\n\t\t\t\t\t\t\t\u0027itemId\u0027: tagValues[2].value,\n\t\t\t\t\t\t\t\u0027modeName\u0027: tagValues[3].value, \n\t\t\t\t\t\t\t\u0027toolingId\u0027: tagValues[4].value,\n\t\t\t\t\t\t\t\u0027tStamp\u0027: currentValue.timestamp,\n\t\t\t\t\t\t\t\u0027changeType\u0027: \u0027Product Change\u0027\n\t\t\t\t\t\t}\n\t\t\t\n\t\t\tif stateInfo[\u0027assetId\u0027] is None: return\n\t\t\tsystem.kanoa.quality.schedule.assetChangeEvent(stateInfo)\n\t\t\t\n\t\t\treturn"
+          }
+        ],
+        "expression": "{[.]../Line/OEE/itemId}",
+        "dataType": "Int4",
+        "historyProvider": "IGN_HISTORIAN",
+        "sourceTagPath": "[.]Product Selection/Input/01/Product Selection/Product MOE ID",
+        "name": "itemId",
+        "historyEnabled": false,
+        "formatString": "#0",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\t\n\tif not initialChange and currentValue.quality.isGood() and previousValue.value !\u003d currentValue.value and currentValue is not None:\t\t\n\t\n\t\ttagValues \u003d system.tag.readBlocking([\"[.]assetId\", \"[.]shiftNameId\", \"[.]itemId\", \"[.]modeName\", \"[.]toolingId\"])\n\t\tstateInfo \u003d {\n\t\t\t\t\t\t\u0027assetId\u0027: tagValues[0].value,\n\t\t\t\t\t\t\u0027shiftNameId\u0027: tagValues[1].value,\n\t\t\t\t\t\t\u0027itemId\u0027: tagValues[2].value,\n\t\t\t\t\t\t\u0027modeName\u0027: tagValues[3].value,\n\t\t\t\t\t\t\u0027toolingId\u0027: tagValues[4].value,\n\t\t\t\t\t\t\u0027tStamp\u0027: currentValue.timestamp,\n\t\t\t\t\t\t\u0027changeType\u0027: \u0027Mode Change\u0027\n\t\t\t\t\t}\n\t\n\t\tif stateInfo[\u0027assetId\u0027] is None: return\n\t\tsystem.kanoa.quality.schedule.assetChangeEvent(stateInfo)\n\t\t\n\t\treturn"
+          }
+        ],
+        "expression": "{[.]../Line/OEE/modeName}",
+        "dataType": "String",
+        "historyProvider": "IGN_HISTORIAN",
+        "sourceTagPath": "[.]Common/Properties/Mode Name",
+        "name": "modeName",
+        "historyEnabled": false,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\t\n\tif not initialChange and currentValue.quality.isGood() and previousValue.value !\u003d currentValue.value and currentValue is not None:\t\t\n\t\n\t\ttagValues \u003d system.tag.readBlocking([\"[.]assetId\", \"[.]shiftNameId\", \"[.]itemId\", \"[.]modeName\", \"[.]toolingId\"])\n\t\tstateInfo \u003d {\n\t\t\t\t\t\t\u0027assetId\u0027: tagValues[0].value,\n\t\t\t\t\t\t\u0027shiftNameId\u0027: tagValues[1].value,\n\t\t\t\t\t\t\u0027itemId\u0027: tagValues[2].value,\n\t\t\t\t\t\t\u0027modeNamee\u0027: tagValues[3].value,\n\t\t\t\t\t\t\u0027toolingId\u0027: tagValues[4].value,\n\t\t\t\t\t\t\u0027tStamp\u0027: currentValue.timestamp,\n\t\t\t\t\t\t\u0027changeType\u0027: \u0027Shift Change\u0027\n\t\t\t\t\t}\n\t\n\t\tif stateInfo[\u0027assetId\u0027] is None: return\n\t\tsystem.kanoa.quality.schedule.assetChangeEvent(stateInfo)\n\t\t\n\t\treturn"
+          }
+        ],
+        "expression": "{[.]../Line/OEE/shiftNameId}",
+        "dataType": "Int4",
+        "historyProvider": "IGN_HISTORIAN",
+        "sourceTagPath": "[.]Common/Properties/Shift Name",
+        "name": "shiftNameId",
+        "historyEnabled": false,
+        "executionMode": "EventDriven",
+        "executionRate": 60000,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "expression": "0",
+        "dataType": "Int4",
+        "name": "stateCode",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\n\tif not initialChange and currentValue.quality.isGood() and previousValue.value !\u003d currentValue.value and currentValue is not None:\t\t\n\t\t\n\t\ttagValues \u003d system.tag.readBlocking([\"[.]assetId\", \"[.]shiftNameId\", \"[.]itemId\", \"[.]modeName\", \"[.]toolingId\"])\n\t\tstateInfo \u003d {\n\t\t\t\t\t\t\u0027assetId\u0027: tagValues[0].value,\n\t\t\t\t\t\t\u0027shiftNameId\u0027: tagValues[1].value,\n\t\t\t\t\t\t\u0027itemId\u0027: tagValues[2].value,\n\t\t\t\t\t\t\u0027modeNamee\u0027: tagValues[3].value,\n\t\t\t\t\t\t\u0027toolingId\u0027: tagValues[4].value,\n\t\t\t\t\t\t\u0027tStamp\u0027: currentValue.timestamp,\n\t\t\t\t\t\t\u0027changeType\u0027: \u0027Tooling Change\u0027\n\t\t\t\t\t}\n\t\n\t\tif stateInfo[\u0027assetId\u0027] is None: return\n\t\tsystem.kanoa.quality.schedule.assetChangeEvent(stateInfo)\n\t\t\n\t\treturn"
+          }
+        ],
+        "expression": "{[.]../Line/Inputs/Tooling}",
+        "name": "toolingId",
+        "tagType": "AtomicTag"
+      }
+    ]
+  },
+  {
+    "readOnly": false,
+    "dataType": "Int4",
+    "writePermissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "name": "chkEvents",
+    "readPermissions": {
+      "type": "AllOf",
+      "securityLevels": []
+    },
+    "tagGroup": "Default",
+    "enabled": true,
+    "tagType": "UdtType",
+    "tags": [
+      {
+        "valueSource": "memory",
+        "readOnly": false,
+        "dataType": "DataSet",
+        "writePermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "name": "chkEventData",
+        "readPermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "value": "{\"columns\":[],\"rows\":[]}",
+        "tagGroup": "Default",
+        "enabled": true,
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "memory",
+        "dataType": "DateTime",
+        "name": "lastUpdated",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      },
+      {
+        "valueSource": "expr",
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\n\t#we\u0027ll update the chkEvents dat aif it hasn\u0027t changed for over a minute\t\n\tif system.date.secondsBetween(currentValue.timeStamp, system.tag.read(\"[.]lastUpdated\").value) \u003e 60: system.tag.write(\"[.]updateChkEventData\", 1)\n\t\n\treturn"
+          }
+        ],
+        "expression": "now(60000)",
+        "dataType": "DateTime",
+        "name": "timerUpdate",
+        "formatString": "yyyy-MM-dd h:mm:ss aa",
+        "tagType": "AtomicTag"
+      },
+      {
+        "eventScripts": [
+          {
+            "eventid": "valueChanged",
+            "script": "\n\tif currentValue.value:\n\t\t\n\t\tlog \u003d system.util.getLogger(\u0027kanoa_tag\u0027)\n\t\timport java.lang\n\t\t\n\t\ttry:\t\t\n\t\t\tchkEventFilterInfo \u003d {}\t\n\t\t\tchkEventFilterInfo[\u0027auto\u0027] \u003d False\n\t\t\tchkEventFilterInfo[\u0027chkShtStateNames\u0027] \u003d [\u0027Due\u0027, \u0027Overdue\u0027, \u0027Coming Due\u0027]\n\t\t\tdata \u003d system.kanoa.quality.event.getChkShtEvents(chkEventFilterInfo)\n\t\t\tif data !\u003d \u0027Kanoa QDS License Expired\u0027:\n\t\t\t\tchkEventFilterInfo \u003d {}\t\n\t\t\t\tchkEventFilterInfo[\u0027startDate\u0027] \u003d system.date.addDays(system.date.now(), -1)\n\t\t\t\tchkEventFilterInfo[\u0027endDate\u0027] \u003d system.date.now()\n\t\t\t\tchkEventFilterInfo[\u0027chkShtStateNames\u0027] \u003d [\u0027Approved\u0027, \u0027Submitted\u0027, \u0027Rejected\u0027, \u0027Missed\u0027, \u0027Canceled\u0027]\n\t\t\t\tchkEventFilterInfo[\u0027auto\u0027] \u003d False\n\t\t\t\n\t\t\t\tchkEvents \u003d system.dataset.appendDataset(data, system.kanoa.quality.event.getChkShtEvents(chkEventFilterInfo))\t\t\n\t\t\t\n\t\t\t\tsystem.tag.write(\"[.]chkEventData\", chkEvents)\n\t\t\t\t\n\t\t\tsystem.tag.write(\"[.]lastUpdated\", system.date.now())\n\n\t\texcept java.lang.Exception, e:\n\t\t\tlog.warn(\"%s timer script failed with %s\"%(tagPath, e.cause))\n\t\texcept:\n\t\t\tlog.warn(\"%s timer script failed\"%tagPath)\t\n\t\t\t\n\t\timport time\n\t\ttime.sleep(0.5)\t\t\t\n\n\t\tsystem.tag.writeBlocking([\u0027[.]updateChkEventData\u0027], [0], 5000)\t#Need token passing here as the updateScheduleChecksTag() also writes to it \t\t\n\t\t\n\treturn"
+          }
+        ],
+        "valueSource": "memory",
+        "readOnly": false,
+        "dataType": "Boolean",
+        "writePermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "name": "updateChkEventData",
+        "readPermissions": {
+          "type": "AllOf",
+          "securityLevels": []
+        },
+        "value": false,
+        "tagGroup": "Default",
+        "enabled": true,
+        "tagType": "AtomicTag"
+      }
+    ]
+  }
+]

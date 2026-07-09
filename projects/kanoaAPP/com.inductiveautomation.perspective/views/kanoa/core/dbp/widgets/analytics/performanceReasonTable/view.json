@@ -1,0 +1,375 @@
+{
+  "custom": {
+    "data": {}, 
+    "filters": {
+      "showSummary": true, 
+      "dateRange": {
+        "endDate": {
+          "$ts": 1756872000000, 
+          "$": [
+            "ts", 
+            0, 
+            1757006530758
+          ]
+        }, 
+        "selectedRange": "This Week", 
+        "startDate": {
+          "$ts": 1756785600000, 
+          "$": [
+            "ts", 
+            0, 
+            1757006530758
+          ]
+        }
+      }, 
+      "showSummarySelector": true, 
+      "showAssetPath": true, 
+      "assetId": 62, 
+      "assetPath": "ICC-ProveIt\\Dallas\\Press\\Press 104"
+    }
+  }, 
+  "params": {
+    "value": {
+      "showSummary": true, 
+      "showSummarySelector": true, 
+      "showAssetPath": true, 
+      "assetPath": null
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 995, 
+      "height": 400
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "classes": "kanoa/font/default"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "classes": "kanoa/font/labelLarge"
+              }, 
+              "text": "Performance Loss Reasons ", 
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblTitle", 
+              "name": "lblTitle"
+            }, 
+            "position": {
+              "grow": 1
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblAsset", 
+              "name": "lblAsset"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters.showAssetPath"
+                  }
+                }
+              }, 
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tassetPath = system.kanoa.utilities.formatPath(value['assetPath'], {}) if value['showAssetPath'] else ''\n\treturn '%s'%(assetPath)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxHeader", 
+          "name": "flxHeader"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "justify": "center", 
+          "style": {
+            "padding": "5px", 
+            "overflow": "visible", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.input.checkbox", 
+            "props": {
+              "text": "Summary"
+            }, 
+            "meta": {
+              "domId": "chkSummary", 
+              "name": "chkSummary"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.filters.showSummarySelector"
+                  }
+                }
+              }, 
+              "props.selected": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.showSummary"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxOptions", 
+          "name": "flxOptions"
+        }
+      }, 
+      {
+        "type": "ia.display.table", 
+        "props": {
+          "footerGroups": [
+            [
+              {
+                "align": "center", 
+                "title": "Total", 
+                "justify": "right", 
+                "style": {
+                  "classes": ""
+                }
+              }, 
+              {
+                "align": "center", 
+                "justify": "center", 
+                "style": {
+                  "classes": ""
+                }, 
+                "span": 1
+              }
+            ]
+          ], 
+          "footerStyle": {
+            "classes": "kanoa/font/default"
+          }, 
+          "bodyStyle": {
+            "classes": "kanoa/font/default"
+          }, 
+          "headerGroupStyle": {
+            "classes": "kanoa/font/default"
+          }, 
+          "rows": {
+            "striped": {
+              "enabled": false
+            }
+          }, 
+          "headerStyle": {
+            "classes": "kanoa/font/default"
+          }, 
+          "pager": {
+            "bottom": false
+          }, 
+          "enableFooterGroups": true, 
+          "style": {
+            "classes": "kanoa/font/default"
+          }, 
+          "footerGroupStyle": {
+            "classes": "kanoa/font/default"
+          }
+        }, 
+        "meta": {
+          "domId": "eventTable", 
+          "name": "eventTable"
+        }, 
+        "position": {
+          "grow": 1
+        }, 
+        "propConfig": {
+          "props.data": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\n\tif value['filter']['showSummary']: return value['data']['summary']\n\treturn value['data']['perfEvents']", 
+                  "type": "script"
+                }
+              ], 
+              "type": "expr-struct", 
+              "overlayOptOut": true, 
+              "config": {
+                "struct": {
+                  "data": "{view.custom.data}", 
+                  "filter": "{view.custom.filters}"
+                }, 
+                "waitOnAll": true
+              }
+            }
+          }, 
+          "props.footerGroups[0][0].span": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn len(value) - 1", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "this.props.columns"
+              }
+            }
+          }, 
+          "props.columns": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\n\tdef buildColumn(field, title, justify, sortable, width, visible):\n\t\treturn {\n\t\t\t\t  \"field\": field,\n\t\t\t\t  \"visible\": visible,\n\t\t\t\t  \"editable\": False,\n\t\t\t\t  \"render\": \"auto\",\n\t\t\t\t  \"justify\": justify,\n\t\t\t\t  \"align\": \"center\",\n\t\t\t\t  \"resizable\": True,\n\t\t\t\t  \"sortable\": sortable,\n\t\t\t\t  \"sort\": \"none\",\n\t\t\t\t  \"filter\": {\"enabled\": False, \"visible\": \"on-hover\", \"string\": {\"condition\": \"\", \"value\": \"\" }, \"number\": {\"condition\": \"\", \"value\": \"\"}, \"boolean\": {\"condition\": \"\"}, \"date\": {\"condition\": \"\", \"value\": \"\"}},\n\t\t\t\t  \"viewPath\": \"\",\n\t\t\t\t  \"viewParams\": \"\",\n\t\t\t\t  \"boolean\": \"checkbox\",\n\t\t\t\t  \"number\": \"value\",\n\t\t\t\t  \"progressBar\": {\"max\": 100, \"min\": 0, \"bar\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"track\": {\"color\": \"\", \"style\": {\"classes\": \"\"}}, \"value\": {\"enabled\": True, \"format\": \"0,0.##\", \"justify\": \"center\", \"style\": {\"classes\": \"\"}}},\n\t\t\t\t  \"toggleSwitch\": {\"color\": {\"selected\": \"\", \"unselected\": \"\"}},\n\t\t\t\t  \"NoneFormat\": {\"includeNoneStrings\": False, \"strict\": False, \"NoneFormatValue\": \"\"},\n\t\t\t\t  \"numberFormat\": \"0,0.##\",\n\t\t\t\t  \"dateFormat\": \"MM/DD/YYYY HH:mm\",\n\t\t\t\t  \"width\": width,\n\t\t\t\t  \"strictWidth\": True,\n\t\t\t\t  \"style\": {\"classes\": \"\"},\n\t\t\t\t  \"header\": {\"title\": title, \"justify\": justify, \"align\": \"center\", \"style\": {\"classes\": \"\"}},\n\t\t\t\t  \"footer\": {\"title\": \"\", \"justify\": \"left\", \"align\": \"center\", \"style\": {\"classes\": \"\" }}\n\t\t\t\t}\n\t\n\tcolumns = []\n\tif not value: columns.append(buildColumn('startDate', 'Start', 'center', True, '', True))\n\tif not value: columns.append(buildColumn('endDate', 'End', 'center', True, '', True))\n\tcolumns.append(buildColumn('performanceStateName', 'Reason', 'center', True, '', True))\n\tcolumns.append(buildColumn('assetName', 'Asset', 'center', True, '', True))\n\tif not value: columns.append(buildColumn('workOrderName', 'Asset', 'center', True, '', True))\n\tif not value: columns.append(buildColumn('itemName', 'Item', 'center', True, '', True))\n\tif not value: columns.append(buildColumn('note', 'Note', 'left', True, '', True))\n\tcolumns.append(buildColumn('value', 'Loss Time (mins)', 'center', True, '', True))\n\t\t\n\treturn columns", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.custom.filters.showSummary"
+              }
+            }
+          }, 
+          "props.footerGroups[0][1].title": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn str(round(sum([item['value'] for item in value]),1))", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "this.props.data"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tsystem.perspective.print(\"widgetAssetSelected msg rcvd with %s\"%payload)\n\tassetPath = payload['selection'][0]['value']['path'] if len(payload['selection']) > 0 else None\n\t\n\tsystem.kanoa.utilities.storeAssetPath(self, assetPath)\n\t\n\treturn", 
+          "messageType": "widgetAssetSelected", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "custom.filters": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tfilters = system.kanoa.dashboard.getWidgetFilters(value['page'], value['viewParams'], value['sessionCustomProps'], self.session.props.device.timezone.id)\n\tif not filters.has_key('showAssetPath'): filters['showAssetPath'] = True\n\tif not filters.has_key('showSummarySelector'): filters['showSummarySelector'] = True\n\tif not filters.has_key('showSummary'): filters['showSummary'] = True\n\treturn filters", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "sessionCustomProps": "{session.custom.kanoa}", 
+            "page": "{page.props.pageId}", 
+            "viewParams": "{view.params.value}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.data.summary": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tfrom collections import defaultdict\n\n\tif len(value) == 0:\n\t\treturn []\n\t\n\t# Grouping: (Reason, Asset) → total duration\n\tsummaryMap = defaultdict(float)\n\t\n\tfor entry in value:\n\t\treason = entry.get(\"performanceStateName\") or \"Unspecified\"\n\t\tasset = entry.get(\"assetName\") or \"Unspecified\"\n\t\tkey = (reason, asset)\n\t\n\t\tduration = entry.get(\"value\", 0)\n\t\tsummaryMap[key] += duration\n\t\n\t# Format for table output\n\tsummary = []\n\tfor (reason, asset), total in summaryMap.items():\n\t\tsummary.append({\n\t\t\t\"performanceStateName\": reason,\n\t\t\t\"assetName\": asset,\n\t\t\t\"value\": round(total, 3)\n\t\t})\n\t\n\t# Optionally sort descending by duration\n\tsummary.sort(key=lambda x: x[\"value\"], reverse=True)\n\t\n\treturn summary", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.data.perfEvents"
+        }
+      }
+    }, 
+    "custom.data.perfEvents": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tfilter = value\n\n\tif (filter['assetPath'] or None) is None: return []\n\tassetPath = filter['assetPath'] + '%'\n\tstartDate = filter['dateRange']['startDate']\n\tendDate = filter['dateRange']['endDate']\n\tmodeEventId = None\n\n\tif assetPath is None: return []\n\t\n\tparamsDict = {'assetPath': assetPath, 'startDate': startDate, 'endDate': endDate, 'modeEventId': modeEventId}\n\treturn system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getPerformanceEvents(paramsDict))", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.filters"
+        }
+      }
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.data": {
+      "persistent": true
+    }
+  }
+}

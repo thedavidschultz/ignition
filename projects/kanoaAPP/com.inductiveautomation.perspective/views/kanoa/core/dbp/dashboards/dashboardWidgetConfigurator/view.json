@@ -1,0 +1,821 @@
+{
+  "custom": {
+    "dashboardWidgetInfo": {
+      "widgetName": null, 
+      "widgetId": null, 
+      "enabled": null, 
+      "dashboardName": null, 
+      "viewPath": null, 
+      "breakpointId": null, 
+      "changedDate": null, 
+      "columnEnd": null, 
+      "breakpointName": null, 
+      "createdDate": null, 
+      "widgetDescription": "", 
+      "size": null, 
+      "createdBy": null, 
+      "dashboardId": null, 
+      "changedBy": null, 
+      "dashboardWidgetId": null, 
+      "columnStart": null, 
+      "rowEnd": null, 
+      "rowStart": null, 
+      "viewParams": ""
+    }
+  }, 
+  "params": {
+    "value": {
+      "widgetId": 28, 
+      "dashboardWidgetId": 15
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 635, 
+      "height": 650
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "backgroundColor": "--kcSurface", 
+        "classes": "kanoa/font/default", 
+        "gap": "5px"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "flex-start", 
+          "alignContent": "flex-start", 
+          "style": {
+            "gap": "5px"
+          }, 
+          "wrap": "wrap"
+        }, 
+        "children": [
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "style": {
+                "width": "100%", 
+                "height": 30
+              }
+            }, 
+            "children": [
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "text": "Widget Information ", 
+                  "textStyle": {
+                    "fontSize": "1.5em", 
+                    "fontWeight": "bold"
+                  }
+                }, 
+                "meta": {
+                  "domId": "lblHeader", 
+                  "name": "lblHeader"
+                }, 
+                "position": {
+                  "grow": 1
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxHeader", 
+              "name": "flxHeader"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }, 
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "style": {
+                "gap": 5
+              }
+            }, 
+            "children": [
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "text": "Name:"
+                }, 
+                "meta": {
+                  "domId": "lblName", 
+                  "name": "lblName"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "80px"
+                }
+              }, 
+              {
+                "type": "ia.display.label", 
+                "meta": {
+                  "domId": "lblWidgetName", 
+                  "name": "lblWidgetName"
+                }, 
+                "position": {
+                  "grow": 1
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value or ''", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.custom.dashboardWidgetInfo.widgetName"
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "style": {
+                    "classes": "kanoa/container", 
+                    "height": 30
+                  }, 
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "enabled": true, 
+                    "location": "bottom-right", 
+                    "text": "widgetId"
+                  }, 
+                  "domId": "lblWidgetId", 
+                  "name": "lblWidgetId"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "30px"
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value['widgetId'] or ''", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.custom.dashboardWidgetInfo"
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "style": {
+                    "classes": "kanoa/container", 
+                    "height": 30
+                  }, 
+                  "textStyle": {
+                    "textAlign": "center"
+                  }
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "enabled": true, 
+                    "location": "bottom-right", 
+                    "text": "dashboardWidgetId"
+                  }, 
+                  "domId": "lblDashboardWidgetId", 
+                  "name": "lblDashboardWidgetId"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "30px"
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value['dashboardWidgetId'] or ''", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.params.value"
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxName", 
+              "name": "flxName"
+            }, 
+            "position": {
+              "grow": 1, 
+              "shrink": 0
+            }
+          }, 
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "alignItems": "flex-start", 
+              "style": {
+                "gap": 5, 
+                "width": "100%"
+              }, 
+              "wrap": "wrap"
+            }, 
+            "children": [
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "text": "Description:"
+                }, 
+                "meta": {
+                  "domId": "label", 
+                  "name": "label"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "80px"
+                }
+              }, 
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "style": {
+                    "width": "200px"
+                  }
+                }, 
+                "meta": {
+                  "domId": "lblDescription", 
+                  "name": "lblDescription"
+                }, 
+                "position": {
+                  "grow": 1, 
+                  "shrink": 0
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.custom.dashboardWidgetInfo.widgetDescription"
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxDescription", 
+              "name": "flxDescription"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }, 
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "alignItems": "flex-start", 
+              "style": {
+                "gap": 5, 
+                "width": "100%"
+              }
+            }, 
+            "children": [
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "text": "View Path:"
+                }, 
+                "meta": {
+                  "domId": "label-1", 
+                  "name": "label"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "80px"
+                }
+              }, 
+              {
+                "type": "ia.display.label", 
+                "meta": {
+                  "domId": "lblViewPath", 
+                  "name": "lblViewPath"
+                }, 
+                "position": {
+                  "grow": 1, 
+                  "shrink": 0
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value or ''", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "path": "view.custom.dashboardWidgetInfo.viewPath"
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxViewPath", 
+              "name": "flxViewPath"
+            }, 
+            "position": {
+              "shrink": 0
+            }
+          }, 
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "alignItems": "flex-start", 
+              "alignContent": "flex-start", 
+              "style": {
+                "minHeight": "100px", 
+                "gap": "5px", 
+                "width": "100%"
+              }, 
+              "wrap": "wrap"
+            }, 
+            "children": [
+              {
+                "type": "ia.display.label", 
+                "props": {
+                  "text": "View Params:"
+                }, 
+                "meta": {
+                  "domId": "lblViewParams", 
+                  "name": "lblViewParams"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "basis": "80px"
+                }
+              }, 
+              {
+                "type": "ia.input.text-area", 
+                "props": {
+                  "resize": "vertical", 
+                  "style": {
+                    "fontSize": "12px", 
+                    "height": "100px"
+                  }, 
+                  "deferUpdates": false
+                }, 
+                "meta": {
+                  "domId": "txtViewParams", 
+                  "name": "txtViewParams"
+                }, 
+                "position": {
+                  "grow": 1
+                }, 
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "property", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "bidirectional": true, 
+                        "path": "view.custom.dashboardWidgetInfo.viewParams"
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxViewParams", 
+              "name": "flxViewParams"
+            }, 
+            "position": {
+              "grow": 1
+            }
+          }, 
+          {
+            "type": "ia.container.flex", 
+            "props": {
+              "alignItems": "center", 
+              "justify": "flex-end", 
+              "style": {
+                "padding": "5px", 
+                "gap": "5px"
+              }
+            }, 
+            "children": [
+              {
+                "type": "ia.input.button", 
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/autorenew"
+                    }
+                  }, 
+                  "style": {
+                    "classes": "kanoa/button/flatIcon", 
+                    "width": "30px", 
+                    "height": "30px"
+                  }, 
+                  "text": ""
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "enabled": true, 
+                    "location": "center-right", 
+                    "text": "Refresh widget"
+                  }, 
+                  "domId": "btnRefresh", 
+                  "name": "btnRefresh"
+                }, 
+                "position": {
+                  "shrink": 0
+                }, 
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\t\n\tself.view.refreshBinding(\"custom.dashboardWidgetInfo\")\n\t\n\treturn"
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "type": "ia.input.button", 
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/block"
+                    }
+                  }, 
+                  "style": {
+                    "classes": "kanoa/button/flatIcon", 
+                    "width": "30px", 
+                    "height": "30px"
+                  }, 
+                  "text": ""
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "enabled": true, 
+                    "location": "center-right", 
+                    "text": "Clear Editor"
+                  }, 
+                  "domId": "btnClear", 
+                  "name": "btnClear"
+                }, 
+                "position": {
+                  "shrink": 0, 
+                  "display": false
+                }, 
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\t\n\tself.view.custom.devOPS.clearWidget = True\n\t\n\treturn"
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "type": "ia.input.button", 
+                "props": {
+                  "image": {
+                    "icon": {
+                      "color": "--kcGreen-60", 
+                      "path": "material/save"
+                    }
+                  }, 
+                  "style": {
+                    "classes": "kanoa/button/flatIcon", 
+                    "width": 30, 
+                    "height": 30
+                  }, 
+                  "text": ""
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "location": "center-right"
+                  }, 
+                  "domId": "btnUpdate", 
+                  "name": "btnUpdate"
+                }, 
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\t\n\tself.view.getChild(\"root\").saveDashboardWidgetParams()\n\t\n\treturn"
+                      }
+                    }
+                  }
+                }, 
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value['widget']['widgetId'] is not None or (value['widget']['widgetName'] or None) is not None", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "widget": "{view.custom.dashboardWidgetInfo}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }
+                }
+              }, 
+              {
+                "type": "ia.input.button", 
+                "props": {
+                  "image": {
+                    "icon": {
+                      "path": "material/playlist_add_check"
+                    }
+                  }, 
+                  "style": {
+                    "classes": "kanoa/button/flatIcon", 
+                    "width": 30, 
+                    "height": 30
+                  }, 
+                  "text": ""
+                }, 
+                "meta": {
+                  "tooltip": {
+                    "enabled": true, 
+                    "location": "center-right", 
+                    "text": "Validate View Params"
+                  }, 
+                  "domId": "btnCheckViewParams", 
+                  "name": "btnCheckViewParams"
+                }, 
+                "events": {
+                  "component": {
+                    "onActionPerformed": {
+                      "type": "script", 
+                      "scope": "G", 
+                      "config": {
+                        "script": "\t\n\tself.view.getChild(\"root\").validateViewParams()\n\t\n\treturn"
+                      }
+                    }
+                  }
+                }, 
+                "propConfig": {
+                  "position.display": {
+                    "binding": {
+                      "transforms": [
+                        {
+                          "code": "\treturn value['widget']['widgetId'] is not None or (value['widget']['widgetName'] or None) is not None", 
+                          "type": "script"
+                        }
+                      ], 
+                      "type": "expr-struct", 
+                      "overlayOptOut": true, 
+                      "config": {
+                        "struct": {
+                          "widget": "{view.custom.dashboardWidgetInfo}"
+                        }, 
+                        "waitOnAll": true
+                      }
+                    }
+                  }
+                }
+              }
+            ], 
+            "meta": {
+              "domId": "flxAction", 
+              "name": "flxAction"
+            }, 
+            "position": {
+              "grow": 1, 
+              "shrink": 0
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxdashboardWidgetInfo", 
+          "name": "flxdashboardWidgetInfo"
+        }, 
+        "position": {
+          "shrink": 0
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "classes": "kanoa/container", 
+            "gap": 5
+          }, 
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "height": 30
+              }, 
+              "text": "Display", 
+              "textStyle": {
+                "fontSize": "1.5em", 
+                "fontWeight": "bold"
+              }
+            }, 
+            "meta": {
+              "domId": "lblHeader-1", 
+              "name": "lblHeader"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "display": false
+            }
+          }, 
+          {
+            "type": "ia.display.view", 
+            "meta": {
+              "domId": "evDisplay", 
+              "name": "evDisplay"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.path": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif value is None: return ''\n\treturn value", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.dashboardWidgetInfo.viewPath"
+                  }
+                }
+              }, 
+              "props.params.value": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tif (value or None) is None: return {}\n\treturn system.util.jsonDecode(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.dashboardWidgetInfo.viewParams"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxDisplay", 
+          "name": "flxDisplay"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "flex-start", 
+          "alignContent": "flex-start", 
+          "style": {
+            "gap": "5px 15px"
+          }, 
+          "wrap": "wrap"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblHeader-2", 
+              "name": "lblHeader"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxDebug", 
+          "name": "flxDebug"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "display": false
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [], 
+      "customMethods": [
+        {
+          "params": [], 
+          "script": "\n\n\tsystem.perspective.print('validateViewParams() called with')\n\t\n\tviewParams = self.view.custom.dashboardWidgetInfo.viewParams\n\t\n\ttry:\t\n\t\tviewParams.replace('null', 'None')\n\t\tviewParams.replace('true', 'True')\n\t\tviewParams.replace('false', 'False')\n\t\t\n\t\tviewParams = system.util.jsonDecode(viewParams)\n\t\tsystem.perspective.print(\"viewParams are %s\"%viewParams)\n\t\t\n\t\tfor k,v in viewParams.items():\n\t\t\tsystem.perspective.print(\"%s: %s\"%(k,v))\n\t\t\n\t\tsystem.perspective.sendMessage('showSuccessfulToast', 'viewParams are valid')\n\texcept:\n\t\tmsg = 'viewParams are invalid'\n\t\tsystem.perspective.print(msg)\n\t\tsystem.perspective.sendMessage('showFailerToast', msg)\n\t\tviewParams = None\n\t\n\treturn viewParams", 
+          "name": "validateViewParams"
+        }, 
+        {
+          "params": [], 
+          "script": "\n\tsystem.perspective.print(\"saveDashboardWidgetParams() called\")\n\t\t\n\tuserId = system.kanoa.security.getIDPUserId(self.session.props.auth.user)\n\tdashboardWidgetInfo = self.view.custom.dashboardWidgetInfo\n\tdashboardWidgetId = dashboardWidgetInfo['dashboardWidgetId']\n\t\n\tif dashboardWidgetId: \t# Save the widget\n\t\tsuccess, msg = system.kanoa.dashboard.updateDashboardWidget(dashboardWidgetInfo, userId)\n\t\tsystem.perspective.print('updateDashboardWidget returned %s %s'%(success, msg))\n\t\tself.view.refreshBinding(\"custom.dashboardWidgetInfo\")\n\telse:\n\t\tdashboardWidgetId, msg = system.kanoa.dashboard.addDashboardWidget(dashboardWidgetInfo, userId)\n\t\tsystem.perspective.print('addDashboardWidget returned %s %s'%(dashboardWidgetId, msg))\n\t\tself.view.params.value.dashboardWidgetId = dashboardWidgetId\n\n\tif msg:\tsystem.perspective.sendMessage('showFailerToast', msg)\n\telse: system.perspective.sendMessage('showSuccessfulToast', 'Dashboard Widget has been saved')\n\t\n\tsystem.perspective.sendMessage('refreshDashboardWidgetParams', {'dashboardWidgetId':dashboardWidgetId})\n\t\n\treturn dashboardWidgetId, msg\t\n\t\n\t", 
+          "name": "saveDashboardWidgetParams"
+        }
+      ], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.dashboardWidgetInfo": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tdashboardWidgetInfo = system.kanoa.utilities.convertDatasetRowToJSON(system.kanoa.dashboard.getDashboardWidgets({'dashboardWidgetId': value['dashboardWidgetId'] or -1}),0)\n\tdashboardWidgetInfo['widgetDescription'] = dashboardWidgetInfo['widgetDescription']  or ''\n\tdashboardWidgetInfo['viewParams'] = dashboardWidgetInfo['viewParams']  or ''\n\t\n\treturn dashboardWidgetInfo", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "overlayOptOut": true, 
+        "config": {
+          "path": "view.params.value"
+        }
+      }, 
+      "persistent": true
+    }
+  }
+}

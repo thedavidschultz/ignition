@@ -3,15 +3,23 @@
   "version": 1,
   "restricted": false,
   "overridable": true,
-  "files": [],
+  "files": [
+    "it.json",
+    "zh.json",
+    "es.json",
+    "fr.json",
+    "de.json",
+    "en.json",
+    "ko.json"
+  ],
   "attributes": {
     "lastModification": {
-      "actor": "8.3-migration",
-      "timestamp": "2026-07-09T18:36:28Z"
+      "actor": "unknown",
+      "timestamp": "2026-07-09T21:17:32Z"
     },
     "ignorePunctuation": false,
     "caseInsensitive": false,
-    "lastModificationSignature": "64a765aea098823ee9365e48c6065590299d4ad37ad88162ea622a2d91247a1d",
+    "lastModificationSignature": "c8f7e9cd7169194ae51ed88ed08d69374b1c51afcd3ce46fecca94bf86bdda7c",
     "ignoreWhitespace": false,
     "ignoreTags": false
   }

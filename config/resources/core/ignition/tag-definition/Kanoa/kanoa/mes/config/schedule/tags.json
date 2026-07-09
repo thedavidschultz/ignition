@@ -1,0 +1,9 @@
+[
+  {
+    "valueSource": "memory",
+    "dataType": "Boolean",
+    "name": "endScheduledRuns",
+    "defaultValue": true,
+    "tagType": "AtomicTag"
+  }
+]

@@ -1,0 +1,234 @@
+{
+  "custom": {
+    "sorted": [], 
+    "total": 0
+  }, 
+  "params": {
+    "value": {
+      "data": {
+        "$": [
+          "ds", 
+          192, 
+          1698601425058
+        ], 
+        "$columns": [
+          {
+            "data": [
+              "Mix Line 1", 
+              "Mix Line 1", 
+              "Mix Line 1", 
+              "Mix Line 1", 
+              "Mix Line 1"
+            ], 
+            "type": "String", 
+            "name": "assetName"
+          }, 
+          {
+            "data": [
+              "Equipment", 
+              "Operations", 
+              "Quality", 
+              "Idle", 
+              "ddd"
+            ], 
+            "type": "String", 
+            "name": "stateCategoryName"
+          }, 
+          {
+            "data": [
+              "Unplanned Downtime", 
+              "Unplanned Downtime", 
+              "Unplanned Downtime", 
+              "Unplanned Downtime", 
+              "Unplanned Downtime"
+            ], 
+            "type": "String", 
+            "name": "stateTypeName"
+          }, 
+          {
+            "data": [
+              "#FF6666", 
+              "#FF6666", 
+              "#FF6666", 
+              "#FF6666", 
+              "#FF6666"
+            ], 
+            "type": "String", 
+            "name": "stateTypeColor"
+          }, 
+          {
+            "data": [
+              262852, 
+              211973, 
+              3040, 
+              168, 
+              0
+            ], 
+            "type": "Integer", 
+            "name": "durationSecs"
+          }
+        ]
+      }, 
+      "title": "value", 
+      "labelCol": "stateCategoryName", 
+      "valueCol": "durationSecs"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "height": 400
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "minHeight": "100px", 
+        "overflow": "hidden"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.chart.pie", 
+        "props": {
+          "legend": {
+            "icon": {
+              "width": 10, 
+              "height": 10
+            }, 
+            "fontSize": 11, 
+            "position": "right"
+          }, 
+          "valueFormat": {
+            "showValueAsPercent": false
+          }, 
+          "colors": [
+            "#117DBE", 
+            "#BF7611", 
+            "#BF11BF", 
+            "#4FBF11", 
+            "#2D536A", 
+            "#F16500", 
+            "#00DEF2", 
+            "#B5F200", 
+            "#A700F2", 
+            "#9D6034"
+          ], 
+          "labels": {
+            "showName": false, 
+            "bent": true, 
+            "inside": {
+              "radius": 50
+            }, 
+            "showValue": false
+          }, 
+          "style": {
+            "fontSize": 12, 
+            "fontWeight": "bold"
+          }, 
+          "tooltipFormat": "{category} : {value.value.formatNumber('#.0')} mins ({value.percent.formatNumber('#.0')}%)"
+        }, 
+        "meta": {
+          "domId": "PieChart", 
+          "name": "PieChart"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "props.titleColor": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn kanoaScripts.colors.getCSSColor('--kcOnSurface', value)", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "session.props.theme"
+              }
+            }
+          }, 
+          "props.data": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\n#\tsystem.perspective.print(\"buildChart() called\")\n\t\n\thdr = ['label', 'value']\n\tdata = system.dataset.toPyDataSet(value.data)\n\tlabels = list(set([row[value.labelCol] for row in data]))\n\tnewValues = [[labels[i], 0.0] for i in range(len(labels))]\n\n\tfor row in data:\n\t\tnewValues[labels.index(row[value.labelCol])][1] += round(row[value.valueCol] / 60.0,1)\n\t\n\treturn system.dataset.toDataSet(hdr, newValues)", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value"
+              }
+            }
+          }, 
+          "position.display": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn value.rowCount > 0", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "this.props.data"
+              }
+            }
+          }, 
+          "props.title": {
+            "binding": {
+              "type": "expr", 
+              "config": {
+                "expression": "translate({view.params.value.title})"
+              }
+            }
+          }, 
+          "props.legendLabelColor": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn kanoaScripts.colors.getCSSColor('--kcOnSurface', value)", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "session.props.theme"
+              }
+            }
+          }, 
+          "props.labels.inside.color": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\t\n\treturn kanoaScripts.colors.getCSSColor('--kcOnSurface', value)", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "session.props.theme"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

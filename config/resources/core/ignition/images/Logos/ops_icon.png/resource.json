@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "85bbe96c57dd1c41ab4bd52413f1acd6",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "ops_icon.png"
+  ],
+  "attributes": {
+    "width": 300,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-07-09T21:17:21Z"
+    },
+    "size": 0,
+    "lastModificationSignature": "39d5c357a0497a2a332de18753e0f602f6ce342aeb1c52983a173ec4ef96f99f",
+    "height": 260
+  }
+}

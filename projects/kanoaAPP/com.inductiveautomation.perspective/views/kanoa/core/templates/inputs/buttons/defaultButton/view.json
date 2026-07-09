@@ -1,0 +1,134 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": {
+      "color": "--kcBlue-40", 
+      "msgHandler": "", 
+      "label": "Save", 
+      "styleClass": "kanoa/button/outlined", 
+      "enabled": true, 
+      "iconColor": "--kcGray-0", 
+      "iconPath": "material/save", 
+      "fontColor": "--kcGray-0"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 118, 
+      "height": 40
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.input.button", 
+        "props": {
+          "image": {
+            "icon": {}
+          }, 
+          "style": {}, 
+          "text": "Save", 
+          "textStyle": {
+            "classes": "kanoa/font/labelMedium"
+          }
+        }, 
+        "meta": {
+          "tooltip": {
+            "enabled": true, 
+            "location": "bottom-right"
+          }, 
+          "domId": "button", 
+          "name": "button"
+        }, 
+        "events": {
+          "component": {
+            "onActionPerformed": {
+              "type": "script", 
+              "scope": "G", 
+              "config": {
+                "script": "\t\n\tsystem.perspective.sendMessage(self.view.params.value.msgHandler, {})\n\t\n\treturn"
+              }
+            }
+          }
+        }, 
+        "propConfig": {
+          "props.style.classes": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.styleClass"
+              }
+            }
+          }, 
+          "props.style.backgroundColor": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.color"
+              }
+            }
+          }, 
+          "props.image.icon.path": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.params.value.iconPath"
+              }
+            }
+          }, 
+          "props.textStyle.color": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.params.value.fontColor"
+              }
+            }
+          }, 
+          "meta.tooltip.text": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.label"
+              }
+            }
+          }, 
+          "props.enabled": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.enabled"
+              }
+            }
+          }, 
+          "props.image.icon.color": {
+            "binding": {
+              "type": "property", 
+              "overlayOptOut": true, 
+              "config": {
+                "path": "view.params.value.iconColor"
+              }
+            }
+          }
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }
+  }
+}

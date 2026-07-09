@@ -1,0 +1,18 @@
+{
+  "scope": "A",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "config.json",
+    "kanoa.svg"
+  ],
+  "attributes": {
+    "lastModification": {
+      "actor": "Kanoa MES",
+      "timestamp": "2026-07-09T21:17:21Z"
+    },
+    "uuid": "698a47c6-ca7c-47a5-983d-08a0cc192f05",
+    "lastModificationSignature": "5948c268c4b30aa13f95b5f8c8677f6128e21985bf31015967896f93a1bac929"
+  }
+}

@@ -1,0 +1,810 @@
+{
+  "custom": {
+    "data": {}, 
+    "filters": {
+      "stacked": true, 
+      "barMode": "byReason", 
+      "dateRange": {
+        "endDate": {
+          "$ts": 1757512893737, 
+          "$": [
+            "ts", 
+            0, 
+            1760749527215
+          ]
+        }, 
+        "startDate": {
+          "$ts": 1757508668000, 
+          "$": [
+            "ts", 
+            0, 
+            1760749527215
+          ]
+        }
+      }, 
+      "woInfo": {
+        "product": null, 
+        "woId": null, 
+        "scheduleId": null
+      }, 
+      "topN": 25, 
+      "showAssetPath": true, 
+      "assetId": null, 
+      "assetPath": "ICC-ProveIt\\Dallas\\Press\\Press 104"
+    }, 
+    "loading": {
+      "msg": "0 / 16", 
+      "max": 16, 
+      "index": 1
+    }, 
+    "chart": {
+      "colors": [
+        "#ba1a1a", 
+        "#f4b400", 
+        "#489fe2"
+      ], 
+      "series": [
+        {
+          "data": [
+            {
+              "x": "Idle", 
+              "y": 281.67
+            }, 
+            {
+              "x": "Unoccupied Time", 
+              "y": 70.42
+            }, 
+            {
+              "x": "Blocked", 
+              "y": 70.42
+            }, 
+            {
+              "x": "CIP", 
+              "y": 40.07
+            }, 
+            {
+              "x": "Mass Broken pins", 
+              "y": 32.05
+            }, 
+            {
+              "x": "Faulted", 
+              "y": 7.28
+            }
+          ], 
+          "name": "Availability"
+        }, 
+        {
+          "data": [
+            {
+              "x": "Idle", 
+              "y": 0
+            }, 
+            {
+              "x": "Unoccupied Time", 
+              "y": 0
+            }, 
+            {
+              "x": "Blocked", 
+              "y": 0
+            }, 
+            {
+              "x": "CIP", 
+              "y": 0
+            }, 
+            {
+              "x": "Mass Broken pins", 
+              "y": 0
+            }, 
+            {
+              "x": "Faulted", 
+              "y": 0
+            }
+          ], 
+          "name": "Performance"
+        }, 
+        {
+          "data": [
+            {
+              "x": "Idle", 
+              "y": 0
+            }, 
+            {
+              "x": "Unoccupied Time", 
+              "y": 0
+            }, 
+            {
+              "x": "Blocked", 
+              "y": 0
+            }, 
+            {
+              "x": "CIP", 
+              "y": 0
+            }, 
+            {
+              "x": "Mass Broken pins", 
+              "y": 0
+            }, 
+            {
+              "x": "Faulted", 
+              "y": 0
+            }
+          ], 
+          "name": "Quality"
+        }
+      ], 
+      "xLabels": [
+        "Idle", 
+        "Unoccupied Time", 
+        "Blocked", 
+        "CIP", 
+        "Mass Broken pins", 
+        "Faulted"
+      ]
+    }
+  }, 
+  "params": {
+    "value": {
+      "stacked": true, 
+      "barMode": "byReason", 
+      "dateRange": {
+        "endDate": {
+          "$ts": 1757512893737, 
+          "$": [
+            "ts", 
+            192, 
+            1757525455351
+          ]
+        }, 
+        "startDate": {
+          "$ts": 1757508668000, 
+          "$": [
+            "ts", 
+            192, 
+            1757596421758
+          ]
+        }
+      }, 
+      "topN": 25, 
+      "assetPath": "ICC-ProveIt\\Dallas\\Press\\Press 104"
+    }
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 926, 
+      "height": 450
+    }
+  }, 
+  "root": {
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": 3, 
+        "backgroundColor": "--kcSurface", 
+        "classes": "kanoa/font/default", 
+        "overflow": "hidden", 
+        "gap": 5
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "style": {
+                "classes": "kanoa/font/labelLarge"
+              }, 
+              "text": "Production Loss Reasons", 
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblTitle", 
+              "name": "lblTitle"
+            }, 
+            "position": {
+              "grow": 1
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "props": {
+              "textStyle": {
+                "textAlign": "center"
+              }
+            }, 
+            "meta": {
+              "domId": "lblAsset", 
+              "name": "lblAsset"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tassetPath = system.kanoa.utilities.formatPath(value['assetPath'], {}) if value['showAssetPath'] else ''\n\treturn '%s'%(assetPath)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "tooltip": {
+            "enabled": true
+          }, 
+          "domId": "flxHeader", 
+          "name": "flxHeader"
+        }, 
+        "position": {
+          "shrink": 0
+        }, 
+        "propConfig": {
+          "meta.tooltip.text": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.custom.filters.assetPath"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "justify": "center", 
+          "style": {
+            "overflow": "visible", 
+            "gap": "5px"
+          }, 
+          "wrap": "wrap"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblMetric", 
+              "name": "lblMetric"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tmetricType = value['metricType'] if value.has_key('showMetricSelector') and not value['showMetricSelector'] else ''\n\treturn 'Summarize by %s'%(metricType)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.dropdown", 
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "kanoa/font/default"
+              }, 
+              "style": {
+                "classes": "kanoa/font/default", 
+                "minWidth": "160px"
+              }
+            }, 
+            "meta": {
+              "domId": "ddMetric", 
+              "name": "ddMetric"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn True if value.has_key('showMetricSelector') and value['showMetricSelector'] else False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }, 
+              "props.options": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn [{'label': 'Duration', 'value': 'Duration'}, \n\t{'label': 'Occurrence', 'value': 'Occurrence'}]\n\t", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr", 
+                  "config": {
+                    "expression": "now(0)"
+                  }
+                }
+              }, 
+              "props.value": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.metricType"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblGroupBy", 
+              "name": "lblGroupBy"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\t\n\tgroupBy = value['groupBy'] if value.has_key('showGroupBySelector') and not value['showGroupBySelector'] else ''\n\treturn 'Group by %s'%(groupBy)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.dropdown", 
+            "props": {
+              "dropdownOptionStyle": {
+                "classes": "kanoa/font/default"
+              }, 
+              "style": {
+                "classes": "kanoa/font/default", 
+                "minWidth": "160px"
+              }
+            }, 
+            "meta": {
+              "domId": "ddGroup", 
+              "name": "ddGroup"
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn True if value.has_key('showGroupBySelector') and value['showGroupBySelector'] else False", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filters"
+                  }
+                }
+              }, 
+              "props.options": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn [{'label': 'Asset', 'value': 'Asset'}, \n\t{'label': 'Reason', 'value': 'Reason'}, \n\t{'label': 'Work Order', 'value': 'Work Order'},\n\t{'label': 'Item', 'value': 'Item'},\n\t{'label': 'Line', 'value': 'Line'}]\n\t", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "expr", 
+                  "config": {
+                    "expression": "now(0)"
+                  }
+                }
+              }, 
+              "props.value": {
+                "binding": {
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": "view.custom.filters.groupBy"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxOptions", 
+          "name": "flxOptions"
+        }, 
+        "position": {
+          "display": false
+        }
+      }, 
+      {
+        "type": "ia.display.progress", 
+        "props": {
+          "bar": {
+            "color": "--kcPrimary"
+          }
+        }, 
+        "meta": {
+          "domId": "Progress", 
+          "name": "Progress"
+        }, 
+        "position": {
+          "basis": "10px"
+        }, 
+        "propConfig": {
+          "position.display": {
+            "binding": {
+              "transforms": [
+                {
+                  "code": "\treturn value is not None", 
+                  "type": "script"
+                }
+              ], 
+              "type": "property", 
+              "config": {
+                "path": "view.custom.loading.msg"
+              }
+            }
+          }, 
+          "props.max": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.custom.loading.max"
+              }
+            }
+          }, 
+          "props.value": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "path": "view.custom.loading.index"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "style": {
+            "overflow": "hidden"
+          }
+        }, 
+        "children": [
+          {
+            "type": "kyvislabs.display.apexchart", 
+            "props": {
+              "type": "bar", 
+              "options": {
+                "plotOptions": {
+                  "bar": {
+                    "dataLabels": {
+                      "total": {
+                        "dropShadow": {
+                          "blur": 2, 
+                          "enabled": true, 
+                          "top": 1, 
+                          "left": 0, 
+                          "opacity": 0.25
+                        }, 
+                        "enabled": true, 
+                        "offsetY": -10, 
+                        "style": {
+                          "color": "#444", 
+                          "fontSize": "13px", 
+                          "fontWeight": 500
+                        }
+                      }
+                    }, 
+                    "horizontal": false
+                  }
+                }, 
+                "legend": {
+                  "position": "bottom"
+                }, 
+                "tooltip": {
+                  "y": {
+                    "formatter": "function(val) { return val.toFixed(1) + ' min'; }"
+                  }
+                }, 
+                "fill": {
+                  "opacity": 1
+                }, 
+                "title": {
+                  "text": ""
+                }, 
+                "stroke": {
+                  "curve": "monotoneCubic", 
+                  "colors": [
+                    "#000000"
+                  ], 
+                  "width": 1
+                }, 
+                "dataLabels": {
+                  "enabled": true
+                }, 
+                "xaxis": {
+                  "type": "category", 
+                  "labels": {
+                    "formatter": "function(val) { if (!val) return ''; var parts = val.split('\\\\'); return parts[parts.length - 1]; }"
+                  }
+                }, 
+                "theme": {}, 
+                "markers": {
+                  "size": 5
+                }, 
+                "chart": {
+                  "type": "bar", 
+                  "toolbar": {
+                    "show": false
+                  }, 
+                  "fontFamily": "Roboto", 
+                  "height": 350
+                }
+              }
+            }, 
+            "meta": {
+              "domId": "apexBar", 
+              "name": "apexBar"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.options.chart.stacked": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.filters.stacked"
+                  }
+                }
+              }, 
+              "props.series": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.chart.series"
+                  }
+                }
+              }, 
+              "props.options.theme.mode": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\tif 'dark' in value: return 'dark'\n\telse: return 'light'", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "config": {
+                    "path": "session.props.theme"
+                  }
+                }
+              }, 
+              "props.options.colors": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "path": "view.custom.chart.colors"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxBody", 
+          "name": "flxBody"
+        }, 
+        "position": {
+          "grow": 1
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "direction": "column"
+        }, 
+        "children": [
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter", 
+              "name": "lblFilter"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.filter"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter_0", 
+              "name": "lblFilter_0"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.display.label", 
+            "meta": {
+              "domId": "lblFilter_1", 
+              "name": "lblFilter_1"
+            }, 
+            "position": {
+              "grow": 1
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn str(value)", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.custom.widgetInfo.params[0].enabled"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxDebug", 
+          "name": "flxDebug"
+        }, 
+        "position": {
+          "grow": 1, 
+          "display": false
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }, 
+    "scripts": {
+      "messageHandlers": [
+        {
+          "viewScope": false, 
+          "script": "\n\tsystem.perspective.print(\"widgetAssetSelected msg rcvd with %s\"%payload)\n\tassetPath = payload['selection'][0]['value']['path'] if len(payload['selection']) > 0 else None\n\t\n\tsystem.kanoa.utilities.storeAssetPath(self, assetPath)\n\t\n\treturn", 
+          "messageType": "widgetAssetSelected", 
+          "sessionScope": false, 
+          "pageScope": true
+        }
+      ], 
+      "customMethods": [], 
+      "extensionFunctions": null
+    }
+  }, 
+  "propConfig": {
+    "custom.chart": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\tfrom collections import defaultdict\n\t\n\tlogger = system.util.getLogger('lossReasonBarchart')\n\t\n\tCAT_COLOR_AVAIL = '#ba1a1a'\n\tCAT_COLOR_PERF  = '#f4b400'\n\tCAT_COLOR_QUAL  = '#489fe2'\n\tFALLBACK_COLOR  = '#9e9e9e'\n\n\tdef toMinutes(valSecs):\n\t\ttry:\n\t\t\treturn round(float(valSecs)/60.0, 4)\n\t\texcept:\n\t\t\treturn 0.0\n\t\n\ttry:\n\t\tif not value:\n\t\t\treturn {\"series\": [], \"colors\": [], \"xLabels\": []}\n\t\n\t\t# Filters\n\t\tfilters = getattr(self.view.custom, 'filters', {}) or {}\n\t\tbarMode = (filters.get('barMode') or 'byReason')\n\t\ttopN = int(filters.get('topN') or 10)\n\t\n\t\t# Global aggregations\n\t\t# reasonTotals[reason] -> {\"Availability\": mins, \"Performance\": mins, \"Quality\": mins, \"category\": bestGuess}\n\t\treasonTotals = defaultdict(lambda: {\"Availability\":0.0,\"Performance\":0.0,\"Quality\":0.0,\"category\":\"\"})\n\t\n\t\tfor evt in value:\n\t\t\t# Skip non-production for loss math; losses reside in summaries\n\t\t\tdurationSecs = float(evt.get('durationSecs') or 0.0)\n\t\t\toutfeedCount = float(evt.get('outfeedCount') or 0.0)\n\t\t\tsecondsPerUnit = (durationSecs / outfeedCount) if outfeedCount > 0 else 0.0\n\t\n\t\t\t# --- Availability (Downtime) ---\n\t\t\tfor dt in (evt.get('downtimeEventSummary') or []):\n\t\t\t\tstateName = (dt.get('stateName') or '').strip() or 'Unspecified'\n\t\t\t\tstateCategoryName = (dt.get('stateCategoryName') or '').strip()\n\t\t\t\tstateTypeName = (dt.get('stateTypeName') or '').strip()\n\t\t\t\tif stateName == 'Running' or stateCategoryName == 'Running' or stateTypeName == 'Running':\n\t\t\t\t\tcontinue\n\t\t\t\tmins = toMinutes(dt.get('durationSecs') or 0)\n\t\t\t\tif mins <= 0:\n\t\t\t\t\tcontinue\n\t\t\t\trec = reasonTotals[stateName]\n\t\t\t\trec[\"Availability\"] += mins\n\t\t\t\tif not rec[\"category\"]:\n\t\t\t\t\trec[\"category\"] = stateCategoryName or stateTypeName or 'Availability'\n\t\n\t\t\t# --- Performance ---\n\t\t\tfor pe in (evt.get('performanceEventSummary') or []):\n\t\t\t\treason = (pe.get('performanceStateName') or '').strip() or 'Unspecified'\n\t\t\t\tpath = (pe.get('performanceStatePath') or '').strip()\n\t\t\t\tcategory = (path.split('\\\\')[0] if '\\\\' in path else path) or 'Performance'\n\t\t\t\tmins = float(pe.get('value') or 0.0)  # assumed minutes\n\t\t\t\tif mins <= 0:\n\t\t\t\t\tcontinue\n\t\t\t\trec = reasonTotals[reason]\n\t\t\t\trec[\"Performance\"] += mins\n\t\t\t\tif not rec[\"category\"]:\n\t\t\t\t\trec[\"category\"] = category\n\t\n\t\t\t# --- Quality (Waste units -> minutes) ---\n\t\t\tfor ce in (evt.get('countEventSummary') or []):\n\t\t\t\tif (ce.get('counterTypeName') or '').lower() != 'waste':\n\t\t\t\t\tcontinue\n\t\t\t\treason = (ce.get('itemStateName') or '').strip() or 'Unspecified'\n\t\t\t\tcategory = (ce.get('itemStateClassName') or '').strip() or 'Quality'\n\t\t\t\tunits = float(ce.get('value') or 0.0)\n\t\t\t\tif units <= 0:\n\t\t\t\t\tcontinue\n\t\t\t\tmins = (units * secondsPerUnit) / 60.0 if secondsPerUnit > 0 else 0.0\n\t\t\t\tif mins <= 0:\n\t\t\t\t\tcontinue\n\t\t\t\trec = reasonTotals[reason]\n\t\t\t\trec[\"Quality\"] += round(mins, 4)\n\t\t\t\tif not rec[\"category\"]:\n\t\t\t\t\trec[\"category\"] = category\n\t\n\t\t# Colors by category (series)\n\t\tseriesColors = [CAT_COLOR_AVAIL, CAT_COLOR_PERF, CAT_COLOR_QUAL]\n\t\n\t\tif barMode == 'byCategory':\n\t\t\t# x-axis: categories; series: reasons (topN per category)\n\t\t\tcatNames = ['Availability','Performance','Quality']\n\t\t\t# Build separate rankings\n\t\t\tcatReasonMaps = {c: [] for c in catNames}\n\t\t\tfor reason, buckets in reasonTotals.items():\n\t\t\t\tfor c in catNames:\n\t\t\t\t\tval = buckets.get(c, 0.0)\n\t\t\t\t\tif val > 0:\n\t\t\t\t\t\tcatReasonMaps[c].append((reason, val))\n\t\n\t\t\t# Pick topN per category\n\t\t\tfor c in catNames:\n\t\t\t\tcatReasonMaps[c].sort(key=lambda t: t[1], reverse=True)\n\t\t\t\tcatReasonMaps[c] = catReasonMaps[c][:topN]\n\t\n\t\t\t# Build union of top reasons across categories as series\n\t\t\treasonSet = set()\n\t\t\tfor c in catNames:\n\t\t\t\tfor r, _ in catReasonMaps[c]:\n\t\t\t\t\treasonSet.add(r)\n\t\t\torderedReasons = sorted(list(reasonSet))\n\t\n\t\t\tseries = []\n\t\t\tfor r in orderedReasons:\n\t\t\t\tdata = []\n\t\t\t\tfor c in catNames:\n\t\t\t\t\tval = 0.0\n\t\t\t\t\tfor rr, v in catReasonMaps[c]:\n\t\t\t\t\t\tif rr == r:\n\t\t\t\t\t\t\tval = v\n\t\t\t\t\t\t\tbreak\n\t\t\t\t\tdata.append({\"x\": c, \"y\": round(val, 2)})\n\t\t\t\tseries.append({\"name\": r, \"data\": data})\n\t\n\t\t\treturn {\"series\": series, \"colors\": None, \"xLabels\": catNames}\n\t\n\t\telse:\n\t\t\t# Default: byReason + TopN support\n\t\t\t# x-axis: reasons (sorted by total minutes desc); series: Availability/Performance/Quality\n\t\t\ttotalByReason = {}\n\t\t\tfor reason, b in reasonTotals.items():\n\t\t\t\ttotal = b[\"Availability\"] + b[\"Performance\"] + b[\"Quality\"]\n\t\t\t\tif total > 0:\n\t\t\t\t\ttotalByReason[reason] = total\n\t\t\n\t\t\t# Sort all reasons by total minutes\n\t\t\tsortedReasons = [r for r, _ in sorted(totalByReason.items(), key=lambda kv: kv[1], reverse=True)]\n\t\t\n\t\t\t# Apply TopN; remainder becomes \"Other\"\n\t\t\tn = int(topN or 10)\n\t\t\tuseTopN = n > 0 and len(sortedReasons) > n\n\t\t\tmainReasons = sortedReasons[:n] if useTopN else sortedReasons\n\t\t\totherReasons = sortedReasons[n:] if useTopN else []\n\t\t\n\t\t\t# Prepare \"Other\" buckets (per category)\n\t\t\totherBuckets = {\"Availability\": 0.0, \"Performance\": 0.0, \"Quality\": 0.0}\n\t\t\tif useTopN:\n\t\t\t\tfor r in otherReasons:\n\t\t\t\t\totherBuckets[\"Availability\"] += reasonTotals[r][\"Availability\"]\n\t\t\t\t\totherBuckets[\"Performance\"]  += reasonTotals[r][\"Performance\"]\n\t\t\t\t\totherBuckets[\"Quality\"]      += reasonTotals[r][\"Quality\"]\n\t\t\n\t\t\t# Final x-labels (append \"Other\" if used)\n\t\t\txLabels = list(mainReasons)\n\t\t\tif useTopN:\n\t\t\t\txLabels.append(\"Other\")\n\t\t\n\t\t\tdef mkSeries(name):\n\t\t\t\tdata = []\n\t\t\t\tfor r in mainReasons:\n\t\t\t\t\tdata.append({\"x\": r, \"y\": round(reasonTotals[r][name], 2)})\n\t\t\t\tif useTopN:\n\t\t\t\t\tdata.append({\"x\": \"Other\", \"y\": round(otherBuckets[name], 2)})\n\t\t\t\treturn {\"name\": name, \"data\": data}\n\t\t\n\t\t\tseries = [\n\t\t\t\tmkSeries(\"Availability\"),\n\t\t\t\tmkSeries(\"Performance\"),\n\t\t\t\tmkSeries(\"Quality\")\n\t\t\t]\n\t\t\n\t\t\treturn {\"series\": series, \"colors\": [CAT_COLOR_AVAIL, CAT_COLOR_PERF, CAT_COLOR_QUAL], \"xLabels\": xLabels}\n\t\n\texcept Exception as ex:\n\t\tlogger.error('lossReasonBarchart transform failed: %s' % ex)\n\t\treturn {\"series\": [], \"colors\": [], \"xLabels\": []}", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.data.productionEvents"
+        }
+      }, 
+      "persistent": true
+    }, 
+    "custom.loading": {
+      "persistent": true
+    }, 
+    "custom.filters": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\n\tsystem.perspective.print(\"filter binding change\")\n\n\tpage = self.page.props.pageId\n\n\tfilters = system.kanoa.dashboard.getWidgetFilters(page, value['viewParams'], value['sessionCustomProps'], self.session.props.device.timezone.id)\n\tif not filters.has_key('showAssetPath'): filters['showAssetPath'] = True\n\t\n\tviewParams = value['viewParams']\n\tif viewParams.has_key('dateRange') and viewParams['dateRange'].has_key('startDate') and viewParams['dateRange'].has_key('endDate'):\n\t\tfilters['dateRange'] = viewParams['dateRange']\n\t\n\treturn filters", 
+            "type": "script"
+          }
+        ], 
+        "type": "expr-struct", 
+        "overlayOptOut": true, 
+        "config": {
+          "struct": {
+            "sessionCustomProps": "{session.custom.kanoa}", 
+            "viewParams": "{view.params.value}"
+          }, 
+          "waitOnAll": true
+        }
+      }, 
+      "persistent": true
+    }, 
+    "params.value": {
+      "paramDirection": "input", 
+      "persistent": true
+    }, 
+    "custom.data": {
+      "persistent": true
+    }, 
+    "custom.data.productionEvents": {
+      "binding": {
+        "transforms": [
+          {
+            "code": "\t\n\tsystem.perspective.print(\"data binding change\")\n\t\n\tfilter = value\n\n\tif (filter['assetPath'] or None) is None: return []\n\tassetPath = filter['assetPath'] + '%'\n\tassetId = filter['assetId']\n\tstartDate = filter['dateRange']['startDate']\n\tendDate = filter['dateRange']['endDate']\n\tmodeEventId = None\n\n\tif assetPath is None: return []\n\t\n\tparamsDict = {'assetId': assetId, 'assetPath': assetPath, 'startDate': startDate, 'endDate': endDate, 'modeEventId': modeEventId, 'strictDates': False}\n\tprodEvents = system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getAssetProductionEvents(paramsDict))\n\t\n\tself.custom.loading['max'] = len(prodEvents)\n\tself.custom.loading['msg'] = 'loading'\n\t\n\tfor index in range(len(prodEvents)):\n\t\tself.custom.loading['index'] = index+1\n\t\tself.custom.loading['msg'] = '{} / {}'.format(index, self.custom.loading['max'])\n\t\tparamsDict = {'assetId': prodEvents[index]['assetId'], 'startDate': max(prodEvents[index]['startDate'], startDate), 'endDate': min(prodEvents[index]['endDate'] or system.date.now(), endDate), 'strictDates': True}\n#\t\tprodEvents[index]['countEventSummary'] = system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getCounterEventTotals(paramsDict))\n\t\tprodEvents[index]['performanceEventSummary'] = system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getPerformanceEvents(paramsDict))\n\t\tprodEvents[index]['downtimeEventSummary'] = system.kanoa.utilities.convertDatasetToJSON(system.kanoa.event.getAssetStateEventsSummary(paramsDict))\n\t\n\tself.custom.loading['msg'] = None\n\treturn prodEvents", 
+            "type": "script"
+          }
+        ], 
+        "type": "property", 
+        "config": {
+          "path": "view.custom.filters"
+        }
+      }
+    }
+  }
+}

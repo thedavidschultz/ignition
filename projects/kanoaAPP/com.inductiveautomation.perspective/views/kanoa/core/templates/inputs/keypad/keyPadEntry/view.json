@@ -1,0 +1,347 @@
+{
+  "custom": {}, 
+  "params": {
+    "value": ""
+  }, 
+  "props": {
+    "defaultSize": {
+      "width": 310, 
+      "height": 308
+    }
+  }, 
+  "root": {
+    "custom": {
+      "source": "keypad"
+    }, 
+    "type": "ia.container.flex", 
+    "props": {
+      "style": {
+        "padding": "5px", 
+        "backgroundColor": "--kcSurface", 
+        "overflow": "hidden", 
+        "gap": "5px"
+      }, 
+      "direction": "column"
+    }, 
+    "children": [
+      {
+        "type": "ia.display.view", 
+        "props": {
+          "useDefaultViewWidth": true, 
+          "params": {
+            "dataType": null, 
+            "styles": [
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }, 
+              {
+                "button_style": {
+                  "backgroundColor": "#44546A", 
+                  "borderRadius": "15%", 
+                  "borderWidth": "0px"
+                }, 
+                "text_style": {
+                  "fontSize": 36
+                }
+              }
+            ], 
+            "valueViewPath": "", 
+            "maxLength": 8
+          }, 
+          "path": "kanoa/core/templates/inputs/keypad/keypadWide"
+        }, 
+        "meta": {
+          "domId": "Keypad", 
+          "name": "Keypad"
+        }, 
+        "position": {
+          "basis": "379px"
+        }, 
+        "events": {
+          "dom": {
+            "onClick": {
+              "type": "script", 
+              "scope": "G", 
+              "config": {
+                "script": "\n\tself.parent.custom.source = 'keypad'"
+              }
+            }
+          }
+        }, 
+        "propConfig": {
+          "props.params.value": {
+            "binding": {
+              "type": "property", 
+              "config": {
+                "bidirectional": true, 
+                "path": "view.params.value"
+              }
+            }
+          }
+        }
+      }, 
+      {
+        "type": "ia.container.flex", 
+        "props": {
+          "alignItems": "center", 
+          "style": {
+            "padding": "5px", 
+            "overflow": "hidden", 
+            "gap": "5px"
+          }
+        }, 
+        "children": [
+          {
+            "type": "ia.input.text-field", 
+            "props": {
+              "rejectUpdatesWhileFocused": false, 
+              "enabled": false, 
+              "style": {
+                "backgroundColor": "--kcGray-10"
+              }, 
+              "deferUpdates": false
+            }, 
+            "meta": {
+              "domId": "TextField", 
+              "name": "TextField"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "190px"
+            }, 
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property", 
+                  "config": {
+                    "bidirectional": true, 
+                    "path": ".../Keypad.props.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "path": "material/clear"
+                }
+              }, 
+              "style": {
+                "classes": "kanoa/button/flatIcon"
+              }, 
+              "text": ""
+            }, 
+            "meta": {
+              "tooltip": {
+                "tail": false, 
+                "enabled": true, 
+                "delay": 0, 
+                "location": "top", 
+                "text": "Clear check item value"
+              }, 
+              "domId": "btnClear", 
+              "name": "btnClear"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "20px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\t\n\tself.getSibling(\"TextField\").props.text = ''\n\t\n\treturn\t"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn value != ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }, 
+          {
+            "type": "ia.input.button", 
+            "props": {
+              "image": {
+                "icon": {
+                  "color": "--kcGreen-60", 
+                  "path": "material/keyboard_return"
+                }
+              }, 
+              "style": {
+                "backgroundColor": "--kcGray-0", 
+                "classes": "kanoa/button/flat", 
+                "height": "50px"
+              }, 
+              "text": ""
+            }, 
+            "meta": {
+              "tooltip": {
+                "enabled": true, 
+                "text": "Enter Value"
+              }, 
+              "domId": "btnEnter", 
+              "name": "btnEnter"
+            }, 
+            "position": {
+              "shrink": 0, 
+              "basis": "68px"
+            }, 
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script", 
+                  "scope": "G", 
+                  "config": {
+                    "script": "\n\tif self.getSibling(\"TextField\").props.text == '': return\n\tpayload = {'value':self.getSibling(\"TextField\").props.text}\n\tsystem.perspective.print(\"Sending 'ValuePicked' message with %s from KeyPad\"%(payload))\n\tsystem.perspective.sendMessage(\"ValuePicked\", payload, scope='page')\n\tself.getSibling(\"TextField\").props.text = ''\n\n\treturn"
+                  }
+                }
+              }
+            }, 
+            "propConfig": {
+              "position.display": {
+                "binding": {
+                  "transforms": [
+                    {
+                      "code": "\treturn value != ''", 
+                      "type": "script"
+                    }
+                  ], 
+                  "type": "property", 
+                  "overlayOptOut": true, 
+                  "config": {
+                    "path": "view.params.value"
+                  }
+                }
+              }
+            }
+          }
+        ], 
+        "meta": {
+          "domId": "flxInput", 
+          "name": "flxInput"
+        }, 
+        "position": {
+          "shrink": 0, 
+          "basis": "60px"
+        }
+      }
+    ], 
+    "meta": {
+      "domId": "root", 
+      "name": "root"
+    }
+  }, 
+  "propConfig": {
+    "params.value": {
+      "paramDirection": "inout", 
+      "persistent": true
+    }
+  }
+}

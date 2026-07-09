@@ -1,0 +1,21 @@
+{
+  "scope": "A",
+  "description": "6262ae831a0dc79a1636738d4578a7ed",
+  "version": 1,
+  "restricted": false,
+  "overridable": true,
+  "files": [
+    "primary_favicon.png"
+  ],
+  "attributes": {
+    "width": 180,
+    "format": "PNG",
+    "lastModification": {
+      "actor": "unknown",
+      "timestamp": "2026-07-09T21:17:21Z"
+    },
+    "size": 0,
+    "lastModificationSignature": "109935d6169fcbd815bf7552c2652dd62001d2cb940556838865294a0cf40774",
+    "height": 180
+  }
+}
