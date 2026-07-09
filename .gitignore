@@ -44,3 +44,6 @@
 *.idb-journal
 *-wal
 *-shm
+
+# JDBC driver binaries — install directly on each host, don't version control
+**/database-driver/**/*.jar
