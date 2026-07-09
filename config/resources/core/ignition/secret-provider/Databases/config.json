@@ -1,0 +1,19 @@
+{
+  "profile": {
+    "type": "internal"
+  },
+  "settings": {
+    "secrets": {
+      "KanoaDEV": {
+        "ciphertext": {
+          "ciphertext": "XPFsrxwMhVfZvaAjlag",
+          "encrypted_key": "e6JR-Rm7I7aC1j4yGwjOiBwQMzCm642PpZY7YeXDgG7uH122e8qhAA",
+          "iv": "G1uDMLD97jbNBdM3",
+          "protected": "eyJhbGciOiJBMjU2S1ciLCJlbmMiOiJBMjU2R0NNIiwiaWF0IjoxNzgzNjI3MDk4LCJ6aXAiOiJERUYifQ",
+          "tag": "XWOrm9rOMCQlLzKmu-htww"
+        },
+        "description": ""
+      }
+    }
+  }
+}

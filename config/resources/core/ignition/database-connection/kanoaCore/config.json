@@ -1,0 +1,33 @@
+{
+  "connectURL": "jdbc:sqlserver://mukwsql01.g5ces.corp\\SQLEXPRESS",
+  "connectionProps": "databaseName\u003dKanoaDEV",
+  "connectionResetParams": "",
+  "defaultTransactionLevel": "DEFAULT",
+  "driver": "Microsoft SQLServer",
+  "evictionRate": -1,
+  "evictionTests": 3,
+  "evictionTime": 1800000,
+  "failoverMode": "STANDARD",
+  "failoverProfile": "",
+  "includeSchemaInTableName": true,
+  "password": {
+    "data": {
+      "providerName": "Databases",
+      "secretName": "KanoaDEV"
+    },
+    "type": "Referenced"
+  },
+  "poolInitSize": 0,
+  "poolMaxActive": -1,
+  "poolMaxIdle": 8,
+  "poolMaxWait": 5000,
+  "poolMinIdle": 0,
+  "slowQueryLogThreshold": 60000,
+  "testOnBorrow": true,
+  "testOnReturn": false,
+  "testWhileIdle": false,
+  "translator": "MSSQL",
+  "username": "sa",
+  "validationQuery": "SELECT 1",
+  "validationSleepTime": 10000
+}

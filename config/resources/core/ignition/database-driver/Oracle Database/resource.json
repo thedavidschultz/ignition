@@ -5,9 +5,15 @@
   "restricted": false,
   "overridable": true,
   "files": [
-    "config.json"
+    "config.json",
+    "ojdbc10.jar"
   ],
   "attributes": {
-    "uuid": "648b5dac-f0df-464e-a3be-4315a51115ee"
+    "lastModification": {
+      "actor": "david",
+      "timestamp": "2026-07-09T19:55:49Z"
+    },
+    "uuid": "648b5dac-f0df-464e-a3be-4315a51115ee",
+    "lastModificationSignature": "c19d84c5f9f4d7371de39038a213a676390715b9807892efba64179ba7290cb5"
   }
 }
