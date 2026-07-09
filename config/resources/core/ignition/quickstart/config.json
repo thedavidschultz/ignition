@@ -1,1 +1,25 @@
-{"finished":false,"steps":[{"completed":false,"name":"INSTALL"},{"completed":false,"name":"ENABLED"},{"completed":false,"name":"DESIGNER"},{"completed":false,"name":"PROJECT"},{"completed":false,"name":"SESSION"}]}
+{
+  "finished": true,
+  "steps": [
+    {
+      "completed": true,
+      "name": "INSTALL"
+    },
+    {
+      "completed": true,
+      "name": "ENABLED"
+    },
+    {
+      "completed": true,
+      "name": "DESIGNER"
+    },
+    {
+      "completed": true,
+      "name": "PROJECT"
+    },
+    {
+      "completed": true,
+      "name": "SESSION"
+    }
+  ]
+}

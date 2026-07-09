@@ -5,9 +5,15 @@
   "restricted": false,
   "overridable": true,
   "files": [
-    "config.json"
+    "config.json",
+    "mysql-connector-java-8.0.22.jar"
   ],
   "attributes": {
-    "uuid": "5fa1755c-7a96-4ee7-b1e7-e46ad2bf015d"
+    "lastModification": {
+      "actor": "david",
+      "timestamp": "2026-07-09T19:55:34Z"
+    },
+    "uuid": "5fa1755c-7a96-4ee7-b1e7-e46ad2bf015d",
+    "lastModificationSignature": "ce499015bba8e559b54d888f79224a1b25899bd426fd76b1cbee572fdd92f690"
   }
 }
